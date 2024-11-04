@@ -47,7 +47,7 @@
             this.chartChiTietDoanhThu.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartChiTietDoanhThu.Legends.Add(legend1);
-            this.chartChiTietDoanhThu.Location = new System.Drawing.Point(12, 12);
+            this.chartChiTietDoanhThu.Location = new System.Drawing.Point(2, 2);
             this.chartChiTietDoanhThu.Name = "chartChiTietDoanhThu";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -61,9 +61,10 @@
             this.chartChiTietDoanhThu.Series.Add(series1);
             this.chartChiTietDoanhThu.Series.Add(series2);
             this.chartChiTietDoanhThu.Series.Add(series3);
-            this.chartChiTietDoanhThu.Size = new System.Drawing.Size(1111, 542);
+            this.chartChiTietDoanhThu.Size = new System.Drawing.Size(1133, 564);
             this.chartChiTietDoanhThu.TabIndex = 0;
             this.chartChiTietDoanhThu.Text = "chart1";
+            this.chartChiTietDoanhThu.Click += new System.EventHandler(this.chartChiTietDoanhThu_Click);
             // 
             // labelThoiGian
             // 
@@ -105,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1147, 598);
+            this.ClientSize = new System.Drawing.Size(1147, 566);
             this.Controls.Add(this.labelDoanhThuThuan);
             this.Controls.Add(this.labelDoanhThuNhap);
             this.Controls.Add(this.labelDoanhThuBan);

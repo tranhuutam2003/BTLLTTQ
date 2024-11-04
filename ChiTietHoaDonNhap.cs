@@ -13,31 +13,76 @@ namespace BTL_LTTQ_VIP
 {
 	public partial class ChiTietHoaDonNhap : Form
 	{
-		public ChiTietHoaDonNhap()
+        private string soHDN;
+        public ChiTietHoaDonNhap()
 		{
 			InitializeComponent();
 			LoadData();
 		}
-		private void LoadData()
+        public ChiTietHoaDonNhap(string soHDN) : this() // Gọi constructor mặc định
+        {
+            this.soHDN = soHDN;
+            LoadData(); // Gọi lại LoadData để hiển thị chi tiết hóa đơn được chọn
+        }
+        private void LoadData()
 		{
-			using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
-			{
-				try
-				{
-					connection.Open();
-					string query = "SELECT * from ChiTietHoaDonNhap";
-					SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-					DataTable dataTable = new DataTable();
-					dataAdapter.Fill(dataTable);
+            //using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
+            //{
+            //	try
+            //	{
+            //		connection.Open();
+            //		string query = "SELECT hdn.SoHDN, hdn.MaNV, hdn.NgayNhap, hdn.MaNCC, \r\n cthn.MaHang, cthn.SoLuong, cthn.DonGia, cthn.GiamGia, \r\n                                    cthn.ThanhTien\r\n                             FROM HoaDonNhap hdn\r\n                             INNER JOIN ChiTietHoaDonNhap cthn ON hdn.SoHDN = cthn.SoHDN\r\n";
+            //		SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+            //		DataTable dataTable = new DataTable();
+            //		dataAdapter.Fill(dataTable);
 
-					dataGridView1.DataSource = dataTable;
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show("Lỗi khi lấy dữ liệu: " + ex.Message);
-				}
-			}
-		}
+            //		dataGridView1.DataSource = dataTable;
+            //	}
+            //	catch (Exception ex)
+            //	{
+            //		MessageBox.Show("Lỗi khi lấy dữ liệu: " + ex.Message);
+            //	}
+            //}
+
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Nếu có soHDN, chỉ lấy chi tiết của hóa đơn nhập đó
+                    string query = string.IsNullOrEmpty(soHDN)
+                        ? @"SELECT hdn.SoHDN, hdn.MaNV, hdn.NgayNhap, hdn.MaNCC, 
+                                   cthn.MaHang, cthn.SoLuong, cthn.DonGia, cthn.GiamGia, 
+                                   cthn.ThanhTien
+                             FROM HoaDonNhap hdn
+                             INNER JOIN ChiTietHoaDonNhap cthn ON hdn.SoHDN = cthn.SoHDN"
+                        : @"SELECT hdn.SoHDN, hdn.MaNV, hdn.NgayNhap, hdn.MaNCC, 
+                                   cthn.MaHang, cthn.SoLuong, cthn.DonGia, cthn.GiamGia, 
+                                   cthn.ThanhTien
+                             FROM HoaDonNhap hdn
+                             INNER JOIN ChiTietHoaDonNhap cthn ON hdn.SoHDN = cthn.SoHDN
+                             WHERE hdn.SoHDN = @SoHDN";
+
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+
+                    if (!string.IsNullOrEmpty(soHDN))
+                    {
+                        // Thêm tham số nếu có soHDN
+                        dataAdapter.SelectCommand.Parameters.AddWithValue("@SoHDN", soHDN);
+                    }
+
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
+
+                    dataGridView1.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi lấy dữ liệu: " + ex.Message);
+                }
+            }
+        }
 		
 
 		

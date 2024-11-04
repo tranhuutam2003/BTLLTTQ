@@ -30,14 +30,24 @@ namespace BTL_LTTQ_VIP
 				try
 				{
 					connection.Open();
-					// Truy vấn lấy dữ liệu từ cả bảng HoaDonNhap và ChiTietHoaDonNhap
-					string query = @"SELECT hdn.SoHDN, hdn.MaNV, hdn.NgayNhap, hdn.MaNCC, 
-                                    cthn.MaHang, cthn.SoLuong, cthn.DonGia, cthn.GiamGia, 
-                                    cthn.ThanhTien
-                             FROM HoaDonNhap hdn
-                             INNER JOIN ChiTietHoaDonNhap cthn ON hdn.SoHDN = cthn.SoHDN";
-
-					SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                    string query = @"
+                SELECT 
+                    hdn.SoHDN,
+                    hdn.NgayNhap AS NgayTao, -- Thêm cột Ngày tạo hóa đơn
+                    hdn.MaNV,
+                    hdn.MaNCC,
+                    COUNT(cthn.MaHang) AS LoaiMatHang, 
+                    SUM(cthn.SoLuong) AS TongSoLuong, 
+                    SUM(cthn.ThanhTien) AS TongTien 
+                FROM 
+                    HoaDonNhap hdn
+                INNER JOIN 
+                    ChiTietHoaDonNhap cthn ON hdn.SoHDN = cthn.SoHDN
+                GROUP BY 
+                    hdn.SoHDN, hdn.NgayNhap, hdn.MaNV, hdn.MaNCC
+                ORDER BY 
+                    hdn.NgayNhap DESC;";
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
 					DataTable dataTable = new DataTable();
 					dataAdapter.Fill(dataTable);
 
@@ -53,9 +63,8 @@ namespace BTL_LTTQ_VIP
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			// Mở form ThemChiTietHoaDonNhap để thêm mới
-			ThemChiTietHoaDonNhap themChiTietHoaDonNhap = new ThemChiTietHoaDonNhap();
-			themChiTietHoaDonNhap.Show();
+			ThemChiTietHoaDonNhap2 themChiTietHoaDonNhap2 = new ThemChiTietHoaDonNhap2();
+			themChiTietHoaDonNhap2.Show();
 		}
 
 		private void button2_Click(object sender, EventArgs e)
@@ -113,9 +122,9 @@ namespace BTL_LTTQ_VIP
 
 							if (result > 0)
 							{
-								transaction.Commit(); // Xác nhận giao dịch
+								transaction.Commit(); 
 								MessageBox.Show("Xóa hóa đơn nhập thành công.");
-								LoadData(); // Tải lại dữ liệu sau khi xóa
+								LoadData();
 							}
 							else
 							{
@@ -138,36 +147,41 @@ namespace BTL_LTTQ_VIP
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-			ChiTietHoaDonNhap chiTietHoaDonNhap = new ChiTietHoaDonNhap();
-			chiTietHoaDonNhap.StartPosition = FormStartPosition.Manual;
-			chiTietHoaDonNhap.Location = this.Location;
-			chiTietHoaDonNhap.Show();
-		}
+
+
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                string soHDN = dataGridView1.SelectedRows[0].Cells["SoHDN"].Value.ToString();
+
+                ChiTietHoaDonNhap chiTietHoaDonNhap = new ChiTietHoaDonNhap(soHDN);
+                chiTietHoaDonNhap.StartPosition = FormStartPosition.Manual;
+                chiTietHoaDonNhap.Location = this.Location;
+                chiTietHoaDonNhap.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn hóa đơn nhập cần xem chi tiết.");
+            }
+        }
 
 		private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
 		{
 			if (dataGridView1.Columns[e.ColumnIndex].Name == "TongTien")
 			{
-				// Kiểm tra nếu giá trị không phải là DBNull
 				if (e.Value != DBNull.Value && e.Value != null)
 				{
-					// Chuyển đổi giá trị thành decimal
 					decimal value = Convert.ToDecimal(e.Value);
 
-					// Định dạng lại giá trị nếu là số nguyên
 					e.Value = value % 1 == 0 ? value.ToString("0") : value.ToString("0.##");
 					e.FormattingApplied = true;
 				}
 			}
 			if (dataGridView1.Columns[e.ColumnIndex].Name == "DonGia")
 			{
-				// Kiểm tra nếu giá trị không phải là DBNull
 				if (e.Value != DBNull.Value && e.Value != null)
 				{
-					// Chuyển đổi giá trị thành decimal
 					decimal value = Convert.ToDecimal(e.Value);
 
-					// Định dạng lại giá trị nếu là số nguyên
 					e.Value = value % 1 == 0 ? value.ToString("0") : value.ToString("0.##");
 					e.FormattingApplied = true;
 				}
@@ -183,6 +197,21 @@ namespace BTL_LTTQ_VIP
             };
             homeForm.Show();
             this.Close();
+        }
+
+        private void QuanLyHoaDonNhap_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

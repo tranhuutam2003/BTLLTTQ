@@ -136,5 +136,10 @@ namespace BTL_LTTQ_VIP
             ResetPassword rs = new ResetPassword();
             rs.Show();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

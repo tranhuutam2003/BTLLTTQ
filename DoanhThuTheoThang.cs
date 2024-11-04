@@ -51,10 +51,13 @@ namespace BTL_LTTQ_VIP
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
 
+                chartdoanhthu.Series["DoanhThuBan"].Name = "Doanh Thu";
+                chartdoanhthu.Series["DoanhThuNhap"].Name = "Chi Phí Nhập";
+                chartdoanhthu.Series["DoanhThuThuần"].Name = "Lợi Nhuận";
                 // Xóa dữ liệu cũ trong các series
-                chartdoanhthu.Series["DoanhThuBan"].Points.Clear();
-                chartdoanhthu.Series["DoanhThuNhap"].Points.Clear();
-                chartdoanhthu.Series["DoanhThuThuần"].Points.Clear();
+                chartdoanhthu.Series["Doanh Thu"].Points.Clear();
+                chartdoanhthu.Series["Chi Phí Nhập"].Points.Clear();
+                chartdoanhthu.Series["Lợi Nhuận"].Points.Clear();
 
                 while (reader.Read())
                 {
@@ -64,9 +67,9 @@ namespace BTL_LTTQ_VIP
                     decimal doanhThuThuan = (decimal)reader["DoanhThuThuần"];
 
                     // Thêm điểm dữ liệu vào biểu đồ cho từng loại doanh thu
-                    chartdoanhthu.Series["DoanhThuBan"].Points.AddXY(month, doanhThuBan);
-                    chartdoanhthu.Series["DoanhThuNhap"].Points.AddXY(month, doanhThuNhap);
-                    chartdoanhthu.Series["DoanhThuThuần"].Points.AddXY(month, doanhThuThuan);
+                    chartdoanhthu.Series["Doanh Thu"].Points.AddXY(month, doanhThuBan);
+                    chartdoanhthu.Series["Chi Phí Nhập"].Points.AddXY(month, doanhThuNhap);
+                    chartdoanhthu.Series["Lợi Nhuận"].Points.AddXY(month, doanhThuThuan);
                 }
                 reader.Close();
             }

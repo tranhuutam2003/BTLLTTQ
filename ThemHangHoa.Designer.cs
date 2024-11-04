@@ -30,8 +30,6 @@
         {
             this.Xacnhan = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.Button();
-            this.Soluong = new System.Windows.Forms.TextBox();
-            this.Dongianhap = new System.Windows.Forms.TextBox();
             this.Dongiaban = new System.Windows.Forms.TextBox();
             this.TenHH = new System.Windows.Forms.TextBox();
             this.MaHH = new System.Windows.Forms.TextBox();
@@ -47,8 +45,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -93,20 +89,6 @@
             this.Exit.Text = "Trở lại";
             this.Exit.UseVisualStyleBackColor = true;
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
-            // 
-            // Soluong
-            // 
-            this.Soluong.Location = new System.Drawing.Point(157, 401);
-            this.Soluong.Name = "Soluong";
-            this.Soluong.Size = new System.Drawing.Size(250, 22);
-            this.Soluong.TabIndex = 3;
-            // 
-            // Dongianhap
-            // 
-            this.Dongianhap.Location = new System.Drawing.Point(157, 429);
-            this.Dongianhap.Name = "Dongianhap";
-            this.Dongianhap.Size = new System.Drawing.Size(250, 22);
-            this.Dongianhap.TabIndex = 4;
             // 
             // Dongiaban
             // 
@@ -235,24 +217,6 @@
             this.label11.Size = new System.Drawing.Size(91, 16);
             this.label11.TabIndex = 28;
             this.label11.Text = "Nước sản xuất";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 407);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(60, 16);
-            this.label12.TabIndex = 29;
-            this.label12.Text = "Số lượng";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 435);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(86, 16);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "Đơn giá nhập";
             // 
             // label14
             // 
@@ -488,8 +452,6 @@
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -505,8 +467,6 @@
             this.Controls.Add(this.MaHH);
             this.Controls.Add(this.TenHH);
             this.Controls.Add(this.Dongiaban);
-            this.Controls.Add(this.Dongianhap);
-            this.Controls.Add(this.Soluong);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.Xacnhan);
             this.Name = "ThemHangHoa";
@@ -520,8 +480,6 @@
 
         private System.Windows.Forms.Button Xacnhan;
         private System.Windows.Forms.Button Exit;
-        private System.Windows.Forms.TextBox Soluong;
-        private System.Windows.Forms.TextBox Dongianhap;
         private System.Windows.Forms.TextBox Dongiaban;
         private System.Windows.Forms.TextBox TenHH;
         private System.Windows.Forms.TextBox MaHH;
@@ -537,8 +495,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;

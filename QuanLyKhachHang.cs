@@ -36,7 +36,7 @@ namespace BTL_LTTQ_VIP
                 try
                 {
                     connection.Open();
-                    string query = "SELECT MaKhach,TenKhach,DiaChi,DienThoai FROM KhachHang WHERE IsActive = 1";
+                    string query = "SELECT MaKhach,TenKhach,DiaChi,DienThoai FROM KhachHang";
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                     DataTable dataTable = new DataTable();
                     dataAdapter.Fill(dataTable);
@@ -106,8 +106,8 @@ namespace BTL_LTTQ_VIP
                         try
                         {
                             connection.Open();
-                            // Sử dụng câu lệnh UPDATE để thực hiện soft delete
-                            string query = "UPDATE KhachHang SET IsActive = 0 WHERE MaKhach = @MaKhach";
+                            // Thực hiện xóa vĩnh viễn khách hàng khỏi bảng KhachHang
+                            string query = "DELETE FROM KhachHang WHERE MaKhach = @MaKhach";
                             using (SqlCommand command = new SqlCommand(query, connection))
                             {
                                 command.Parameters.AddWithValue("@MaKhach", maKhach);
@@ -116,7 +116,7 @@ namespace BTL_LTTQ_VIP
                                 if (rowsAffected > 0)
                                 {
                                     MessageBox.Show("Khách hàng đã được xóa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    // Cập nhật lại DataGridView
+                                    // Cập nhật lại DataGridView sau khi xóa
                                     LoadData();
                                 }
                                 else

@@ -252,5 +252,75 @@ namespace BTL_LTTQ_VIP
                 MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}");
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            TimNhanVien timNhanVien = new TimNhanVien();
+            timNhanVien.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ThemNV themNV = new ThemNV();
+            themNV.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            TimKhachHang timKhachHang = new TimKhachHang();
+            timKhachHang.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TimSanPham timSanPham = new TimSanPham();
+            timSanPham.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            TimHoaDon timHoaDon = new TimHoaDon();
+            timHoaDon.Show();
+        }
+
+        private void plCV_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Home_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuQL_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void rspass_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

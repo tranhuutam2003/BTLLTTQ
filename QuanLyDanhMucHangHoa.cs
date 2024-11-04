@@ -1,4 +1,5 @@
 ﻿using System;
+using ClosedXML.Excel;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -176,7 +177,7 @@ namespace BTL_LTTQ_VIP
                         {
                             connection.Open();
                             // Sử dụng câu lệnh UPDATE để thực hiện soft delete
-                            string query = "UPDATE DanhMucHangHoa SET IsActive = 0 WHERE MaHang = @MaHang";
+                            string query = "DELETE FROM DanhMucHangHoa WHERE MaHang = @MaHang";
                             using (SqlCommand command = new SqlCommand(query, connection))
                             {
                                 command.Parameters.AddWithValue("@MaHang", maHang);
@@ -204,6 +205,36 @@ namespace BTL_LTTQ_VIP
             else
             {
                 MessageBox.Show("Vui lòng chọn hàng hóa cần xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnXuatExcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "Excel files (*.xlsx)|*.xlsx",
+                Title = "Lưu file Quản lí Hàng Hóa"
+            };
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    using (XLWorkbook workbook = new XLWorkbook())
+                    {
+                        DataTable dataTable = (DataTable)dataGridView1.DataSource;
+
+                        workbook.Worksheets.Add(dataTable, "DanhMucHangHoa");
+
+                        workbook.SaveAs(saveFileDialog.FileName);
+
+                        MessageBox.Show("Xuất file Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi xuất file Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

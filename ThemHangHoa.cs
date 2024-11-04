@@ -13,7 +13,6 @@ namespace BTL_LTTQ_VIP
 {
 	public partial class ThemHangHoa : Form
 	{
-		//private string connectionString = "Data Source=LAPTOP-7NSHMMSK;Initial Catalog=quanlybankinh;Integrated Security=True";
 		public ThemHangHoa()
 		{
 			InitializeComponent();
@@ -271,15 +270,15 @@ namespace BTL_LTTQ_VIP
 					connection.Open();
 
 					string query = @"INSERT INTO DanhMucHangHoa 
-                            (MaHang, TenHang, MaLoai, MaLoaiGong, MaDangMat, MaChatLieu, 
-                             MaDiop, MaCongDung, MaDacDiem, MaMau, MaNuocSX, SoLuong, 
-                             DonGiaNhap, DonGiaBan, ThoiGianBaoHanh, GhiChu)
-                            VALUES 
-                            (@MaHang, @TenHang, @MaLoai, @MaLoaiGong, @MaDangMat, @MaChatLieu,
-                             @MaDiop, @MaCongDung, @MaDacDiem, @MaMau, @MaNuocSX, @SoLuong,
-                             @DonGiaNhap, @DonGiaBan, @ThoiGianBaoHanh, @GhiChu)";
+                                    (MaHang, TenHang, MaLoai, MaLoaiGong, MaDangMat, MaChatLieu, 
+                                     MaDiop, MaCongDung, MaDacDiem, MaMau, MaNuocSX, SoLuong, 
+                                     DonGiaNhap, DonGiaBan, ThoiGianBaoHanh, GhiChu)
+                                    VALUES 
+                                    (@MaHang, @TenHang, @MaLoai, @MaLoaiGong, @MaDangMat, @MaChatLieu,
+                                     @MaDiop, @MaCongDung, @MaDacDiem, @MaMau, @MaNuocSX, 0, 
+                                     0, @DonGiaBan, @ThoiGianBaoHanh, @GhiChu)";
 
-					using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlCommand command = new SqlCommand(query, connection))
 					{
 						command.Parameters.AddWithValue("@MaHang", Convert.ToInt32(MaHH.Text));
 						command.Parameters.AddWithValue("@TenHang", TenHH.Text);
@@ -292,8 +291,6 @@ namespace BTL_LTTQ_VIP
 						command.Parameters.AddWithValue("@MaDacDiem", ((dynamic)Dacdiem.SelectedItem).MaDacDiem);
 						command.Parameters.AddWithValue("@MaMau", ((dynamic)Mausac.SelectedItem).MaMau);
 						command.Parameters.AddWithValue("@MaNuocSX", ((dynamic)Nuocsanxuat.SelectedItem).MaNuocSX);
-						command.Parameters.AddWithValue("@SoLuong", Convert.ToInt32(Soluong.Text));
-						command.Parameters.AddWithValue("@DonGiaNhap", Convert.ToDecimal(Dongianhap.Text));
 						command.Parameters.AddWithValue("@DonGiaBan", Convert.ToDecimal(Dongiaban.Text));
 						command.Parameters.AddWithValue("@ThoiGianBaoHanh", Convert.ToInt32(Thoigianbaohanh.Text));
 						command.Parameters.AddWithValue("@GhiChu", Ghichu.Text);
@@ -321,63 +318,60 @@ namespace BTL_LTTQ_VIP
 		{
 			ThemLoaiKinh tlk = new ThemLoaiKinh();
 			tlk.Show();
-			this.Close();
+			
 		}
 
 		private void themloaigong_Click(object sender, EventArgs e)
 		{
 			ThemGongMat tgm = new ThemGongMat();
 			tgm.Show();
-			this.Close();
+			
 		}
 
 		private void Themdangmat_Click(object sender, EventArgs e)
 		{
 			ThemHinhDangMat thdm = new ThemHinhDangMat();
 			thdm.Show();
-			this.Close();
+			
 		}
 
 		private void themchatlieu_Click(object sender, EventArgs e)
 		{
 			ThemChatLieu themChatLieu = new ThemChatLieu();
 			themChatLieu.Show();
-			this.Close();
+			
 		}
 
 		private void themdiop_Click(object sender, EventArgs e)
 		{
 			ThemDiop themDiop = new ThemDiop();
 			themDiop.Show();
-			this.Close();
+			
 		}
 
 		private void themcongdung_Click(object sender, EventArgs e)
 		{
 			ThemCongDung tcd = new ThemCongDung();
 			tcd.Show();
-			this.Close();
+			
 		}
 
 		private void themdacdiem_Click(object sender, EventArgs e)
 		{
 			ThemDacDiem tdd = new ThemDacDiem();
 			tdd.Show();
-			this.Close();
 		}
 
 		private void themmausac_Click(object sender, EventArgs e)
 		{
 			ThemMauSac tms = new ThemMauSac();
 			tms.Show();
-			this.Close();
 		}
 
 		private void themnuocsanxuat_Click(object sender, EventArgs e)
 		{
 			ThemNuocSanXuat tnsx = new ThemNuocSanXuat();
 			tnsx.Show();
-			this.Close();
 		}
 
         private void Exit_Click(object sender, EventArgs e)

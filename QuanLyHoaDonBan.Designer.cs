@@ -33,6 +33,7 @@
             this.btnXoaHD = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
             this.btnXemChiTiet = new System.Windows.Forms.Button();
+            this.btnIn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,11 +91,22 @@
             this.btnXemChiTiet.UseVisualStyleBackColor = true;
             this.btnXemChiTiet.Click += new System.EventHandler(this.btnXemChiTiet_Click);
             // 
+            // btnIn
+            // 
+            this.btnIn.Location = new System.Drawing.Point(427, 542);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(125, 30);
+            this.btnIn.TabIndex = 6;
+            this.btnIn.Text = "In Hóa Đơn";
+            this.btnIn.UseVisualStyleBackColor = true;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
+            // 
             // QuanLyHoaDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 642);
+            this.Controls.Add(this.btnIn);
             this.Controls.Add(this.btnXemChiTiet);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.btnXoaHD);
@@ -115,5 +127,6 @@
 		private System.Windows.Forms.Button btnXoaHD;
 		private System.Windows.Forms.Button exit;
 		private System.Windows.Forms.Button btnXemChiTiet;
-	}
+        private System.Windows.Forms.Button btnIn;
+    }
 }

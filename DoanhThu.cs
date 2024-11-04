@@ -47,6 +47,10 @@ namespace BTL_LTTQ_VIP
                 adapter.Fill(dt);
 
                 dataGridView1.DataSource = dt;
+                dataGridView1.Columns["NgayThang"].HeaderText = "Ngày Tháng";
+                dataGridView1.Columns["DoanhThuBan"].HeaderText = "Doanh Thu";
+                dataGridView1.Columns["DoanhThuNhap"].HeaderText = "Chi Phí Nhập";
+                dataGridView1.Columns["DoanhThuThuần"].HeaderText = "Lợi Nhuận";
 
                 // Tính tổng
                 decimal totalDoanhThuBan = 0;
@@ -87,6 +91,21 @@ namespace BTL_LTTQ_VIP
         }
 
         private void DoanhThu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpngayketthuc_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTongDoanhThuBan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

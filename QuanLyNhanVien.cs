@@ -100,7 +100,7 @@ namespace BTL_LTTQ_VIP
                         {
                             connection.Open();
                             // Sử dụng câu lệnh UPDATE để thực hiện soft delete
-                            string query = "UPDATE NhanVien SET IsActive = 0 WHERE MaNV = @MaNV";
+                            string query = "delete NhanVien WHERE MaNV = @MaNV";
                             using (SqlCommand command = new SqlCommand(query, connection))
                             {
                                 command.Parameters.AddWithValue("@MaNV", maNV);

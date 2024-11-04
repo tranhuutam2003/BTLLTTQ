@@ -35,6 +35,7 @@
             this.Xoa = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnXuatExcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -109,11 +110,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin hàng hóa";
             // 
+            // btnXuatExcel
+            // 
+            this.btnXuatExcel.Location = new System.Drawing.Point(512, 638);
+            this.btnXuatExcel.Name = "btnXuatExcel";
+            this.btnXuatExcel.Size = new System.Drawing.Size(125, 30);
+            this.btnXuatExcel.TabIndex = 7;
+            this.btnXuatExcel.Text = "Xuất File Excel";
+            this.btnXuatExcel.UseVisualStyleBackColor = true;
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
+            // 
             // QuanLyDanhMucHangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 680);
+            this.Controls.Add(this.btnXuatExcel);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.Xoa);
@@ -138,5 +150,6 @@
         private System.Windows.Forms.Button Xoa;
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnXuatExcel;
     }
 }

@@ -54,10 +54,13 @@ namespace BTL_LTTQ_VIP
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                // Xóa dữ liệu biểu đồ cũ
-                chartChiTietDoanhThu.Series["DoanhThuBan"].Points.Clear();
-                chartChiTietDoanhThu.Series["DoanhThuNhap"].Points.Clear();
-                chartChiTietDoanhThu.Series["DoanhThuThuần"].Points.Clear();
+                chartChiTietDoanhThu.Series["DoanhThuBan"].Name = "Doanh Thu";
+                chartChiTietDoanhThu.Series["DoanhThuNhap"].Name = "Chi Phí Nhập";
+                chartChiTietDoanhThu.Series["DoanhThuThuần"].Name = "Lợi Nhuận";
+
+                chartChiTietDoanhThu.Series["Doanh Thu"].Points.Clear();
+                chartChiTietDoanhThu.Series["Chi Phí Nhập"].Points.Clear();
+                chartChiTietDoanhThu.Series["Lợi Nhuận"].Points.Clear();
 
                 decimal totalDoanhThuBan = 0, totalDoanhThuNhap = 0, totalDoanhThuThuan = 0;
 
@@ -74,23 +77,28 @@ namespace BTL_LTTQ_VIP
                     totalDoanhThuThuan += doanhThuThuan;
 
                     // Thêm điểm vào biểu đồ
-                    chartChiTietDoanhThu.Series["DoanhThuBan"].Points.AddXY(ngay, doanhThuBan);
-                    chartChiTietDoanhThu.Series["DoanhThuNhap"].Points.AddXY(ngay, doanhThuNhap);
-                    chartChiTietDoanhThu.Series["DoanhThuThuần"].Points.AddXY(ngay, doanhThuThuan);
+                    chartChiTietDoanhThu.Series["Doanh Thu"].Points.AddXY(ngay, doanhThuBan);
+                    chartChiTietDoanhThu.Series["Chi Phí Nhập"].Points.AddXY(ngay, doanhThuNhap);
+                    chartChiTietDoanhThu.Series["Lợi Nhuận"].Points.AddXY(ngay, doanhThuThuan);
                 }
 
                 // Đóng reader
                 reader.Close();
 
                 // Cập nhật giá trị cho Label
-                labelDoanhThuBan.Text = $"Doanh Thu Bán: {totalDoanhThuBan:C}";
-                labelDoanhThuNhap.Text = $"Doanh Thu Nhập: {totalDoanhThuNhap:C}";
-                labelDoanhThuThuan.Text = $"Doanh Thu Thuần: {totalDoanhThuThuan:C}";
+                labelDoanhThuBan.Text = $"Doanh Thu: {totalDoanhThuBan:C}";
+                labelDoanhThuNhap.Text = $"Chi Phí Nhập: {totalDoanhThuNhap:C}";
+                labelDoanhThuThuan.Text = $"Lợi Nhuận: {totalDoanhThuThuan:C}";
 
                 chartChiTietDoanhThu.ChartAreas[0].AxisX.Minimum = fromDate.ToOADate();
                 chartChiTietDoanhThu.ChartAreas[0].AxisX.Maximum = toDate.ToOADate();
 
             }
+        }
+
+        private void chartChiTietDoanhThu_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

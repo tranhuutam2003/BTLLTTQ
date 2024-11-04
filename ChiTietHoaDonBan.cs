@@ -13,36 +13,51 @@ namespace BTL_LTTQ_VIP
 {
 	public partial class ChiTietHoaDonBan : Form
 	{
-		
-		public ChiTietHoaDonBan()
+        private int soHDB;
+        public ChiTietHoaDonBan(int soHDB)
 		{
 			InitializeComponent();
+			this.soHDB = soHDB;
 			LoadData();
 		}
 		private void LoadData()
 		{
-			using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
-			{
-				try
-				{
-					connection.Open();
-					//string query = "SELECT * from ChiTietHoaDonBan";
-					string query = @"SELECT hdb.SoHDB, hdb.MaNV, hdb.NgayBan, hdb.MaKhach, 
-                                    cthdb.MaHang, cthdb.SoLuong, cthdb.GiamGia, cthdb.ThanhTien
-                                FROM HoaDonBan hdb
-                                INNER JOIN ChiTietHoaDonBan cthdb ON hdb.SoHDB = cthdb.SoHDB";
-					SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-					DataTable dataTable = new DataTable();
-					dataAdapter.Fill(dataTable);
+           
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = @"
+						SELECT 
+							cthdb.SoHDB, 
+							cthdb.MaHang, 
+							dh.TenHang, 
+							cthdb.SoLuong, 
+							cthdb.GiamGia, 
+							cthdb.ThanhTien
+						FROM 
+							ChiTietHoaDonBan cthdb
+						JOIN 
+							DanhMucHangHoa dh ON cthdb.MaHang = dh.MaHang
+						WHERE 
+							cthdb.SoHDB = @SoHDB";
 
-					dataGridView1.DataSource = dataTable;
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show("Lỗi khi lấy dữ liệu: " + ex.Message);
-				}
-			}
-		}
+                    SqlCommand cmd = new SqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@SoHDB", this.soHDB);
+
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
+
+                    dataGridView1.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi lấy dữ liệu: " + ex.Message);
+                }
+            }
+        }
 
 		private void Quaylai_Click(object sender, EventArgs e)
 		{
@@ -51,7 +66,7 @@ namespace BTL_LTTQ_VIP
 
 		private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
 		{
-			//if (dataGridView1.Columns[e.ColumnIndex].Name == "TongTien")
+			//if (dataGridView1.Columns[e.ColumnIndex].Name == "ThanhTien")
 			//{
 			//	// Lấy giá trị từ cell và định dạng lại
 			//	decimal value = Convert.ToDecimal(e.Value);
