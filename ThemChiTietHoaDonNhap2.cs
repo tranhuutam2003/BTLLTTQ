@@ -14,9 +14,23 @@ namespace BTL_LTTQ_VIP
     public partial class ThemChiTietHoaDonNhap2 : Form
     {
         private int soHDN;
+        private int MaNV;
+        private string TenNV;
         public ThemChiTietHoaDonNhap2()
         {
             InitializeComponent();
+            GenerateNewSoHDN();
+            LoadComboBoxData();
+            InitializeListView();
+            dateTimePickerNgayNhap.Value = DateTime.Now;
+        }
+
+        public ThemChiTietHoaDonNhap2(string tenNV,int maNV)
+        {
+            InitializeComponent();
+            this.TenNV = tenNV;
+            lbtennhanvien.Text = tenNV;
+            MaNV = maNV;
             GenerateNewSoHDN();
             LoadComboBoxData();
             InitializeListView();
@@ -53,13 +67,6 @@ namespace BTL_LTTQ_VIP
         {
             using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
             {
-                SqlDataAdapter daNhanVien = new SqlDataAdapter("SELECT MaNV, TenNV FROM NhanVien", conn);
-                DataTable dtNhanVien = new DataTable();
-                daNhanVien.Fill(dtNhanVien);
-                cbMaNV.DataSource = dtNhanVien;
-                cbMaNV.DisplayMember = "TenNV";
-                cbMaNV.ValueMember = "MaNV";
-
                 SqlDataAdapter daNCC = new SqlDataAdapter("SELECT MaNCC, TenNCC FROM NhaCungCap", conn);
                 DataTable dtNCC = new DataTable();
                 daNCC.Fill(dtNCC);
@@ -103,7 +110,7 @@ namespace BTL_LTTQ_VIP
             item.SubItems.Add(txtGiamGia.Text);
             item.SubItems.Add(txtMaHang.Text);
             item.SubItems.Add(txtDonGia.Text);
-            item.SubItems.Add(cbMaNV.SelectedValue.ToString());
+            item.SubItems.Add(lbtennhanvien.Text);
             item.SubItems.Add(cbMaNcc.SelectedValue.ToString());
             item.SubItems.Add(dateTimePickerNgayNhap.Value.ToString("dd/MM/yyyy"));
             item.SubItems.Add(txtThanhTien.Text);
@@ -124,7 +131,7 @@ namespace BTL_LTTQ_VIP
                 txtGiamGia.Text = item.SubItems[2].Text;
                 txtMaHang.Text = item.SubItems[3].Text;
                 txtDonGia.Text = item.SubItems[4].Text;
-                cbMaNV.SelectedValue = item.SubItems[5].Text;
+                lbtennhanvien.Text = item.SubItems[5].Text;
                 cbMaNcc.SelectedValue = item.SubItems[6].Text;
                 dateTimePickerNgayNhap.Value = DateTime.Parse(item.SubItems[7].Text);
                 txtThanhTien.Text = item.SubItems[8].Text;
@@ -165,7 +172,7 @@ namespace BTL_LTTQ_VIP
                                             "VALUES (@SoHDN, @MaNV, @NgayNhap, @MaNCC, @TongTien)";
                     SqlCommand cmdHDN = new SqlCommand(insertHDNQuery, conn, transaction);
                     cmdHDN.Parameters.AddWithValue("@SoHDN", soHDN);
-                    cmdHDN.Parameters.AddWithValue("@MaNV", cbMaNV.SelectedValue);
+                    cmdHDN.Parameters.AddWithValue("@MaNV", MaNV);
                     cmdHDN.Parameters.AddWithValue("@NgayNhap", dateTimePickerNgayNhap.Value);
                     cmdHDN.Parameters.AddWithValue("@MaNCC", cbMaNcc.SelectedValue);
                     cmdHDN.Parameters.AddWithValue("@TongTien", CalculateTongTien());
@@ -200,6 +207,7 @@ namespace BTL_LTTQ_VIP
                     }
 
                     transaction.Commit();
+                    AddNotification(TenNV, "hóa đơn nhập");
                     MessageBox.Show("Hóa đơn nhập đã được lưu thành công và số lượng hàng đã được cập nhật!");
                     listView1.Items.Clear();
                     GenerateNewSoHDN();
@@ -230,6 +238,23 @@ namespace BTL_LTTQ_VIP
         {
             NhaCungCap nhaCungCap = new NhaCungCap();
             nhaCungCap.Show();
+        }
+
+        private void AddNotification(string tenNV, string action)
+        {
+            string query = "INSERT INTO ThongBao (NguoiTao, NoiDung, NgayTao) VALUES (@NguoiTao, @NoiDung, @NgayTao)";
+            string noiDung = $"{tenNV} đã tạo {action} vào ngày {DateTime.Now:dd/MM/yyyy HH:mm}";
+
+            using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@NguoiTao", tenNV);
+                cmd.Parameters.AddWithValue("@NoiDung", noiDung);
+                cmd.Parameters.AddWithValue("@NgayTao", DateTime.Now);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
         }
 
         private void txtSoHDN_TextChanged(object sender, EventArgs e)

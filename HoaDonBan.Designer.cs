@@ -41,7 +41,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.cbMaNV = new System.Windows.Forms.ComboBox();
             this.cbMaKhach = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
@@ -50,6 +49,7 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnXacNhan = new System.Windows.Forms.Button();
+            this.lbtennhanvien = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -157,16 +157,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(108, 22);
             this.dateTimePicker1.TabIndex = 7;
             // 
-            // cbMaNV
-            // 
-            this.cbMaNV.BackColor = System.Drawing.SystemColors.Window;
-            this.cbMaNV.FormattingEnabled = true;
-            this.cbMaNV.Location = new System.Drawing.Point(187, 67);
-            this.cbMaNV.Name = "cbMaNV";
-            this.cbMaNV.Size = new System.Drawing.Size(174, 24);
-            this.cbMaNV.TabIndex = 8;
-            this.cbMaNV.SelectedIndexChanged += new System.EventHandler(this.cbMaNV_SelectedIndexChanged);
-            // 
             // cbMaKhach
             // 
             this.cbMaKhach.BackColor = System.Drawing.SystemColors.Window;
@@ -260,17 +250,26 @@
             this.btnXacNhan.UseVisualStyleBackColor = true;
             this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
+            // lbtennhanvien
+            // 
+            this.lbtennhanvien.AutoSize = true;
+            this.lbtennhanvien.Location = new System.Drawing.Point(184, 73);
+            this.lbtennhanvien.Name = "lbtennhanvien";
+            this.lbtennhanvien.Size = new System.Drawing.Size(91, 16);
+            this.lbtennhanvien.TabIndex = 21;
+            this.lbtennhanvien.Text = "Tên nhân viên";
+            // 
             // HoaDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(909, 571);
+            this.Controls.Add(this.lbtennhanvien);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtGiamGia);
             this.Controls.Add(this.txtSoLuong);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbMaKhach);
-            this.Controls.Add(this.cbMaNV);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -297,7 +296,6 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.DateTimePicker dateTimePicker1;
-		private System.Windows.Forms.ComboBox cbMaNV;
 		private System.Windows.Forms.ComboBox cbMaKhach;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TextBox txtSoLuong;
@@ -312,5 +310,6 @@
 		private System.Windows.Forms.ColumnHeader columnHeader9;
 		private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbtennhanvien;
     }
 }

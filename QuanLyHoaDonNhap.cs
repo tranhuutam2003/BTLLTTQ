@@ -9,18 +9,20 @@ namespace BTL_LTTQ_VIP
 	{
         private string TenNV;
         private string CongViec;
+		private int MaNV;
         public QuanLyHoaDonNhap()
 		{
 			InitializeComponent();
 			LoadData();
 		}
 
-        public QuanLyHoaDonNhap(string tenNV, string congViec)
+        public QuanLyHoaDonNhap(string tenNV, string congViec, int maNV)
         {
             InitializeComponent();
             TenNV = tenNV;   // Set user information
             CongViec = congViec;
             LoadData();
+            MaNV = maNV;
         }
 
         private void LoadData()
@@ -63,7 +65,7 @@ namespace BTL_LTTQ_VIP
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			ThemChiTietHoaDonNhap2 themChiTietHoaDonNhap2 = new ThemChiTietHoaDonNhap2();
+			ThemChiTietHoaDonNhap2 themChiTietHoaDonNhap2 = new ThemChiTietHoaDonNhap2(TenNV,MaNV);
 			themChiTietHoaDonNhap2.Show();
 		}
 

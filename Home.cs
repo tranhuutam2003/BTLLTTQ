@@ -15,15 +15,13 @@ namespace BTL_LTTQ_VIP
     {
         public string TenNV { get; set; }
         public string CongViec { get; set; }
+        public int MaNV { get; set; }
         public Home()
         {
             InitializeComponent();
             this.Load += Home_Load;
             QLNV.Visible = false;
             btndoanhthu.Visible = false;
-
-            //this.BackgroundImage = Image.FromFile(@"C:\Users\tam tran\source\repos\BTL LTTQ VIP\imglttq\backroundhome.jpg");
-            //this.BackgroundImageLayout = ImageLayout.Stretch; // Để hình ảnh giãn theo kích thước form
         }
 
         private void QLNV_Click(object sender, EventArgs e)
@@ -50,7 +48,7 @@ namespace BTL_LTTQ_VIP
 
         private void QLHDN_Click(object sender, EventArgs e)
         {
-            QuanLyHoaDonNhap quanLyHoaDonNhap = new QuanLyHoaDonNhap(TenNV, CongViec);
+            QuanLyHoaDonNhap quanLyHoaDonNhap = new QuanLyHoaDonNhap(TenNV, CongViec,MaNV);
             quanLyHoaDonNhap.Show();
             this.Hide();
         }
@@ -64,7 +62,7 @@ namespace BTL_LTTQ_VIP
 
         private void QLHDB_Click(object sender, EventArgs e)
         {
-            QuanLyHoaDonBan qlhdb = new QuanLyHoaDonBan(TenNV, CongViec);
+            QuanLyHoaDonBan qlhdb = new QuanLyHoaDonBan(TenNV, CongViec, MaNV);
             qlhdb.Show();
             this.Hide();
         }
@@ -150,7 +148,7 @@ namespace BTL_LTTQ_VIP
 
 		private void button8_Click(object sender, EventArgs e)
 		{
-            QuanLyHoaDonNhap quanLyHoaDonNhap= new QuanLyHoaDonNhap(TenNV, CongViec);
+            QuanLyHoaDonNhap quanLyHoaDonNhap= new QuanLyHoaDonNhap(TenNV, CongViec, MaNV);
             quanLyHoaDonNhap.Show();
             this.Hide();
 		}

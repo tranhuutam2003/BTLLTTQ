@@ -13,15 +13,26 @@ namespace BTL_LTTQ_VIP
 {
 	public partial class HoaDonBan : Form
 	{
-		public HoaDonBan()
+        private string TenNV;
+        private int MaNV;
+        public HoaDonBan()
 		{
 			InitializeComponent();
-			LoadItemsToListView();
-			GenerateNewSoHDB();
-			this.Load += new EventHandler(HoaDonBan_Load);
+
 		}
 
-		private void LoadItemsToListView()
+        public HoaDonBan(string tenNV, int maNV)
+        {
+            InitializeComponent();
+            this.TenNV = tenNV;
+            lbtennhanvien.Text = tenNV;
+            MaNV = maNV;
+            LoadItemsToListView();
+            GenerateNewSoHDB();
+            this.Load += new EventHandler(HoaDonBan_Load);
+        }
+
+        private void LoadItemsToListView()
 		{
 			using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
 			{
@@ -126,12 +137,6 @@ namespace BTL_LTTQ_VIP
                         return;
                     }
 
-                    if (cbMaNV.SelectedValue == null)
-                    {
-                        MessageBox.Show("Vui lòng chọn nhân viên trước khi xác nhận hóa đơn.");
-                        return;
-                    }
-
                     bool hasValidItem = false;
                     foreach (ListViewItem item in listView1.Items)
                     {
@@ -153,7 +158,7 @@ namespace BTL_LTTQ_VIP
                                             "VALUES (@SoHDB, @MaNV, @NgayBan, @MaKhach, @TongTien)";
                     SqlCommand cmdHDB = new SqlCommand(insertHDBQuery, conn, transaction);
                     cmdHDB.Parameters.AddWithValue("@SoHDB", int.Parse(txtSoHDB.Text));
-                    cmdHDB.Parameters.AddWithValue("@MaNV", cbMaNV.SelectedValue);
+                    cmdHDB.Parameters.AddWithValue("@MaNV", MaNV);
                     cmdHDB.Parameters.AddWithValue("@NgayBan", dateTimePicker1.Value);
                     cmdHDB.Parameters.AddWithValue("@MaKhach", cbMaKhach.SelectedValue);
                     cmdHDB.Parameters.AddWithValue("@TongTien", CalculateTongTien());
@@ -191,7 +196,7 @@ namespace BTL_LTTQ_VIP
                     // Commit transaction
                     transaction.Commit();
 
-                    AddNotification(cbMaNV.SelectedValue.ToString(), "hóa đơn bán");
+                    AddNotification(TenNV, "hóa đơn bán");
 
                     MessageBox.Show("Hóa đơn đã được cập nhật thành công và số lượng tồn kho đã được điều chỉnh!");
                 }
@@ -253,41 +258,21 @@ namespace BTL_LTTQ_VIP
 		{
 
 		}
-		private void LoadNhanVienToComboBox()
-		{
-			using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
-			{
-				string query = "SELECT MaNV, TenNV FROM NhanVien"; // Chỉ chọn nhân viên đang hoạt động
-				SqlDataAdapter da = new SqlDataAdapter(query, conn);
-				DataTable dt = new DataTable();
-				da.Fill(dt);
-
-				cbMaNV.DataSource = dt;
-				cbMaNV.DisplayMember = "TenNV";  // Hiển thị tên nhân viên
-				cbMaNV.ValueMember = "MaNV";     // Giá trị là mã nhân viên
-
-				if (cbMaNV.SelectedValue != null)
-				{
-					//MessageBox.Show("SelectedValue của ComboBox MaNV: " + cbMaNV.SelectedValue.ToString());
-				}
-			}
-		}
 
 		private void HoaDonBan_Load(object sender, EventArgs e)
 		{
 			LoadKhachHangToComboBox();
-			LoadNhanVienToComboBox();
 		}
 
-        private void AddNotification(string maNV, string action)
+        private void AddNotification(string tenNV, string action)
         {
-            string query = "INSERT INTO ThongBao (NguoiNhan, NoiDung, NgayTao) VALUES (@NguoiNhan, @NoiDung, @NgayTao)";
-            string noiDung = $"{maNV} đã tạo {action} vào ngày {DateTime.Now:dd/MM/yyyy HH:mm}";
+            string query = "INSERT INTO ThongBao (NguoiTao, NoiDung, NgayTao) VALUES (@NguoiTao, @NoiDung, @NgayTao)";
+            string noiDung = $"{tenNV} đã tạo {action} vào ngày {DateTime.Now:dd/MM/yyyy HH:mm}";
 
             using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@NguoiNhan", maNV);
+                cmd.Parameters.AddWithValue("@NguoiTao", tenNV);
                 cmd.Parameters.AddWithValue("@NoiDung", noiDung);
                 cmd.Parameters.AddWithValue("@NgayTao", DateTime.Now);
 
@@ -300,5 +285,5 @@ namespace BTL_LTTQ_VIP
 		{
 			this.Close();
 		}
-	}
+    }
 }

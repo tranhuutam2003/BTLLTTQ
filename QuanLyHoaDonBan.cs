@@ -17,6 +17,7 @@ namespace BTL_LTTQ_VIP
     {
         private string TenNV;
         private string CongViec;
+        private int MaNV;
 
 
         public QuanLyHoaDonBan()
@@ -25,10 +26,11 @@ namespace BTL_LTTQ_VIP
 			LoadData();
         }
 
-        public QuanLyHoaDonBan(string tenNV, string congViec)
+        public QuanLyHoaDonBan(string tenNV, string congViec, int maNV)
         {
             InitializeComponent();
-            TenNV = tenNV;   // Set user information
+            TenNV = tenNV;
+            MaNV = maNV;// Set user information
             CongViec = congViec;
             LoadData();
         }
@@ -141,12 +143,9 @@ GROUP BY
 
 		private void btnThemHD_Click(object sender, EventArgs e)
 		{
-			//ThemHoaDonBan themHoaDonBanForm = new ThemHoaDonBan(false); // false để chỉ ra rằng đây là chế độ thêm
-			//themHoaDonBanForm.Show();
-			//this.Hide();
-			HoaDonBan hoaDonBan = new HoaDonBan();
-			hoaDonBan.Show();
-		}
+            HoaDonBan hoaDonBan = new HoaDonBan(TenNV, MaNV);
+            hoaDonBan.Show();
+        }
 
 		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{

@@ -31,10 +31,10 @@ namespace BTL_LTTQ_VIP
 
         private void Login_Click(object sender, EventArgs e)
         {
-            string userInput = username.Text; // Có thể là MaNV hoặc email
+            string userInput = username.Text;
             string pass = password.Text;
 
-            var (isAuthenticated, tenNV, tenCV) = AuthenticateUser(userInput, pass);
+            var (isAuthenticated, tenNV, tenCV, maNV) = AuthenticateUser(userInput, pass);
 
             if (isAuthenticated)
             {
@@ -50,7 +50,8 @@ namespace BTL_LTTQ_VIP
                 Home homeForm = new Home
                 {
                     TenNV = tenNV,
-                    CongViec = tenCV
+                    CongViec = tenCV,
+                    MaNV = maNV
                 };
                 homeForm.Show();
                 this.Hide();
@@ -91,17 +92,16 @@ namespace BTL_LTTQ_VIP
                 }
             }
         }
-        private (bool isAuthenticated, string tenNV, string tenCV) AuthenticateUser(string userInput, string password)
+        private (bool isAuthenticated, string tenNV, string tenCV, int maNV) AuthenticateUser(string userInput, string password)
         {
             using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
             {
                 conn.Open();
-                string query = @"SELECT nv.TenNV, cv.TenCV 
+                string query = @"SELECT nv.MaNV, nv.TenNV, cv.TenCV 
                          FROM NhanVien nv 
                          JOIN CongViec cv ON nv.MaCV = cv.MaCV 
                          WHERE (nv.MaNV = @UserInput OR nv.emailNV = @UserInput) 
-                         AND nv.MkNV = @Password 
-                         ";
+                         AND nv.MkNV = @Password";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@UserInput", userInput);
@@ -111,13 +111,14 @@ namespace BTL_LTTQ_VIP
                     {
                         if (reader.Read())
                         {
-                            return (true, reader["TenNV"].ToString(), reader["TenCV"].ToString());
+                            return (true, reader["TenNV"].ToString(), reader["TenCV"].ToString(), Convert.ToInt32(reader["MaNV"]));
                         }
-                        return (false, null, null);
+                        return (false, null, null, 0);
                     }
                 }
             }
         }
+
         private void button3_Click(object sender, EventArgs e)
         {
 

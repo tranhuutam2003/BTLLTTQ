@@ -48,11 +48,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.cbMaNcc = new System.Windows.Forms.ComboBox();
-            this.cbMaNV = new System.Windows.Forms.ComboBox();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbtennhanvien = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +60,7 @@
             // 
             this.dateTimePickerNgayNhap.Enabled = false;
             this.dateTimePickerNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerNgayNhap.Location = new System.Drawing.Point(523, 164);
+            this.dateTimePickerNgayNhap.Location = new System.Drawing.Point(508, 153);
             this.dateTimePickerNgayNhap.Name = "dateTimePickerNgayNhap";
             this.dateTimePickerNgayNhap.Size = new System.Drawing.Size(165, 22);
             this.dateTimePickerNgayNhap.TabIndex = 68;
@@ -88,9 +88,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(696, 87);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 16);
+            this.label7.Size = new System.Drawing.Size(53, 16);
             this.label7.TabIndex = 65;
-            this.label7.Text = "Mã NV";
+            this.label7.Text = "Tên NV";
             // 
             // txtThanhTien
             // 
@@ -102,7 +102,7 @@
             // 
             // txtMaHang
             // 
-            this.txtMaHang.Location = new System.Drawing.Point(163, 90);
+            this.txtMaHang.Location = new System.Drawing.Point(163, 93);
             this.txtMaHang.Name = "txtMaHang";
             this.txtMaHang.Size = new System.Drawing.Size(112, 22);
             this.txtMaHang.TabIndex = 61;
@@ -242,19 +242,10 @@
             // cbMaNcc
             // 
             this.cbMaNcc.FormattingEnabled = true;
-            this.cbMaNcc.Location = new System.Drawing.Point(163, 156);
+            this.cbMaNcc.Location = new System.Drawing.Point(163, 151);
             this.cbMaNcc.Name = "cbMaNcc";
             this.cbMaNcc.Size = new System.Drawing.Size(169, 24);
             this.cbMaNcc.TabIndex = 70;
-            // 
-            // cbMaNV
-            // 
-            this.cbMaNV.FormattingEnabled = true;
-            this.cbMaNV.Location = new System.Drawing.Point(807, 93);
-            this.cbMaNV.Name = "cbMaNV";
-            this.cbMaNV.Size = new System.Drawing.Size(121, 24);
-            this.cbMaNV.TabIndex = 71;
-            this.cbMaNV.SelectedIndexChanged += new System.EventHandler(this.cbMaNV_SelectedIndexChanged);
             // 
             // btnOk
             // 
@@ -305,14 +296,23 @@
             this.panel1.Size = new System.Drawing.Size(1080, 66);
             this.panel1.TabIndex = 75;
             // 
+            // lbtennhanvien
+            // 
+            this.lbtennhanvien.AutoSize = true;
+            this.lbtennhanvien.Location = new System.Drawing.Point(804, 87);
+            this.lbtennhanvien.Name = "lbtennhanvien";
+            this.lbtennhanvien.Size = new System.Drawing.Size(53, 16);
+            this.lbtennhanvien.TabIndex = 76;
+            this.lbtennhanvien.Text = "Tên NV";
+            // 
             // ThemChiTietHoaDonNhap2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1080, 646);
+            this.Controls.Add(this.lbtennhanvien);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnOk);
-            this.Controls.Add(this.cbMaNV);
             this.Controls.Add(this.cbMaNcc);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.dateTimePickerNgayNhap);
@@ -362,10 +362,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ComboBox cbMaNcc;
-        private System.Windows.Forms.ComboBox cbMaNV;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbtennhanvien;
     }
 }
