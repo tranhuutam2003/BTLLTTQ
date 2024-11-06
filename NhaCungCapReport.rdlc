@@ -40,7 +40,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ma NCC</Value>
+                              <Value>Mã NCC</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -70,7 +70,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ten NCC</Value>
+                              <Value>Tên NCC</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -100,7 +100,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Dia Chi</Value>
+                              <Value>Địa chỉ</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -130,7 +130,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Dien Thoai</Value>
+                              <Value>Điện thoại</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -160,7 +160,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>So HDN</Value>
+                              <Value>Số HDN</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -190,7 +190,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ngay Nhap</Value>
+                              <Value>Ngày nhập</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -220,7 +220,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Tong Tien</Value>
+                              <Value>Tổng tiền</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>

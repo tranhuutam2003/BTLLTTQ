@@ -15,16 +15,18 @@ namespace BTL_LTTQ_VIP
     {
         private string TenNV;
         private string CongViec;
+        private int MaNV;
         public DoanhThu()
         {
             InitializeComponent();
         }
 
-        public DoanhThu(string tenNV, string congViec)
+        public DoanhThu(string tenNV, string congViec, int maNV)
         {
             InitializeComponent();
             TenNV = tenNV;   // Set user information
             CongViec = congViec;
+            MaNV = maNV;
         }
         private void btnxemdoanhthu_Click(object sender, EventArgs e)
         {
@@ -78,7 +80,8 @@ namespace BTL_LTTQ_VIP
             Home homeForm = new Home
             {
                 TenNV = TenNV,
-                CongViec = CongViec
+                CongViec = CongViec,
+                MaNV = MaNV
             };
             homeForm.Show();
             this.Close();

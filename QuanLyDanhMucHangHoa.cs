@@ -16,6 +16,7 @@ namespace BTL_LTTQ_VIP
     {
         private string TenNV;
         private string CongViec;
+        private int MaNV;
         public QuanLyDanhMucHangHoa()
         {
             InitializeComponent();
@@ -23,12 +24,13 @@ namespace BTL_LTTQ_VIP
             loadData();
         }
 
-        public QuanLyDanhMucHangHoa(string tenNV, string congViec)
+        public QuanLyDanhMucHangHoa(string tenNV, string congViec, int maNV)
         {
             InitializeComponent();
             TenNV = tenNV;   // Set user information
             CongViec = congViec;
             loadData();
+            MaNV = maNV;
         }
 
         public void loadData()
@@ -154,7 +156,8 @@ namespace BTL_LTTQ_VIP
             Home homeForm = new Home
             {
                 TenNV = TenNV,
-                CongViec = CongViec
+                CongViec = CongViec,
+                MaNV = MaNV
             };
             homeForm.Show();
             this.Close();

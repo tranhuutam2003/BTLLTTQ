@@ -15,17 +15,19 @@ namespace BTL_LTTQ_VIP
     {
         private string TenNV;
         private string CongViec;
+        private int MaNV;
         public QuanLyNhaCungCap()
         {
             InitializeComponent();
             LoadData();
         }
 
-        public QuanLyNhaCungCap(string tenNV, string congViec)
+        public QuanLyNhaCungCap(string tenNV, string congViec,int maNV)
         {
             InitializeComponent();
             TenNV = tenNV; 
             CongViec = congViec;
+            MaNV = maNV;
             LoadData();
         }
 
@@ -64,7 +66,8 @@ namespace BTL_LTTQ_VIP
             Home homeForm = new Home
             {
                 TenNV = TenNV,
-                CongViec = CongViec
+                CongViec = CongViec,
+                MaNV = MaNV
             };
             homeForm.Show();
             this.Close();

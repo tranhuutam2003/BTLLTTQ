@@ -12,9 +12,6 @@
               <Width>0.65in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.89167in</Width>
-            </TablixColumn>
-            <TablixColumn>
               <Width>0.84167in</Width>
             </TablixColumn>
             <TablixColumn>
@@ -70,7 +67,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ma Hang</Value>
+                              <Value>Mã Hàng</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -100,7 +97,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ten Hang</Value>
+                              <Value>Tên Hàng</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -123,36 +120,6 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox5">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Ten Loai</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox5</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
                     <Textbox Name="Textbox7">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -160,7 +127,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ten Loai</Value>
+                              <Value>Tên loại</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -190,7 +157,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ten Loai Gong</Value>
+                              <Value>Tên loại gọng</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -220,7 +187,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ten Dang Mat</Value>
+                              <Value>Tên dạng mắt</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -250,7 +217,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ten Chat Lieu</Value>
+                              <Value>Tên chất liệu</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -280,7 +247,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ten Diop</Value>
+                              <Value>Tên Diop</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -310,7 +277,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ten Cong Dung</Value>
+                              <Value>Tên công dụng</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -340,7 +307,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ten Dac Diem</Value>
+                              <Value>Tên đặc điểm</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -370,7 +337,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ten Mau</Value>
+                              <Value>Tên màu</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -400,7 +367,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ten Nuoc SX</Value>
+                              <Value>Tên nước SX</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -430,7 +397,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>So Luong</Value>
+                              <Value>Số lượng</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -460,7 +427,16 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Don Gia Nhap</Value>
+                              <Value>Đơn giá nhập</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -490,7 +466,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Don Gia Ban</Value>
+                              <Value>Đơn giá bán</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -520,7 +496,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Thoi Gian Bao Hanh</Value>
+                              <Value>Thời gian bảo hành</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -550,7 +526,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ghi Chu</Value>
+                              <Value>Ghi chú</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -623,36 +599,6 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>TenHang</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="TenLoai">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!TenLoai.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>TenLoai</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1054,6 +1000,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1108,7 +1055,6 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -1122,8 +1068,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>HangHoaDataSet</DataSetName>
-        <Height>1.21667in</Height>
-        <Width>13.66667in</Width>
+        <Height>1.21666in</Height>
+        <Width>12.77501in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1134,7 +1080,7 @@
     <Height>3.44167in</Height>
     <Style />
   </Body>
-  <Width>13.66667in</Width>
+  <Width>13.66668in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>

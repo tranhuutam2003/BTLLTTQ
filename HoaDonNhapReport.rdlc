@@ -52,7 +52,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>So HDN</Value>
+                              <Value>Số HDN</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -82,7 +82,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ma NV</Value>
+                              <Value>Mã NV</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -112,7 +112,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ngay Nhap</Value>
+                              <Value>Ngày nhập</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -142,7 +142,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ten NCC</Value>
+                              <Value>Tên NCC</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -172,7 +172,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Dia Chi</Value>
+                              <Value>Địa chỉ</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -202,7 +202,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Dien Thoai</Value>
+                              <Value>Điện thoại</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -232,7 +232,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ma Hang</Value>
+                              <Value>Mã hàng</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -262,7 +262,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>So Luong</Value>
+                              <Value>Số lượng</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -292,7 +292,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Don Gia</Value>
+                              <Value>Đơn giá</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -322,7 +322,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Giam Gia</Value>
+                              <Value>Giảm giá</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -352,7 +352,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Thanh Tien</Value>
+                              <Value>Thành tiền</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -586,7 +586,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -707,6 +706,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -739,7 +739,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>HoaDonNhapDataSet</DataSetName>
-        <Height>1.08333in</Height>
+        <Height>1.08334in</Height>
         <Width>8.66667in</Width>
         <Style>
           <Border>

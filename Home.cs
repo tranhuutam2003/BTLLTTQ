@@ -26,7 +26,7 @@ namespace BTL_LTTQ_VIP
 
         private void QLNV_Click(object sender, EventArgs e)
         {
-            QuanLyNhanVien qlnv = new QuanLyNhanVien(TenNV, CongViec);
+            QuanLyNhanVien qlnv = new QuanLyNhanVien(TenNV, CongViec, MaNV);
             qlnv.Show();
             this.Hide();
 
@@ -34,14 +34,14 @@ namespace BTL_LTTQ_VIP
 
         private void QLNCC_Click(object sender, EventArgs e)
         {
-            QuanLyNhaCungCap qlncc = new QuanLyNhaCungCap(TenNV, CongViec);
+            QuanLyNhaCungCap qlncc = new QuanLyNhaCungCap(TenNV, CongViec, MaNV);
             qlncc.Show();
             this.Hide();
         }
 
         private void QLKH_Click(object sender, EventArgs e)
         {
-            QuanLyKhachHang qlkh = new QuanLyKhachHang(TenNV, CongViec);
+            QuanLyKhachHang qlkh = new QuanLyKhachHang(TenNV, CongViec, MaNV);
             qlkh.Show();
             this.Hide();
         }
@@ -55,7 +55,7 @@ namespace BTL_LTTQ_VIP
 
         private void QLDMHH_Click(object sender, EventArgs e)
         {
-            QuanLyDanhMucHangHoa qlhh = new QuanLyDanhMucHangHoa(TenNV, CongViec);
+            QuanLyDanhMucHangHoa qlhh = new QuanLyDanhMucHangHoa(TenNV, CongViec, MaNV);
             qlhh.Show();
             this.Hide();
         }
@@ -134,7 +134,7 @@ namespace BTL_LTTQ_VIP
 
         private void button9_Click(object sender, EventArgs e)
         {
-            QuanLyDanhMucHangHoa qlhh = new QuanLyDanhMucHangHoa(TenNV, CongViec);
+            QuanLyDanhMucHangHoa qlhh = new QuanLyDanhMucHangHoa(TenNV, CongViec,MaNV);
             qlhh.Show();
             this.Hide();
         }
@@ -155,7 +155,7 @@ namespace BTL_LTTQ_VIP
 
         private void btndoanhthu_Click(object sender, EventArgs e)
         {
-            DoanhThu dt = new DoanhThu(TenNV, CongViec);
+            DoanhThu dt = new DoanhThu(TenNV, CongViec, MaNV);
             dt.Show();
             this.Hide();
         }

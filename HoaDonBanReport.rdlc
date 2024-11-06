@@ -52,7 +52,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>So HDB</Value>
+                              <Value>Số HDB</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -82,7 +82,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ma NV</Value>
+                              <Value>Mã NV</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -112,7 +112,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ngay Ban</Value>
+                              <Value>Ngày bán</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -142,7 +142,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ten Khach</Value>
+                              <Value>Tên khách</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -172,7 +172,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Dia Chi</Value>
+                              <Value>Địa chỉ</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -202,7 +202,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Dien Thoai</Value>
+                              <Value>Điện thoại</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -232,7 +232,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ten Hang</Value>
+                              <Value>Tên hàng</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -262,7 +262,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>So Luong</Value>
+                              <Value>Số lượng</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -292,7 +292,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Giam Gia</Value>
+                              <Value>Giảm giá</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -322,7 +322,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Don Gia Ban</Value>
+                              <Value>Đơn giá bán</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -352,7 +352,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Thanh Tien</Value>
+                              <Value>Thành tiền</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>

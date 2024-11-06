@@ -9,7 +9,7 @@
     <Shape ID="DesignTable:KhachHangTable" ZOrder="5" X="830" Y="47" Height="87" Width="248" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="283" SplitterPosition="28" />
     <Shape ID="DesignTable:HoaDonBanTable" ZOrder="7" X="171" Y="49" Height="87" Width="292" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="306" SplitterPosition="28" />
     <Shape ID="DesignTable:HoaDonNhapTable" ZOrder="6" X="524" Y="47" Height="87" Width="248" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="306" SplitterPosition="28" />
-    <Shape ID="DesignTable:NhanVienTable" ZOrder="4" X="214" Y="187" Height="87" Width="248" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="214" SplitterPosition="28" />
+    <Shape ID="DesignTable:NhanVienTable" ZOrder="4" X="172" Y="217" Height="87" Width="248" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="214" SplitterPosition="28" />
     <Shape ID="DesignTable:DoanhThuTable" ZOrder="3" X="532" Y="192" Height="87" Width="241" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="122" SplitterPosition="28" />
     <Shape ID="DesignTable:NhaCungCapTable" ZOrder="2" X="835" Y="199" Height="87" Width="248" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="191" SplitterPosition="28" />
     <Shape ID="DesignTable:HangHoaTable" ZOrder="1" X="526" Y="368" Height="87" Width="248" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="306" SplitterPosition="28" />

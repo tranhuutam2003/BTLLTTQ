@@ -9,7 +9,7 @@
               <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.41667in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.375in</Width>
@@ -31,7 +31,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ngay Thang</Value>
+                              <Value>Ngày tháng</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -61,7 +61,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Doanh Thu Ban</Value>
+                              <Value>Doanh thu bán</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -91,7 +91,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Doanh Thu Nhap</Value>
+                              <Value>Doanh Thu Nhập</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -140,6 +140,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -293,7 +294,7 @@
         <Top>0.48833in</Top>
         <Left>3.03833in</Left>
         <Height>0.5in</Height>
-        <Width>4.65833in</Width>
+        <Width>5.075in</Width>
         <Style>
           <Border>
             <Style>None</Style>
