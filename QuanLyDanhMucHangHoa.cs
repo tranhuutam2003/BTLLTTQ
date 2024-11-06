@@ -19,6 +19,7 @@ namespace BTL_LTTQ_VIP
         public QuanLyDanhMucHangHoa()
         {
             InitializeComponent();
+            dataGridView1.CellFormatting += dataGridView1_CellFormatting;
             loadData();
         }
 
@@ -234,6 +235,28 @@ namespace BTL_LTTQ_VIP
                 catch (Exception ex)
                 {
                     MessageBox.Show("Lỗi khi xuất file Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "DonGiaNhap" || dataGridView1.Columns[e.ColumnIndex].Name == "DonGiaBan")
+            {
+                if (e.Value != DBNull.Value && e.Value != null)
+                {
+                    decimal value = Convert.ToDecimal(e.Value);
+
+                    // Kiểm tra nếu số không có phần thập phân khác 0
+                    if (value % 1 == 0)
+                    {
+                        e.Value = value.ToString("0"); // Hiển thị chỉ phần nguyên nếu không có phần thập phân
+                    }
+                    else
+                    {
+                        e.Value = value.ToString("0.##");  // Hiển thị tối đa 2 chữ số thập phân nếu có phần lẻ
+                    }
+                    e.FormattingApplied = true;
                 }
             }
         }

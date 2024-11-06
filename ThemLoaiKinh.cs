@@ -50,5 +50,10 @@ namespace BTL_LTTQ_VIP
             qlhh.Show();
             this.Close();
         }
+
+        private void ThemLoaiKinh_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

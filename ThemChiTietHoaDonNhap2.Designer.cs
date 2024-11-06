@@ -36,8 +36,6 @@
             this.txtMaHang = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnXacNhan = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
             this.txtGiamGia = new System.Windows.Forms.TextBox();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.txtSoHDN = new System.Windows.Forms.TextBox();
@@ -50,9 +48,11 @@
             this.cbMaNcc = new System.Windows.Forms.ComboBox();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbtennhanvien = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnXacNhan = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,7 +94,7 @@
             // 
             // txtThanhTien
             // 
-            this.txtThanhTien.Location = new System.Drawing.Point(861, 166);
+            this.txtThanhTien.Location = new System.Drawing.Point(806, 156);
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.ReadOnly = true;
             this.txtThanhTien.Size = new System.Drawing.Size(134, 22);
@@ -118,50 +118,17 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(683, 28);
+            this.label6.Location = new System.Drawing.Point(696, 31);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 16);
             this.label6.TabIndex = 59;
             this.label6.Text = "Giảm Giá";
             // 
-            // btnXacNhan
-            // 
-            this.btnXacNhan.FlatAppearance.BorderSize = 0;
-            this.btnXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXacNhan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnXacNhan.Image = global::BTL_LTTQ_VIP.Properties.Resources.xacnhan;
-            this.btnXacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXacNhan.Location = new System.Drawing.Point(209, 3);
-            this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.Size = new System.Drawing.Size(135, 63);
-            this.btnXacNhan.TabIndex = 58;
-            this.btnXacNhan.Text = "Xác Nhận";
-            this.btnXacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXacNhan.UseVisualStyleBackColor = true;
-            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnBack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBack.Image = global::BTL_LTTQ_VIP.Properties.Resources.undo;
-            this.btnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBack.Location = new System.Drawing.Point(743, 0);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(152, 63);
-            this.btnBack.TabIndex = 57;
-            this.btnBack.Text = "Trờ lại";
-            this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBack.UseVisualStyleBackColor = true;
-            // 
             // txtGiamGia
             // 
             this.txtGiamGia.Location = new System.Drawing.Point(807, 25);
             this.txtGiamGia.Name = "txtGiamGia";
-            this.txtGiamGia.Size = new System.Drawing.Size(171, 22);
+            this.txtGiamGia.Size = new System.Drawing.Size(88, 22);
             this.txtGiamGia.TabIndex = 56;
             this.txtGiamGia.TextChanged += new System.EventHandler(this.txtGiamGia_TextChanged);
             // 
@@ -187,7 +154,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(750, 166);
+            this.label5.Location = new System.Drawing.Point(696, 159);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 16);
             this.label5.TabIndex = 53;
@@ -244,14 +211,19 @@
             this.cbMaNcc.FormattingEnabled = true;
             this.cbMaNcc.Location = new System.Drawing.Point(163, 151);
             this.cbMaNcc.Name = "cbMaNcc";
-            this.cbMaNcc.Size = new System.Drawing.Size(169, 24);
+            this.cbMaNcc.Size = new System.Drawing.Size(206, 24);
             this.cbMaNcc.TabIndex = 70;
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(636, 218);
+            this.btnOk.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btnOk.FlatAppearance.BorderSize = 2;
+            this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnOk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(104)))), ((int)(((byte)(130)))));
+            this.btnOk.Location = new System.Drawing.Point(620, 208);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(125, 30);
+            this.btnOk.Size = new System.Drawing.Size(141, 40);
             this.btnOk.TabIndex = 72;
             this.btnOk.Text = "Ok";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -259,30 +231,18 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(806, 218);
+            this.btnXoa.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btnXoa.FlatAppearance.BorderSize = 2;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(104)))), ((int)(((byte)(130)))));
+            this.btnXoa.Location = new System.Drawing.Point(790, 208);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(125, 30);
+            this.btnXoa.Size = new System.Drawing.Size(141, 40);
             this.btnXoa.TabIndex = 73;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Image = global::BTL_LTTQ_VIP.Properties.Resources.add2;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(459, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(196, 66);
-            this.button1.TabIndex = 74;
-            this.button1.Text = "Thêm NCC Nhanh";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
@@ -304,6 +264,57 @@
             this.lbtennhanvien.Size = new System.Drawing.Size(53, 16);
             this.lbtennhanvien.TabIndex = 76;
             this.lbtennhanvien.Text = "Tên NV";
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Image = global::BTL_LTTQ_VIP.Properties.Resources.add2;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(432, 1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(223, 66);
+            this.button1.TabIndex = 74;
+            this.button1.Text = "Thêm NCC Nhanh";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnXacNhan
+            // 
+            this.btnXacNhan.FlatAppearance.BorderSize = 0;
+            this.btnXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXacNhan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnXacNhan.Image = global::BTL_LTTQ_VIP.Properties.Resources.xacnhan;
+            this.btnXacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXacNhan.Location = new System.Drawing.Point(138, 4);
+            this.btnXacNhan.Name = "btnXacNhan";
+            this.btnXacNhan.Size = new System.Drawing.Size(149, 63);
+            this.btnXacNhan.TabIndex = 58;
+            this.btnXacNhan.Text = "Xác Nhận";
+            this.btnXacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXacNhan.UseVisualStyleBackColor = true;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBack.Image = global::BTL_LTTQ_VIP.Properties.Resources.undo;
+            this.btnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBack.Location = new System.Drawing.Point(824, 3);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(152, 63);
+            this.btnBack.TabIndex = 57;
+            this.btnBack.Text = "Trờ lại";
+            this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // ThemChiTietHoaDonNhap2
             // 

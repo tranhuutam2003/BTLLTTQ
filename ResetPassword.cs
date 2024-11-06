@@ -129,5 +129,10 @@ namespace BTL_LTTQ_VIP
                 }
             }
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

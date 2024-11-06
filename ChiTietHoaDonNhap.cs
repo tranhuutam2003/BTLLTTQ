@@ -19,30 +19,15 @@ namespace BTL_LTTQ_VIP
 			InitializeComponent();
 			LoadData();
 		}
-        public ChiTietHoaDonNhap(string soHDN) : this() // Gọi constructor mặc định
+        public ChiTietHoaDonNhap(string soHDN) : this() 
         {
             this.soHDN = soHDN;
-            LoadData(); // Gọi lại LoadData để hiển thị chi tiết hóa đơn được chọn
+            dataGridView1.CellFormatting += dataGridView1_CellFormatting;
+            LoadData();
         }
         private void LoadData()
 		{
-            //using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
-            //{
-            //	try
-            //	{
-            //		connection.Open();
-            //		string query = "SELECT hdn.SoHDN, hdn.MaNV, hdn.NgayNhap, hdn.MaNCC, \r\n cthn.MaHang, cthn.SoLuong, cthn.DonGia, cthn.GiamGia, \r\n                                    cthn.ThanhTien\r\n                             FROM HoaDonNhap hdn\r\n                             INNER JOIN ChiTietHoaDonNhap cthn ON hdn.SoHDN = cthn.SoHDN\r\n";
-            //		SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-            //		DataTable dataTable = new DataTable();
-            //		dataAdapter.Fill(dataTable);
 
-            //		dataGridView1.DataSource = dataTable;
-            //	}
-            //	catch (Exception ex)
-            //	{
-            //		MessageBox.Show("Lỗi khi lấy dữ liệu: " + ex.Message);
-            //	}
-            //}
 
             using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
             {
@@ -113,5 +98,28 @@ namespace BTL_LTTQ_VIP
 		{
 			
 		}
-	}
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "DonGia" ||
+       dataGridView1.Columns[e.ColumnIndex].Name == "GiamGia" ||
+       dataGridView1.Columns[e.ColumnIndex].Name == "ThanhTien")
+            {
+                if (e.Value != DBNull.Value && e.Value != null)
+                {
+                    decimal value = Convert.ToDecimal(e.Value);
+
+                    if (value % 1 == 0)
+                    {
+                        e.Value = value.ToString("0");
+                    }
+                    else
+                    {
+                        e.Value = value.ToString("0.##"); 
+                    }
+                    e.FormattingApplied = true;
+                }
+            }
+        }
+    }
 }

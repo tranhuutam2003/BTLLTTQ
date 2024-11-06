@@ -205,5 +205,20 @@ namespace BTL_LTTQ_VIP
             mailMessage.To.Add(email);
             smtpClient.Send(mailMessage);
         }
+
+        private void ThemNV_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Email_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

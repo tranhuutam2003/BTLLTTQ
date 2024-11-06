@@ -67,6 +67,30 @@ namespace BTL_LTTQ_VIP
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
+            //if (Mode == "Them" && string.IsNullOrWhiteSpace(txtMaNCC.Text))
+            //{
+            //    MessageBox.Show("Vui lòng nhập Mã nhà cung cấp.");
+            //    return;
+            //}
+            //if (Mode == "Them")
+            //{
+            //    ThemNhaCungCap();
+            //}
+            //else if (Mode == "Sua")
+            //{
+            //    // Thực hiện cập nhật thông tin nhà cung cấp
+            //    SuaNhaCungCap(MaNCC);
+            //}
+
+            //this.Close();
+
+            string dienThoai = txtDienThoai.Text;
+            if (!IsValidPhoneNumber(dienThoai))
+            {
+                MessageBox.Show("Số điện thoại phải bắt đầu bằng số 0 và có đúng 10 chữ số.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (Mode == "Them" && string.IsNullOrWhiteSpace(txtMaNCC.Text))
             {
                 MessageBox.Show("Vui lòng nhập Mã nhà cung cấp.");
@@ -78,11 +102,18 @@ namespace BTL_LTTQ_VIP
             }
             else if (Mode == "Sua")
             {
-                // Thực hiện cập nhật thông tin nhà cung cấp
+                
                 SuaNhaCungCap(MaNCC);
             }
 
             this.Close();
+        }
+
+        // Hàm kiểm tra số điện thoại hợp lệ
+        private bool IsValidPhoneNumber(string phoneNumber)
+        {
+            // Kiểm tra số điện thoại bắt đầu bằng '0', có độ dài 10 và chỉ bao gồm chữ số
+            return phoneNumber.Length == 10 && phoneNumber.StartsWith("0") && phoneNumber.All(char.IsDigit);
         }
 
         private void ThemNhaCungCap()
@@ -103,7 +134,7 @@ namespace BTL_LTTQ_VIP
                     if (count > 0)
                     {
                         MessageBox.Show("Mã nhà cung cấp hoặc tên nhà cung cấp đã tồn tại. Vui lòng nhập lại.");
-                        return; // Dừng lại nếu trùng
+                        return; 
                     }
 
                     // Nếu không có trùng, thực hiện thêm nhà cung cấp

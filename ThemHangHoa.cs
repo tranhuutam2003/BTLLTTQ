@@ -378,5 +378,20 @@ namespace BTL_LTTQ_VIP
         {
 			this.Close();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Ghichu_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dongiaban_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

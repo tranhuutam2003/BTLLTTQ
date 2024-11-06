@@ -266,5 +266,10 @@ namespace BTL_LTTQ_VIP
         {
 
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

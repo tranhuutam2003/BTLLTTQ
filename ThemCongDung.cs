@@ -48,5 +48,10 @@ namespace BTL_LTTQ_VIP
         {
             this.Close();
         }
+
+        private void ThemCongDung_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

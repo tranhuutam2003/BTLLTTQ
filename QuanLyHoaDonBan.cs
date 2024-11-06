@@ -64,16 +64,12 @@ GROUP BY
 ";
 
 
-					// Tạo một SqlDataAdapter để lấy dữ liệu
 					SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
 
-					// Tạo một DataTable để chứa dữ liệu
 					DataTable dt = new DataTable();
 
-					// Điền dữ liệu vào DataTable
 					adapter.Fill(dt);
 
-					// Gán dữ liệu cho DataGridView
 					dataGridView1.DataSource = dt;
 				}
 				catch (Exception ex)
@@ -95,7 +91,6 @@ GROUP BY
 
         }
 
-        //Xem chi tiet hoa don ban
         private void btnXemChiTiet_Click(object sender, EventArgs e)
 		{
             //ChiTietHoaDonBan chiTietHoaDon= new ChiTietHoaDonBan();
@@ -139,7 +134,25 @@ GROUP BY
 					e.FormattingApplied = true;
 				}
 			}
-		}
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "ThanhTien")
+            {
+                if (e.Value != DBNull.Value && e.Value != null)
+                {
+                    decimal value = Convert.ToDecimal(e.Value);
+
+                    // Kiểm tra nếu số không có phần thập phân khác 0
+                    if (value % 1 == 0)
+                    {
+                        e.Value = value.ToString("0"); // Hiển thị chỉ phần nguyên nếu không có phần thập phân
+                    }
+                    else
+                    {
+                        e.Value = value.ToString("0.##");  // Hiển thị tối đa 2 chữ số thập phân nếu có phần lẻ
+                    }
+                    e.FormattingApplied = true;
+                }
+            }
+        }
 
 		private void btnThemHD_Click(object sender, EventArgs e)
 		{

@@ -315,5 +315,10 @@ namespace BTL_LTTQ_VIP
 		{
 			this.Close();
 		}
-	}
+
+        private void ThemHoaDonNhap_Load_1(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

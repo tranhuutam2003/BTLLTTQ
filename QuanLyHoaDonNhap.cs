@@ -19,7 +19,7 @@ namespace BTL_LTTQ_VIP
         public QuanLyHoaDonNhap(string tenNV, string congViec, int maNV)
         {
             InitializeComponent();
-            TenNV = tenNV;   // Set user information
+            TenNV = tenNV;   
             CongViec = congViec;
             LoadData();
             MaNV = maNV;
@@ -53,7 +53,6 @@ namespace BTL_LTTQ_VIP
 					DataTable dataTable = new DataTable();
 					dataAdapter.Fill(dataTable);
 
-					// Đặt nguồn dữ liệu cho DataGridView
 					dataGridView1.DataSource = dataTable;
 				}
 				catch (Exception ex)
@@ -69,37 +68,13 @@ namespace BTL_LTTQ_VIP
 			themChiTietHoaDonNhap2.Show();
 		}
 
-		private void button2_Click(object sender, EventArgs e)
-		{
-			if (dataGridView1.SelectedRows.Count > 0)
-			{
-				// Lấy dữ liệu từ hàng được chọn
-				DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-				string soHDN = selectedRow.Cells["SoHDN"].Value.ToString();
-				int maNV = Convert.ToInt32(selectedRow.Cells["MaNV"].Value);
-				int maHang = Convert.ToInt32(selectedRow.Cells["MaHang"].Value);
-				int soLuong = Convert.ToInt32(selectedRow.Cells["SoLuong"].Value);
-				decimal donGia = Convert.ToDecimal(selectedRow.Cells["DonGia"].Value);
-				decimal giamGia = Convert.ToDecimal(selectedRow.Cells["GiamGia"].Value);
-				decimal thanhTien = Convert.ToDecimal(selectedRow.Cells["ThanhTien"].Value);
-				DateTime ngayNhap = Convert.ToDateTime(selectedRow.Cells["NgayNhap"].Value);
-
-				// Mở form ThemChiTietHoaDonNhap với chế độ chỉnh sửa
-				ThemChiTietHoaDonNhap themChiTietHoaDonNhap = new ThemChiTietHoaDonNhap(true, soHDN, maHang, soLuong, donGia, giamGia, thanhTien, ngayNhap, maNV);
-				themChiTietHoaDonNhap.Show();
-			}
-			else
-			{
-				MessageBox.Show("Vui lòng chọn hóa đơn cần sửa.");
-			}
-		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
 			if (dataGridView1.SelectedRows.Count > 0)
 			{
 				DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-				string soHDN = selectedRow.Cells["SoHDN"].Value.ToString(); // "SoHDN" là tên cột chứa mã hóa đơn nhập
+				string soHDN = selectedRow.Cells["SoHDN"].Value.ToString(); 
 				DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa hóa đơn nhập này?", "Xác nhận xóa", MessageBoxButtons.YesNo);
 				if (dialogResult == DialogResult.Yes)
 				{
@@ -130,7 +105,7 @@ namespace BTL_LTTQ_VIP
 							}
 							else
 							{
-								transaction.Rollback(); // Hủy giao dịch nếu không thành công
+								transaction.Rollback(); 
 								MessageBox.Show("Xóa hóa đơn nhập thất bại.");
 							}
 						}

@@ -30,7 +30,7 @@ namespace BTL_LTTQ_VIP
             listViewKetQuaNV.Columns.Add("Giới Tính", 70);
             listViewKetQuaNV.Columns.Add("Ngày Sinh", 100);
             listViewKetQuaNV.Columns.Add("Điện Thoại", 100);
-            listViewKetQuaNV.Columns.Add("Địa Chỉ", 150);
+            listViewKetQuaNV.Columns.Add("Địa Chỉ", 120);
         }
         
 
@@ -145,6 +145,11 @@ namespace BTL_LTTQ_VIP
                     }
                 }
             }
+        }
+
+        private void btnexit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

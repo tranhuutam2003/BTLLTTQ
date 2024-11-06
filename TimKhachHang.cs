@@ -25,7 +25,7 @@ namespace BTL_LTTQ_VIP
             listViewKetQuaKH.View = View.Details;
             listViewKetQuaKH.Columns.Add("Mã KH", 80);
             listViewKetQuaKH.Columns.Add("Tên KH", 150);
-            listViewKetQuaKH.Columns.Add("Địa Chỉ", 200);
+            listViewKetQuaKH.Columns.Add("Địa Chỉ", 80);
             listViewKetQuaKH.Columns.Add("Điện Thoại", 100);
             listViewKetQuaKH.Columns.Add("Tổng Tiền Đã Mua", 120);
 
@@ -75,7 +75,9 @@ namespace BTL_LTTQ_VIP
                         ListViewItem item = new ListViewItem(reader["TenSanPham"].ToString());
                         item.SubItems.Add(reader["SoLuong"].ToString());
                         item.SubItems.Add(Convert.ToDateTime(reader["NgayMua"]).ToString("dd/MM/yyyy"));
-                        item.SubItems.Add(reader["TongTien"].ToString());
+                        //item.SubItems.Add(reader["TongTien"].ToString());
+                        decimal tongtien = Convert.ToDecimal(reader["TongTien"]);
+                        item.SubItems.Add(tongtien % 1 == 0 ? tongtien.ToString("0") : tongtien.ToString("0.##"));
                         listViewLichSuMua.Items.Add(item);
                     }
 
@@ -163,7 +165,8 @@ namespace BTL_LTTQ_VIP
                         item.SubItems.Add(reader["TenKhach"].ToString());
                         item.SubItems.Add(reader["DiaChi"].ToString());
                         item.SubItems.Add(reader["DienThoai"].ToString());
-                        item.SubItems.Add(reader["TongTienDaMua"].ToString()); // Hiển thị Tổng Tiền Đã Mua
+                        decimal tongTiendamua = Convert.ToDecimal(reader["TongTienDaMua"]);
+                        item.SubItems.Add(tongTiendamua % 1 == 0 ? tongTiendamua.ToString("0") : tongTiendamua.ToString("0.##"));
                         listViewKetQuaKH.Items.Add(item);
                     }
 
@@ -209,6 +212,31 @@ namespace BTL_LTTQ_VIP
                     }
                 }
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listViewKetQuaKH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listViewLichSuMua_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnexit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

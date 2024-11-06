@@ -29,72 +29,82 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ThemNV = new System.Windows.Forms.Button();
             this.SuaNV = new System.Windows.Forms.Button();
             this.XoaNV = new System.Windows.Forms.Button();
             this.exitNV = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 21);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1022, 363);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // ThemNV
             // 
-            this.ThemNV.Location = new System.Drawing.Point(471, 3);
+            this.ThemNV.FlatAppearance.BorderSize = 0;
+            this.ThemNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ThemNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.ThemNV.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ThemNV.Image = global::BTL_LTTQ_VIP.Properties.Resources.add2;
+            this.ThemNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ThemNV.Location = new System.Drawing.Point(27, -2);
             this.ThemNV.Name = "ThemNV";
-            this.ThemNV.Size = new System.Drawing.Size(150, 35);
+            this.ThemNV.Size = new System.Drawing.Size(204, 66);
             this.ThemNV.TabIndex = 1;
             this.ThemNV.Text = "Thêm nhân viên";
+            this.ThemNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ThemNV.UseVisualStyleBackColor = true;
             this.ThemNV.Click += new System.EventHandler(this.ThemNV_Click);
             // 
             // SuaNV
             // 
-            this.SuaNV.Location = new System.Drawing.Point(315, 3);
+            this.SuaNV.FlatAppearance.BorderSize = 0;
+            this.SuaNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SuaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.SuaNV.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.SuaNV.Image = global::BTL_LTTQ_VIP.Properties.Resources.sua;
+            this.SuaNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SuaNV.Location = new System.Drawing.Point(326, 0);
             this.SuaNV.Name = "SuaNV";
-            this.SuaNV.Size = new System.Drawing.Size(150, 35);
+            this.SuaNV.Size = new System.Drawing.Size(272, 62);
             this.SuaNV.TabIndex = 2;
             this.SuaNV.Text = "Sửa thông tin nhân viên";
+            this.SuaNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.SuaNV.UseVisualStyleBackColor = true;
             this.SuaNV.Click += new System.EventHandler(this.SuaNV_Click);
             // 
             // XoaNV
             // 
-            this.XoaNV.Location = new System.Drawing.Point(159, 3);
+            this.XoaNV.FlatAppearance.BorderSize = 0;
+            this.XoaNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.XoaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.XoaNV.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.XoaNV.Image = global::BTL_LTTQ_VIP.Properties.Resources.delete;
+            this.XoaNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.XoaNV.Location = new System.Drawing.Point(678, 2);
             this.XoaNV.Name = "XoaNV";
-            this.XoaNV.Size = new System.Drawing.Size(150, 35);
+            this.XoaNV.Size = new System.Drawing.Size(195, 58);
             this.XoaNV.TabIndex = 3;
             this.XoaNV.Text = "Xóa nhân viên";
+            this.XoaNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.XoaNV.UseVisualStyleBackColor = true;
             this.XoaNV.Click += new System.EventHandler(this.XoaNV_Click);
             // 
             // exitNV
             // 
-            this.exitNV.Location = new System.Drawing.Point(3, 3);
+            this.exitNV.FlatAppearance.BorderSize = 0;
+            this.exitNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.exitNV.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.exitNV.Image = global::BTL_LTTQ_VIP.Properties.Resources.undo;
+            this.exitNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exitNV.Location = new System.Drawing.Point(991, 0);
             this.exitNV.Name = "exitNV";
-            this.exitNV.Size = new System.Drawing.Size(150, 35);
+            this.exitNV.Size = new System.Drawing.Size(145, 62);
             this.exitNV.TabIndex = 5;
             this.exitNV.Text = "Quay lại";
+            this.exitNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.exitNV.UseVisualStyleBackColor = true;
             this.exitNV.Click += new System.EventHandler(this.exitNV_Click);
             // 
@@ -104,77 +114,57 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Mistral", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(357, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(427, 71);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Quản lý nhân viên";
-            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(55)))), ((int)(((byte)(77)))));
+            this.panel1.Controls.Add(this.SuaNV);
+            this.panel1.Controls.Add(this.exitNV);
+            this.panel1.Controls.Add(this.ThemNV);
+            this.panel1.Controls.Add(this.XoaNV);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 344);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1161, 82);
-            this.panel1.TabIndex = 10;
+            this.panel1.Size = new System.Drawing.Size(1161, 66);
+            this.panel1.TabIndex = 13;
             // 
-            // groupBox1
+            // dataGridView1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(58, 88);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1034, 387);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Danh sách nhân viên";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.exitNV);
-            this.flowLayoutPanel1.Controls.Add(this.XoaNV);
-            this.flowLayoutPanel1.Controls.Add(this.SuaNV);
-            this.flowLayoutPanel1.Controls.Add(this.ThemNV);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(64, 481);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(626, 41);
-            this.flowLayoutPanel1.TabIndex = 12;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, -2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1161, 344);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // QuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1161, 555);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(1161, 410);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Name = "QuanLyNhanVien";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Quản Lý Nhân Viên";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button ThemNV;
         private System.Windows.Forms.Button SuaNV;
         private System.Windows.Forms.Button XoaNV;
         private System.Windows.Forms.Button exitNV;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

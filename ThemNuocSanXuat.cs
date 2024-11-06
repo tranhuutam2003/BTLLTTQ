@@ -18,7 +18,9 @@ namespace BTL_LTTQ_VIP
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
             {
@@ -44,11 +46,16 @@ namespace BTL_LTTQ_VIP
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
             ThemHangHoa qlhh = new ThemHangHoa();
             qlhh.Show();
             this.Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

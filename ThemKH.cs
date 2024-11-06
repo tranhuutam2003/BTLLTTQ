@@ -58,5 +58,10 @@ namespace BTL_LTTQ_VIP
         {
             this.Close();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

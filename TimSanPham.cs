@@ -17,18 +17,16 @@ namespace BTL_LTTQ_VIP
         {
             InitializeComponent();
             LoadComboBoxData();
-            // Thiết lập chế độ gợi ý cho ComboBox
             comboBoxTenHang.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboBoxTenHang.AutoCompleteSource = AutoCompleteSource.ListItems;
             comboBoxMaHang.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboBoxMaHang.AutoCompleteSource = AutoCompleteSource.ListItems;
-            // Thiết lập ListView
             listViewKetQua.View = View.Details;
-            listViewKetQua.Columns.Add("Mã Hàng", 80);
+            listViewKetQua.Columns.Add("Mã Hàng", 68);
             listViewKetQua.Columns.Add("Tên Hàng", 150);
-            listViewKetQua.Columns.Add("Số Lượng Còn Lại", 70);
+            listViewKetQua.Columns.Add("Số Lượng Còn Lại", 105);
             listViewKetQua.Columns.Add("Đơn Giá Nhập", 100);
-            listViewKetQua.Columns.Add("Đơn Giá Bán", 100);
+            listViewKetQua.Columns.Add("Đơn Giá Bán", 93);
             listViewKetQua.Columns.Add("Thời Gian Bảo Hành", 120);
         }
         private BindingSource bindingSourceMaHang = new BindingSource();
@@ -99,8 +97,12 @@ namespace BTL_LTTQ_VIP
                             ListViewItem item = new ListViewItem(reader["MaHang"].ToString());
                             item.SubItems.Add(reader["TenHang"].ToString());
                             item.SubItems.Add(reader["SoLuong"].ToString());
-                            item.SubItems.Add(reader["DonGiaNhap"].ToString());
-                            item.SubItems.Add(reader["DonGiaBan"].ToString());
+                            //item.SubItems.Add(reader["DonGiaNhap"].ToString());
+                            decimal dongianhap = Convert.ToDecimal(reader["DonGiaNhap"]);
+                            item.SubItems.Add(dongianhap % 1 == 0 ? dongianhap.ToString("0") : dongianhap.ToString("0.##"));
+                            //item.SubItems.Add(reader["DonGiaBan"].ToString());
+                            decimal dongiaban = Convert.ToDecimal(reader["DonGiaBan"]);
+                            item.SubItems.Add(dongiaban % 1 == 0 ? dongiaban.ToString("0") : dongiaban.ToString("0.##"));
                             item.SubItems.Add(reader["ThoiGianBaoHanh"].ToString());
                             listViewKetQua.Items.Add(item);
                         }
@@ -146,6 +148,17 @@ namespace BTL_LTTQ_VIP
                     }
                 }
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnexit_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            this.Close();
         }
     }
 }
