@@ -141,5 +141,11 @@ namespace BTL_LTTQ_VIP
             homeForm.Show();
             this.Close();
         }
+
+        private void btnbaocao_Click(object sender, EventArgs e)
+        {
+            NhanVienReport nvrp = new NhanVienReport();
+            nvrp.Show();
+        }
     }
 }

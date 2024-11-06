@@ -170,7 +170,8 @@ namespace BTL_LTTQ_VIP
             Home homeForm = new Home
             {
                 TenNV = TenNV,
-                CongViec = CongViec
+                CongViec = CongViec,
+                MaNV = MaNV
             };
             homeForm.Show();
             this.Close();
@@ -189,6 +190,12 @@ namespace BTL_LTTQ_VIP
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnbaocao_Click(object sender, EventArgs e)
+        {
+			HoaDonNhapReport hdnrp = new HoaDonNhapReport();
+			hdnrp.Show();
         }
     }
 }

@@ -137,5 +137,11 @@ namespace BTL_LTTQ_VIP
                 MessageBox.Show("Vui lòng chọn một nhà cung cấp để xóa.");
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            NhaCungCapReport nccrp = new NhaCungCapReport();
+            nccrp.Show();
+        }
     }
 }

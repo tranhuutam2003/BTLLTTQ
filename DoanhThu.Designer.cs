@@ -40,6 +40,7 @@
             this.lblTongDoanhThuBan = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnxemdoanhthutheothang = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -162,6 +163,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(55)))), ((int)(((byte)(77)))));
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnxemdoanhthutheothang);
             this.panel1.Controls.Add(this.btnexit);
             this.panel1.Controls.Add(this.btnxemdoanhthu);
@@ -180,7 +182,7 @@
             this.btnxemdoanhthutheothang.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnxemdoanhthutheothang.Image = global::BTL_LTTQ_VIP.Properties.Resources.seedetail;
             this.btnxemdoanhthutheothang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnxemdoanhthutheothang.Location = new System.Drawing.Point(279, 0);
+            this.btnxemdoanhthutheothang.Location = new System.Drawing.Point(220, -1);
             this.btnxemdoanhthutheothang.Name = "btnxemdoanhthutheothang";
             this.btnxemdoanhthutheothang.Size = new System.Drawing.Size(255, 66);
             this.btnxemdoanhthutheothang.TabIndex = 10;
@@ -188,6 +190,22 @@
             this.btnxemdoanhthutheothang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnxemdoanhthutheothang.UseVisualStyleBackColor = true;
             this.btnxemdoanhthutheothang.Click += new System.EventHandler(this.btnxemdoanhthutheothang_Click);
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(481, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(185, 66);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Báo cáo doanh thu";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // DoanhThu
             // 
@@ -227,5 +245,6 @@
         private System.Windows.Forms.Label lblTongDoanhThuNhap;
         private System.Windows.Forms.Label lblTongDoanhThuBan;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
     }
 }

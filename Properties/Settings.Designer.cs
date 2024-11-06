@@ -46,5 +46,16 @@ namespace BTL_LTTQ_VIP.Properties {
                 this["SavePassword"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-7NSHMMSK;Initial Catalog=quanlybankinh;Integrated Security=Tru" +
+            "e;TrustServerCertificate=True")]
+        public string quanlybankinhConnectionString {
+            get {
+                return ((string)(this["quanlybankinhConnectionString"]));
+            }
+        }
     }
 }

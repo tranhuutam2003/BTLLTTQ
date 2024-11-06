@@ -35,6 +35,7 @@
             this.Sua = new System.Windows.Forms.Button();
             this.btnXuatExcel = new System.Windows.Forms.Button();
             this.Xoa = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -71,6 +72,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(55)))), ((int)(((byte)(77)))));
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.Them);
             this.panel1.Controls.Add(this.Sua);
             this.panel1.Controls.Add(this.Exit);
@@ -107,7 +109,7 @@
             this.Sua.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Sua.Image = global::BTL_LTTQ_VIP.Properties.Resources.sua;
             this.Sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Sua.Location = new System.Drawing.Point(314, 0);
+            this.Sua.Location = new System.Drawing.Point(218, 0);
             this.Sua.Name = "Sua";
             this.Sua.Size = new System.Drawing.Size(187, 59);
             this.Sua.TabIndex = 3;
@@ -141,7 +143,7 @@
             this.Xoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Xoa.Image = global::BTL_LTTQ_VIP.Properties.Resources.delete;
             this.Xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Xoa.Location = new System.Drawing.Point(610, -2);
+            this.Xoa.Location = new System.Drawing.Point(661, -2);
             this.Xoa.Name = "Xoa";
             this.Xoa.Size = new System.Drawing.Size(184, 62);
             this.Xoa.TabIndex = 4;
@@ -149,6 +151,22 @@
             this.Xoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Xoa.UseVisualStyleBackColor = true;
             this.Xoa.Click += new System.EventHandler(this.Xoa_Click);
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(441, 1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(187, 59);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Báo cáo hàng hóa";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // QuanLyDanhMucHangHoa
             // 
@@ -173,5 +191,6 @@
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.Button btnXuatExcel;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
     }
 }

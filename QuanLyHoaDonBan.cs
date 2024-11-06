@@ -84,7 +84,8 @@ GROUP BY
             Home homeForm = new Home
             {
                 TenNV = TenNV,
-                CongViec = CongViec
+                CongViec = CongViec,
+                MaNV = MaNV
             };
             homeForm.Show();
             this.Close();
@@ -345,6 +346,12 @@ GROUP BY
                 MessageBox.Show("Vui lòng chọn hóa đơn cần in.");
             }
 
+        }
+
+        private void btnbaocao_Click(object sender, EventArgs e)
+        {
+            HoaDonBanReport hdbrp = new HoaDonBanReport();
+            hdbrp.Show();
         }
     }
 }

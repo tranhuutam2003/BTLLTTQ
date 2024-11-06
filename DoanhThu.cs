@@ -109,5 +109,11 @@ namespace BTL_LTTQ_VIP
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DoanhThuReport dtrp = new DoanhThuReport();
+            dtrp.Show();   
+        }
     }
 }
