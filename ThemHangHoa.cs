@@ -16,18 +16,21 @@ namespace BTL_LTTQ_VIP
 		public ThemHangHoa()
 		{
 			InitializeComponent();
-			LoadLoaiGong();
-			LoadCongDung();
-			LoadLoaikinh();
-			LoadHinhDangMat();
-			LoadChatLieu();
-			LoadNuocSanXuat();
-			LoadMauSac();
-			LoadDiop();
-			LoadDacDiem();
+			LoadData();	
 		}
 
-        
+        public void LoadData()
+		{
+            LoadLoaiGong();
+            LoadCongDung();
+            LoadLoaikinh();
+            LoadHinhDangMat();
+            LoadChatLieu();
+            LoadNuocSanXuat();
+            LoadMauSac();
+            LoadDiop();
+            LoadDacDiem();
+        }
 
         private void LoadLoaiGong()
         {

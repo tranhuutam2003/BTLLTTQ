@@ -58,7 +58,6 @@
             this.Thoigianbaohanh = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Xacnhan = new System.Windows.Forms.Button();
-            this.Exit = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -329,7 +328,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(55)))), ((int)(((byte)(77)))));
             this.panel2.Controls.Add(this.Xacnhan);
-            this.panel2.Controls.Add(this.Exit);
             this.panel2.Location = new System.Drawing.Point(9, 273);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(751, 66);
@@ -343,7 +341,7 @@
             this.Xacnhan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Xacnhan.Image = global::BTL_LTTQ_VIP.Properties.Resources.xacnhan;
             this.Xacnhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Xacnhan.Location = new System.Drawing.Point(127, 0);
+            this.Xacnhan.Location = new System.Drawing.Point(311, 0);
             this.Xacnhan.Name = "Xacnhan";
             this.Xacnhan.Size = new System.Drawing.Size(184, 66);
             this.Xacnhan.TabIndex = 0;
@@ -351,23 +349,6 @@
             this.Xacnhan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Xacnhan.UseVisualStyleBackColor = true;
             this.Xacnhan.Click += new System.EventHandler(this.Xacnhan_Click);
-            // 
-            // Exit
-            // 
-            this.Exit.FlatAppearance.BorderSize = 0;
-            this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Exit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Exit.Image = global::BTL_LTTQ_VIP.Properties.Resources.undo;
-            this.Exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Exit.Location = new System.Drawing.Point(461, 0);
-            this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(184, 66);
-            this.Exit.TabIndex = 1;
-            this.Exit.Text = "Trở lại";
-            this.Exit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Exit.UseVisualStyleBackColor = true;
-            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // ThemHangHoa
             // 
@@ -414,7 +395,6 @@
         #endregion
 
         private System.Windows.Forms.Button Xacnhan;
-        private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.TextBox Dongiaban;
         private System.Windows.Forms.TextBox TenHH;
         private System.Windows.Forms.TextBox MaHH;

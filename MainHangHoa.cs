@@ -136,5 +136,69 @@ namespace BTL_LTTQ_VIP
             tabPage.Controls.Add(form); // Thêm form vào TabPage
             form.Show(); // Hiển thị form con
         }
+
+        private void tabThemHangHoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainHangHoa_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Get the selected tab's name
+            TabPage selectedTab = tabControl1.SelectedTab;
+
+            // Call the corresponding LoadData method based on the selected tab
+            if (selectedTab != null)
+            {
+                switch (selectedTab.Name)
+                {
+                    case "tabThemDiop":
+                        ThemDiop themDiopForm = (ThemDiop)selectedTab.Controls[0];
+                        themDiopForm.LoadData(); // Call LoadData for ThemDiop
+                        break;
+                    case "tabThemHangHoa":
+                        ThemHangHoa themHangHoaForm = (ThemHangHoa)selectedTab.Controls[0];
+                        themHangHoaForm.LoadData(); // Call LoadData for ThemHangHoa
+                        break;
+                    case "tabThemHinhDangMat":
+                        ThemHinhDangMat themHinhDangMatForm = (ThemHinhDangMat)selectedTab.Controls[0];
+                        themHinhDangMatForm.LoadData(); // Call LoadData for ThemHinhDangMat
+                        break;
+                    case "tabThemCongDung":
+                        ThemCongDung themCongDungForm = (ThemCongDung)selectedTab.Controls[0];
+                        themCongDungForm.LoadData(); // Call LoadData for ThemCongDung
+                        break;
+                    case "tabThemChatLieu":
+                        ThemChatLieu themChatLieuForm = (ThemChatLieu)selectedTab.Controls[0];
+                        themChatLieuForm.LoadData(); // Call LoadData for ThemChatLieu
+                        break;
+                    case "tabThemDacDiem":
+                        ThemDacDiem themDacDiemForm = (ThemDacDiem)selectedTab.Controls[0];
+                        themDacDiemForm.LoadData(); // Call LoadData for ThemDacDiem
+                        break;
+                    case "tabThemMauSac":
+                        ThemMauSac themMauSacForm = (ThemMauSac)selectedTab.Controls[0];
+                        themMauSacForm.LoadData(); // Call LoadData for ThemMauSac
+                        break;
+                    case "tabThemLoaiKinh":
+                        ThemLoaiKinh themLoaiKinhForm = (ThemLoaiKinh)selectedTab.Controls[0];
+                        themLoaiKinhForm.LoadData(); // Call LoadData for ThemLoaiKinh
+                        break;
+                    case "tabThemNuocSanXuat":
+                        ThemNuocSanXuat themNuocSanXuatForm = (ThemNuocSanXuat)selectedTab.Controls[0];
+                        themNuocSanXuatForm.LoadData(); // Call LoadData for ThemNuocSanXuat
+                        break;
+                    case "tabThemGongMat":
+                        ThemGongMat themGongMatForm = (ThemGongMat)selectedTab.Controls[0];
+                        themGongMatForm.LoadData(); // Call LoadData for ThemGongMat
+                        break;
+                }
+            }
+        }
     }
 }
