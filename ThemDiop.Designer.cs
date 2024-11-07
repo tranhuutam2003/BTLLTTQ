@@ -35,6 +35,7 @@
             this.Ma = new System.Windows.Forms.TextBox();
             this.Ten = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.listBoxDiop = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +60,6 @@
             this.label3.Size = new System.Drawing.Size(87, 22);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tên đi-ốp";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // button1
             // 
@@ -76,7 +76,6 @@
             this.button1.Text = "Trở lại";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -119,13 +118,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(446, 66);
             this.panel1.TabIndex = 7;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // listBoxDiop
+            // 
+            this.listBoxDiop.FormattingEnabled = true;
+            this.listBoxDiop.ItemHeight = 16;
+            this.listBoxDiop.Location = new System.Drawing.Point(235, 10);
+            this.listBoxDiop.Name = "listBoxDiop";
+            this.listBoxDiop.Size = new System.Drawing.Size(196, 36);
+            this.listBoxDiop.TabIndex = 8;
             // 
             // ThemDiop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(446, 354);
+            this.Controls.Add(this.listBoxDiop);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Ten);
             this.Controls.Add(this.Ma);
@@ -148,5 +156,6 @@
         private System.Windows.Forms.TextBox Ma;
         private System.Windows.Forms.TextBox Ten;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListBox listBoxDiop;
     }
 }

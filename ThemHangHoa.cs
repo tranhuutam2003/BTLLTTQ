@@ -27,241 +27,78 @@ namespace BTL_LTTQ_VIP
 			LoadDacDiem();
 		}
 
-		private void LoadLoaiGong()
-		{
-			using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
-			{
-				try
-				{
-					connection.Open();
-					string query = "SELECT MaLoaiGong, TenLoaiGong FROM GongMat";
-					SqlCommand command = new SqlCommand(query, connection);
-					SqlDataReader reader = command.ExecuteReader();
+        
 
-					while (reader.Read())
-					{
-						Loaigong.Items.Add(new { MaLoaiGong = reader["MaLoaiGong"], TenLoaiGong = reader["TenLoaiGong"].ToString() });
-					}
+        private void LoadLoaiGong()
+        {
+            LoadComboBoxData("SELECT MaLoaiGong, TenLoaiGong FROM GongMat", Loaigong, "MaLoaiGong", "TenLoaiGong", "Lỗi khi lấy danh sách loại gọng");
+        }
 
-					Loaigong.DisplayMember = "TenLoaiGong";
-					Loaigong.ValueMember = "MaLoaiGong"; // Lấy MaCongDung làm giá trị khi chọn
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show("Lỗi khi lấy danh sách loại gọng: " + ex.Message);
-				}
-			}
-		}
+        private void LoadCongDung()
+        {
+            LoadComboBoxData("SELECT MaCongDung, TenCongDung FROM CongDung", Congdung, "MaCongDung", "TenCongDung", "Lỗi khi lấy danh sách công dụng");
+        }
 
-		private void LoadCongDung()
-		{
-			using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
-			{
-				try
-				{
-					connection.Open();
-					string query = "SELECT MaCongDung, TenCongDung FROM CongDung";
-					SqlCommand command = new SqlCommand(query, connection);
-					SqlDataReader reader = command.ExecuteReader();
+        private void LoadLoaikinh()
+        {
+            LoadComboBoxData("SELECT MaLoai, TenLoai FROM LoaiKinh", Loaikinh, "MaLoai", "TenLoai", "Lỗi khi lấy danh sách loại kính");
+        }
 
-					while (reader.Read())
-					{
-						Congdung.Items.Add(new { MaCongDung = reader["MaCongDung"], TenCongDung = reader["TenCongDung"].ToString() });
-					}
+        private void LoadHinhDangMat()
+        {
+            LoadComboBoxData("SELECT MaDangMat, TenDangMat FROM HinhDangMat", Dangmat, "MaDangMat", "TenDangMat", "Lỗi khi lấy danh sách hình dáng mắt");
+        }
 
-					Congdung.DisplayMember = "TenCongDung";
-					Congdung.ValueMember = "MaCongDung"; // Lấy MaCongDung làm giá trị khi chọn
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show("Lỗi khi lấy danh sách công dụng: " + ex.Message);
-				}
-			}
-		}
+        private void LoadChatLieu()
+        {
+            LoadComboBoxData("SELECT MaChatLieu, TenChatLieu FROM ChatLieu", Chatlieu, "MaChatLieu", "TenChatLieu", "Lỗi khi lấy danh sách chất liệu");
+        }
 
-		private void LoadLoaikinh()
-		{
-			using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
-			{
-				try
-				{
-					connection.Open();
-					string query = "SELECT MaLoai, TenLoai FROM LoaiKinh";
-					SqlCommand command = new SqlCommand(query, connection);
-					SqlDataReader reader = command.ExecuteReader();
+        private void LoadNuocSanXuat()
+        {
+            LoadComboBoxData("SELECT MaNuocSX, TenNuocSX FROM NuocSanXuat", Nuocsanxuat, "MaNuocSX", "TenNuocSX", "Lỗi khi lấy danh sách nước sản xuất");
+        }
 
-					while (reader.Read())
-					{
-						Loaikinh.Items.Add(new { MaLoai = reader["MaLoai"], TenLoai = reader["TenLoai"].ToString() });
-					}
+        private void LoadMauSac()
+        {
+            LoadComboBoxData("SELECT MaMau, TenMau FROM MauSac", Mausac, "MaMau", "TenMau", "Lỗi khi lấy danh sách màu sắc");
+        }
 
-					Loaikinh.DisplayMember = "TenLoai";
-					Loaikinh.ValueMember = "MaLoai"; // Lấy MaLoai làm giá trị khi chọn
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show("Lỗi khi lấy danh sách loại kính: " + ex.Message);
-				}
-			}
-		}
+        private void LoadDiop()
+        {
+            LoadComboBoxData("SELECT MaDiop, TenDiop FROM Diop", Diop, "MaDiop", "TenDiop", "Lỗi khi lấy danh sách diop");
+        }
 
-		private void LoadHinhDangMat()
-		{
-			using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
-			{
-				try
-				{
-					connection.Open();
-					string query = "SELECT MaDangMat, TenDangMat FROM HinhDangMat";
-					SqlCommand command = new SqlCommand(query, connection);
-					SqlDataReader reader = command.ExecuteReader();
+        private void LoadDacDiem()
+        {
+            LoadComboBoxData("SELECT MaDacDiem, TenDacDiem FROM DacDiem", Dacdiem, "MaDacDiem", "TenDacDiem", "Lỗi khi lấy danh sách đặc điểm");
+        }
 
-					while (reader.Read())
-					{
-						Dangmat.Items.Add(new { MaDangMat = reader["MaDangMat"], TenDangMat = reader["TenDangMat"].ToString() });
-					}
+        private void LoadComboBoxData(string query, ComboBox comboBox, string valueMember, string displayMember, string errorMessage)
+        {
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    SqlDataReader reader = command.ExecuteReader();
 
-					Dangmat.DisplayMember = "TenDangMat";
-					Dangmat.ValueMember = "MaDangMat";
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show("Lỗi khi lấy danh sách hình dáng mắt: " + ex.Message);
-				}
-			}
-		}
+                    while (reader.Read())
+                    {
+                        comboBox.Items.Add(new { Value = reader[valueMember], Text = reader[displayMember].ToString() });
+                    }
 
-		private void LoadChatLieu()
-		{
-			using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
-			{
-				try
-				{
-					connection.Open();
-					string query = "SELECT MaChatLieu, TenChatLieu FROM ChatLieu";
-					SqlCommand command = new SqlCommand(query, connection);
-					SqlDataReader reader = command.ExecuteReader();
-
-					while (reader.Read())
-					{
-						Chatlieu.Items.Add(new { MaChatLieu = reader["MaChatLieu"], TenChatLieu = reader["TenChatLieu"].ToString() });
-					}
-
-					Chatlieu.DisplayMember = "TenChatLieu";
-					Chatlieu.ValueMember = "MaChatLieu";
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show("Lỗi khi lấy danh sách chất liệu: " + ex.Message);
-				}
-			}
-		}
-
-		private void LoadNuocSanXuat()
-		{
-			using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
-			{
-				try
-				{
-					connection.Open();
-					string query = "SELECT MaNuocSX, TenNuocSX FROM NuocSanXuat";
-					SqlCommand command = new SqlCommand(query, connection);
-					SqlDataReader reader = command.ExecuteReader();
-
-					while (reader.Read())
-					{
-						Nuocsanxuat.Items.Add(new { MaNuocSX = reader["MaNuocSX"], TenNuocSX = reader["TenNuocSX"].ToString() });
-					}
-
-					Nuocsanxuat.DisplayMember = "TenNuocSX";
-					Nuocsanxuat.ValueMember = "MaNuocSX";
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show("Lỗi khi lấy danh sách nước sản xuất: " + ex.Message);
-				}
-			}
-		}
-
-		private void LoadMauSac()
-		{
-			using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
-			{
-				try
-				{
-					connection.Open();
-					string query = "SELECT MaMau, TenMau FROM MauSac";
-					SqlCommand command = new SqlCommand(query, connection);
-					SqlDataReader reader = command.ExecuteReader();
-
-					while (reader.Read())
-					{
-						Mausac.Items.Add(new { MaMau = reader["MaMau"], TenMau = reader["TenMau"].ToString() });
-					}
-
-					Mausac.DisplayMember = "TenMau";
-					Mausac.ValueMember = "MaMau";
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show("Lỗi khi lấy danh sách màu sắc: " + ex.Message);
-				}
-			}
-		}
-
-		private void LoadDiop()
-		{
-			using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
-			{
-				try
-				{
-					connection.Open();
-					string query = "SELECT MaDiop, TenDiop FROM Diop";
-					SqlCommand command = new SqlCommand(query, connection);
-					SqlDataReader reader = command.ExecuteReader();
-
-					while (reader.Read())
-					{
-						Diop.Items.Add(new { MaDiop = reader["MaDiop"], TenDiop = reader["TenDiop"].ToString() });
-					}
-
-					Diop.DisplayMember = "TenDiop";
-					Diop.ValueMember = "MaDiop";
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show("Lỗi khi lấy danh sách diop: " + ex.Message);
-				}
-			}
-		}
-
-		private void LoadDacDiem()
-		{
-			using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
-			{
-				try
-				{
-					connection.Open();
-					string query = "SELECT MaDacDiem, TenDacDiem FROM DacDiem";
-					SqlCommand command = new SqlCommand(query, connection);
-					SqlDataReader reader = command.ExecuteReader();
-
-					while (reader.Read())
-					{
-						Dacdiem.Items.Add(new { MaDacDiem = reader["MaDacDiem"], TenDacDiem = reader["TenDacDiem"].ToString() });
-					}
-
-					Dacdiem.DisplayMember = "TenDacDiem";
-					Dacdiem.ValueMember = "MaDacDiem";
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show("Lỗi khi lấy danh sách đặc điểm: " + ex.Message);
-				}
-			}
-		}
-
-		private void Xacnhan_Click(object sender, EventArgs e)
+                    comboBox.DisplayMember = "Text";
+                    comboBox.ValueMember = "Value";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(errorMessage + ": " + ex.Message);
+                }
+            }
+        }
+        private void Xacnhan_Click(object sender, EventArgs e)
 		{
 			using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
 			{
@@ -379,17 +216,7 @@ namespace BTL_LTTQ_VIP
 			this.Close();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Ghichu_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Dongiaban_TextChanged(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BTL_LTTQ_VIP
@@ -16,47 +9,70 @@ namespace BTL_LTTQ_VIP
         public ThemDiop()
         {
             InitializeComponent();
+            LoadExistingDiop(); 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        // Hàm để tải và hiển thị các Diop hiện tại vào một danh sách
+        private void LoadExistingDiop()
         {
             using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
             {
                 try
                 {
                     connection.Open();
-                    string query = "INSERT INTO Diop (MaDiop, TenDiop) " +
-                                   "VALUES (@MaDiop, @TenDiop)";
+                    string query = "SELECT MaDiop, TenDiop FROM Diop";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        // Thêm tham số cho câu truy vấn
-                        command.Parameters.AddWithValue("@MaDiop", Ma.Text);
-                        command.Parameters.AddWithValue("@TenDiop", Ten.Text);
-                        // Thực thi câu lệnh
-                        command.ExecuteNonQuery();
-                        MessageBox.Show("Thêm công dụng thành công!");
+                        SqlDataReader reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            listBoxDiop.Items.Add($"{reader["MaDiop"]} - {reader["TenDiop"]}");
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi thêm công dụng: " + ex.Message);
+                    MessageBox.Show("Lỗi khi tải danh sách Diop: " + ex.Message);
                 }
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(Ma.Text) || string.IsNullOrWhiteSpace(Ten.Text))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ mã và tên Diop.");
+                return;
+            }
 
-        }
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "INSERT INTO Diop (MaDiop, TenDiop) VALUES (@MaDiop, @TenDiop)";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaDiop", Ma.Text);
+                        command.Parameters.AddWithValue("@TenDiop", Ten.Text);
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Thêm Diop thành công!");
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+                        // Cập nhật danh sách Diop và xóa dữ liệu form
+                        listBoxDiop.Items.Add($"{Ma.Text} - {Ten.Text}");
+                        Ma.Clear();
+                        Ten.Clear();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi thêm Diop: " + ex.Message);
+                }
+            }
         }
     }
 }

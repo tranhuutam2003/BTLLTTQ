@@ -109,7 +109,7 @@ namespace BTL_LTTQ_VIP
 
         private void Them_Click(object sender, EventArgs e)
         {
-            ThemHangHoa thh = new ThemHangHoa();
+            MainHangHoa thh = new MainHangHoa();
             thh.Show();
         }
 
