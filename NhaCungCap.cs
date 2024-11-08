@@ -67,22 +67,7 @@ namespace BTL_LTTQ_VIP
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
-            //if (Mode == "Them" && string.IsNullOrWhiteSpace(txtMaNCC.Text))
-            //{
-            //    MessageBox.Show("Vui lòng nhập Mã nhà cung cấp.");
-            //    return;
-            //}
-            //if (Mode == "Them")
-            //{
-            //    ThemNhaCungCap();
-            //}
-            //else if (Mode == "Sua")
-            //{
-            //    // Thực hiện cập nhật thông tin nhà cung cấp
-            //    SuaNhaCungCap(MaNCC);
-            //}
-
-            //this.Close();
+          
 
             string dienThoai = txtDienThoai.Text;
             if (!IsValidPhoneNumber(dienThoai))
@@ -109,10 +94,8 @@ namespace BTL_LTTQ_VIP
             this.Close();
         }
 
-        // Hàm kiểm tra số điện thoại hợp lệ
         private bool IsValidPhoneNumber(string phoneNumber)
         {
-            // Kiểm tra số điện thoại bắt đầu bằng '0', có độ dài 10 và chỉ bao gồm chữ số
             return phoneNumber.Length == 10 && phoneNumber.StartsWith("0") && phoneNumber.All(char.IsDigit);
         }
 
@@ -123,20 +106,17 @@ namespace BTL_LTTQ_VIP
                 try
                 {
                     connection.Open();
-
                     // Kiểm tra xem MaNCC hoặc TenNCC đã tồn tại hay chưa
                     string checkQuery = "SELECT COUNT(*) FROM NhaCungCap WHERE MaNCC = @MaNCC OR TenNCC = @TenNCC";
                     SqlCommand checkCommand = new SqlCommand(checkQuery, connection);
                     checkCommand.Parameters.AddWithValue("@MaNCC", Convert.ToInt32(txtMaNCC.Text)); // Lấy giá trị từ txtMaNCC
                     checkCommand.Parameters.AddWithValue("@TenNCC", txtTenNCC.Text);
                     int count = (int)checkCommand.ExecuteScalar();
-
                     if (count > 0)
                     {
                         MessageBox.Show("Mã nhà cung cấp hoặc tên nhà cung cấp đã tồn tại. Vui lòng nhập lại.");
-                        return; 
+                        return;
                     }
-
                     // Nếu không có trùng, thực hiện thêm nhà cung cấp
                     string query = "INSERT INTO NhaCungCap (MaNCC, TenNCC, DiaChi, DienThoai) VALUES (@MaNCC, @TenNCC, @DiaChi, @DienThoai)";
                     SqlCommand command = new SqlCommand(query, connection);
@@ -145,7 +125,6 @@ namespace BTL_LTTQ_VIP
                     command.Parameters.AddWithValue("@DiaChi", txtDiaChi.Text);
                     command.Parameters.AddWithValue("@DienThoai", txtDienThoai.Text);
                     command.ExecuteNonQuery();
-
                     MessageBox.Show("Thêm nhà cung cấp thành công!");
                     this.DialogResult = DialogResult.OK; // Đặt kết quả cho Dialog
                 }
@@ -164,6 +143,18 @@ namespace BTL_LTTQ_VIP
                 try
                 {
                     connection.Open();
+                    // Kiểm tra xem có nhà cung cấp nào trùng MaNCC hoặc TenNCC không
+                    string checkQuery = "SELECT COUNT(*) FROM NhaCungCap WHERE (MaNCC = @MaNCC OR TenNCC = @TenNCC) AND MaNCC <> @MaNCC";
+                    SqlCommand checkCommand = new SqlCommand(checkQuery, connection);
+                    checkCommand.Parameters.AddWithValue("@MaNCC", maNCC); // MaNCC hiện tại
+                    checkCommand.Parameters.AddWithValue("@TenNCC", txtTenNCC.Text);
+                    int count = (int)checkCommand.ExecuteScalar();
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Mã nhà cung cấp hoặc tên nhà cung cấp đã tồn tại. Vui lòng nhập lại.");
+                        return;
+                    }
+                    // Nếu không có trùng, thực hiện cập nhật nhà cung cấp
                     string query = "UPDATE NhaCungCap SET TenNCC = @TenNCC, DiaChi = @DiaChi, DienThoai = @DienThoai WHERE MaNCC = @MaNCC";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@TenNCC", txtTenNCC.Text);

@@ -57,7 +57,7 @@
             this.tabControl1.Location = new System.Drawing.Point(10, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(848, 436);
+            this.tabControl1.Size = new System.Drawing.Size(773, 436);
             this.tabControl1.TabIndex = 0;
             // 
             // tabThemHangHoa
@@ -65,7 +65,7 @@
             this.tabThemHangHoa.Location = new System.Drawing.Point(4, 25);
             this.tabThemHangHoa.Name = "tabThemHangHoa";
             this.tabThemHangHoa.Padding = new System.Windows.Forms.Padding(3);
-            this.tabThemHangHoa.Size = new System.Drawing.Size(840, 407);
+            this.tabThemHangHoa.Size = new System.Drawing.Size(765, 407);
             this.tabThemHangHoa.TabIndex = 0;
             this.tabThemHangHoa.Text = "Thêm hàng hóa";
             this.tabThemHangHoa.UseVisualStyleBackColor = true;
@@ -76,7 +76,7 @@
             this.tabThemDiop.Location = new System.Drawing.Point(4, 25);
             this.tabThemDiop.Name = "tabThemDiop";
             this.tabThemDiop.Padding = new System.Windows.Forms.Padding(3);
-            this.tabThemDiop.Size = new System.Drawing.Size(840, 407);
+            this.tabThemDiop.Size = new System.Drawing.Size(773, 407);
             this.tabThemDiop.TabIndex = 1;
             this.tabThemDiop.Text = "Thêm đi ốp";
             this.tabThemDiop.UseVisualStyleBackColor = true;
@@ -85,7 +85,7 @@
             // 
             this.tabThemHinhDangMat.Location = new System.Drawing.Point(4, 25);
             this.tabThemHinhDangMat.Name = "tabThemHinhDangMat";
-            this.tabThemHinhDangMat.Size = new System.Drawing.Size(840, 407);
+            this.tabThemHinhDangMat.Size = new System.Drawing.Size(773, 407);
             this.tabThemHinhDangMat.TabIndex = 2;
             this.tabThemHinhDangMat.Text = "Thêm hình dạng mắt";
             this.tabThemHinhDangMat.UseVisualStyleBackColor = true;
@@ -94,7 +94,7 @@
             // 
             this.tabThemCongDung.Location = new System.Drawing.Point(4, 25);
             this.tabThemCongDung.Name = "tabThemCongDung";
-            this.tabThemCongDung.Size = new System.Drawing.Size(840, 407);
+            this.tabThemCongDung.Size = new System.Drawing.Size(773, 407);
             this.tabThemCongDung.TabIndex = 3;
             this.tabThemCongDung.Text = "Thêm công dụng";
             this.tabThemCongDung.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@
             // 
             this.tabThemChatLieu.Location = new System.Drawing.Point(4, 25);
             this.tabThemChatLieu.Name = "tabThemChatLieu";
-            this.tabThemChatLieu.Size = new System.Drawing.Size(840, 407);
+            this.tabThemChatLieu.Size = new System.Drawing.Size(773, 407);
             this.tabThemChatLieu.TabIndex = 4;
             this.tabThemChatLieu.Text = "Thêm chất liệu";
             this.tabThemChatLieu.UseVisualStyleBackColor = true;
@@ -112,7 +112,7 @@
             // 
             this.tabThemDacDiem.Location = new System.Drawing.Point(4, 25);
             this.tabThemDacDiem.Name = "tabThemDacDiem";
-            this.tabThemDacDiem.Size = new System.Drawing.Size(840, 407);
+            this.tabThemDacDiem.Size = new System.Drawing.Size(773, 407);
             this.tabThemDacDiem.TabIndex = 5;
             this.tabThemDacDiem.Text = "Thêm đặc điểm";
             this.tabThemDacDiem.UseVisualStyleBackColor = true;
@@ -121,7 +121,7 @@
             // 
             this.tabThemMauSac.Location = new System.Drawing.Point(4, 25);
             this.tabThemMauSac.Name = "tabThemMauSac";
-            this.tabThemMauSac.Size = new System.Drawing.Size(840, 407);
+            this.tabThemMauSac.Size = new System.Drawing.Size(773, 407);
             this.tabThemMauSac.TabIndex = 6;
             this.tabThemMauSac.Text = "Thêm màu sắc";
             this.tabThemMauSac.UseVisualStyleBackColor = true;
@@ -130,7 +130,7 @@
             // 
             this.tabThemLoaiKinh.Location = new System.Drawing.Point(4, 25);
             this.tabThemLoaiKinh.Name = "tabThemLoaiKinh";
-            this.tabThemLoaiKinh.Size = new System.Drawing.Size(840, 407);
+            this.tabThemLoaiKinh.Size = new System.Drawing.Size(773, 407);
             this.tabThemLoaiKinh.TabIndex = 7;
             this.tabThemLoaiKinh.Text = "Thêm loại kính";
             this.tabThemLoaiKinh.UseVisualStyleBackColor = true;
@@ -139,7 +139,7 @@
             // 
             this.tabThemNuocSanXuat.Location = new System.Drawing.Point(4, 25);
             this.tabThemNuocSanXuat.Name = "tabThemNuocSanXuat";
-            this.tabThemNuocSanXuat.Size = new System.Drawing.Size(840, 407);
+            this.tabThemNuocSanXuat.Size = new System.Drawing.Size(773, 407);
             this.tabThemNuocSanXuat.TabIndex = 8;
             this.tabThemNuocSanXuat.Text = "Thêm nước sản xuất";
             this.tabThemNuocSanXuat.UseVisualStyleBackColor = true;
@@ -148,7 +148,7 @@
             // 
             this.tabThemGongMat.Location = new System.Drawing.Point(4, 25);
             this.tabThemGongMat.Name = "tabThemGongMat";
-            this.tabThemGongMat.Size = new System.Drawing.Size(840, 407);
+            this.tabThemGongMat.Size = new System.Drawing.Size(773, 407);
             this.tabThemGongMat.TabIndex = 9;
             this.tabThemGongMat.Text = "Thêm gọng mắt";
             this.tabThemGongMat.UseVisualStyleBackColor = true;
@@ -157,7 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 460);
+            this.ClientSize = new System.Drawing.Size(795, 459);
             this.Controls.Add(this.tabControl1);
             this.Name = "MainHangHoa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

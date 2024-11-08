@@ -35,8 +35,8 @@
             this.Ma = new System.Windows.Forms.TextBox();
             this.Ten = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvDiop = new System.Windows.Forms.DataGridView();
             this.btnxoa = new System.Windows.Forms.Button();
+            this.dgvDiop = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiop)).BeginInit();
             this.SuspendLayout();
@@ -69,11 +69,11 @@
             this.btnsua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnsua.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnsua.Image = global::BTL_LTTQ_VIP.Properties.Resources.undo;
+            this.btnsua.Image = global::BTL_LTTQ_VIP.Properties.Resources.sua;
             this.btnsua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnsua.Location = new System.Drawing.Point(246, 3);
+            this.btnsua.Location = new System.Drawing.Point(300, 3);
             this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(172, 60);
+            this.btnsua.Size = new System.Drawing.Size(121, 60);
             this.btnsua.TabIndex = 3;
             this.btnsua.Text = "Sửa";
             this.btnsua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -120,11 +120,29 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 337);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(732, 66);
+            this.panel1.Size = new System.Drawing.Size(720, 66);
             this.panel1.TabIndex = 7;
+            // 
+            // btnxoa
+            // 
+            this.btnxoa.FlatAppearance.BorderSize = 0;
+            this.btnxoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnxoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnxoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnxoa.Image = global::BTL_LTTQ_VIP.Properties.Resources.delete;
+            this.btnxoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnxoa.Location = new System.Drawing.Point(557, 3);
+            this.btnxoa.Name = "btnxoa";
+            this.btnxoa.Size = new System.Drawing.Size(133, 60);
+            this.btnxoa.TabIndex = 5;
+            this.btnxoa.Text = "Xóa";
+            this.btnxoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnxoa.UseVisualStyleBackColor = true;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
             // dgvDiop
             // 
+            this.dgvDiop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDiop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDiop.Location = new System.Drawing.Point(332, 8);
             this.dgvDiop.Name = "dgvDiop";
@@ -133,28 +151,11 @@
             this.dgvDiop.Size = new System.Drawing.Size(378, 316);
             this.dgvDiop.TabIndex = 8;
             // 
-            // btnxoa
-            // 
-            this.btnxoa.FlatAppearance.BorderSize = 0;
-            this.btnxoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnxoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnxoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnxoa.Image = global::BTL_LTTQ_VIP.Properties.Resources.undo;
-            this.btnxoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnxoa.Location = new System.Drawing.Point(522, 3);
-            this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(172, 60);
-            this.btnxoa.TabIndex = 5;
-            this.btnxoa.Text = "Xóa";
-            this.btnxoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnxoa.UseVisualStyleBackColor = true;
-            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
-            // 
             // ThemDiop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 403);
+            this.ClientSize = new System.Drawing.Size(720, 403);
             this.Controls.Add(this.dgvDiop);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Ten);

@@ -134,6 +134,8 @@ namespace BTL_LTTQ_VIP
 
         private void LoadThongBao()
         {
+            
+
             try
             {
                 using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
@@ -164,7 +166,7 @@ namespace BTL_LTTQ_VIP
 
                     if (maNV == -1)
                     {
-                        MessageBox.Show($"Không tìm thấy thông tin nhân viên: {TenNV}");
+                        MessageBox.Show($"Không tìm thấy thông tin nhân viên:\n{TenNV}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
 
@@ -188,24 +190,18 @@ namespace BTL_LTTQ_VIP
 
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            listBoxthongbao.Items.Clear(); // Xóa các mục hiện có trong ListBox
+                            richTextBoxThongBao.Clear(); // Xóa các nội dung hiện có trong RichTextBox
 
                             while (reader.Read())
                             {
                                 string noiDung = reader["NoiDung"].ToString();
                                 DateTime ngayTao = Convert.ToDateTime(reader["NgayTao"]);
 
-                                // Cắt bớt thông báo nếu dài hơn 70 ký tự
-                                if (noiDung.Length > 70)
-                                {
-                                    noiDung = noiDung.Substring(0, 70) + "..."; // Thêm ba dấu chấm ở cuối
-                                }
+                                // Định dạng chuỗi thông báo với xuống dòng
+                                string thongBao = $"{noiDung} - Ngày: {ngayTao:dd/MM/yyyy HH:mm}\n\n";
 
-                                // Định dạng chuỗi thông báo
-                                string thongBao = $"{noiDung} - Ngày: {ngayTao:dd/MM/yyyy HH:mm}";
-
-                                // Thêm chuỗi thông báo vào ListBox
-                                listBoxthongbao.Items.Add(thongBao);
+                                // Thêm chuỗi thông báo vào RichTextBox
+                                richTextBoxThongBao.AppendText(thongBao);
                             }
                         }
                     }
@@ -213,11 +209,11 @@ namespace BTL_LTTQ_VIP
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"Lỗi kết nối cơ sở dữ liệu: {ex.Message}");
+                MessageBox.Show($"Lỗi kết nối cơ sở dữ liệu:\n{ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}");
+                MessageBox.Show($"Đã xảy ra lỗi:\n{ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -241,8 +237,8 @@ namespace BTL_LTTQ_VIP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            TimSanPham timSanPham = new TimSanPham();
-            timSanPham.Show();
+           TimSanPham2 timSanPham2 = new TimSanPham2();
+            timSanPham2.Show();
         }
 
         private void button6_Click(object sender, EventArgs e)

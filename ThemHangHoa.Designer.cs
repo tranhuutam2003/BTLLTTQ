@@ -70,21 +70,21 @@
             // 
             // TenHH
             // 
-            this.TenHH.Location = new System.Drawing.Point(510, 65);
+            this.TenHH.Location = new System.Drawing.Point(510, 81);
             this.TenHH.Name = "TenHH";
             this.TenHH.Size = new System.Drawing.Size(250, 22);
             this.TenHH.TabIndex = 15;
             // 
             // MaHH
             // 
-            this.MaHH.Location = new System.Drawing.Point(510, 35);
+            this.MaHH.Location = new System.Drawing.Point(510, 39);
             this.MaHH.Name = "MaHH";
             this.MaHH.Size = new System.Drawing.Size(250, 22);
             this.MaHH.TabIndex = 16;
             // 
             // Ghichu
             // 
-            this.Ghichu.Location = new System.Drawing.Point(510, 134);
+            this.Ghichu.Location = new System.Drawing.Point(510, 157);
             this.Ghichu.Multiline = true;
             this.Ghichu.Name = "Ghichu";
             this.Ghichu.Size = new System.Drawing.Size(250, 73);
@@ -95,7 +95,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label1.Location = new System.Drawing.Point(371, 39);
+            this.label1.Location = new System.Drawing.Point(371, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 18);
             this.label1.TabIndex = 18;
@@ -106,7 +106,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label2.Location = new System.Drawing.Point(371, 69);
+            this.label2.Location = new System.Drawing.Point(371, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 18);
             this.label2.TabIndex = 19;
@@ -128,7 +128,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(6, 39);
+            this.label4.Location = new System.Drawing.Point(6, 45);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 18);
             this.label4.TabIndex = 21;
@@ -139,7 +139,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(6, 69);
+            this.label5.Location = new System.Drawing.Point(6, 85);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 18);
             this.label5.TabIndex = 22;
@@ -150,7 +150,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(6, 99);
+            this.label6.Location = new System.Drawing.Point(6, 125);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 18);
             this.label6.TabIndex = 23;
@@ -161,7 +161,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(6, 129);
+            this.label7.Location = new System.Drawing.Point(6, 157);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 18);
             this.label7.TabIndex = 24;
@@ -172,7 +172,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(6, 159);
+            this.label8.Location = new System.Drawing.Point(6, 204);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 18);
             this.label8.TabIndex = 25;
@@ -183,7 +183,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(6, 189);
+            this.label9.Location = new System.Drawing.Point(6, 245);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 18);
             this.label9.TabIndex = 26;
@@ -194,7 +194,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(6, 219);
+            this.label10.Location = new System.Drawing.Point(6, 285);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 18);
             this.label10.TabIndex = 27;
@@ -205,7 +205,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(6, 249);
+            this.label11.Location = new System.Drawing.Point(371, 280);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(103, 18);
             this.label11.TabIndex = 28;
@@ -227,7 +227,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label15.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label15.Location = new System.Drawing.Point(371, 99);
+            this.label15.Location = new System.Drawing.Point(371, 122);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(133, 18);
             this.label15.TabIndex = 32;
@@ -238,7 +238,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label16.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label16.Location = new System.Drawing.Point(371, 189);
+            this.label16.Location = new System.Drawing.Point(377, 163);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(59, 18);
             this.label16.TabIndex = 33;
@@ -255,7 +255,7 @@
             // Loaigong
             // 
             this.Loaigong.FormattingEnabled = true;
-            this.Loaigong.Location = new System.Drawing.Point(115, 33);
+            this.Loaigong.Location = new System.Drawing.Point(115, 39);
             this.Loaigong.Name = "Loaigong";
             this.Loaigong.Size = new System.Drawing.Size(250, 24);
             this.Loaigong.TabIndex = 36;
@@ -263,7 +263,7 @@
             // Dangmat
             // 
             this.Dangmat.FormattingEnabled = true;
-            this.Dangmat.Location = new System.Drawing.Point(115, 63);
+            this.Dangmat.Location = new System.Drawing.Point(115, 79);
             this.Dangmat.Name = "Dangmat";
             this.Dangmat.Size = new System.Drawing.Size(250, 24);
             this.Dangmat.TabIndex = 37;
@@ -271,7 +271,7 @@
             // Chatlieu
             // 
             this.Chatlieu.FormattingEnabled = true;
-            this.Chatlieu.Location = new System.Drawing.Point(115, 92);
+            this.Chatlieu.Location = new System.Drawing.Point(115, 118);
             this.Chatlieu.Name = "Chatlieu";
             this.Chatlieu.Size = new System.Drawing.Size(250, 24);
             this.Chatlieu.TabIndex = 38;
@@ -279,7 +279,7 @@
             // Diop
             // 
             this.Diop.FormattingEnabled = true;
-            this.Diop.Location = new System.Drawing.Point(115, 123);
+            this.Diop.Location = new System.Drawing.Point(115, 157);
             this.Diop.Name = "Diop";
             this.Diop.Size = new System.Drawing.Size(250, 24);
             this.Diop.TabIndex = 39;
@@ -287,7 +287,7 @@
             // Congdung
             // 
             this.Congdung.FormattingEnabled = true;
-            this.Congdung.Location = new System.Drawing.Point(115, 153);
+            this.Congdung.Location = new System.Drawing.Point(115, 198);
             this.Congdung.Name = "Congdung";
             this.Congdung.Size = new System.Drawing.Size(250, 24);
             this.Congdung.TabIndex = 40;
@@ -295,7 +295,7 @@
             // Dacdiem
             // 
             this.Dacdiem.FormattingEnabled = true;
-            this.Dacdiem.Location = new System.Drawing.Point(115, 183);
+            this.Dacdiem.Location = new System.Drawing.Point(115, 239);
             this.Dacdiem.Name = "Dacdiem";
             this.Dacdiem.Size = new System.Drawing.Size(250, 24);
             this.Dacdiem.TabIndex = 41;
@@ -303,7 +303,7 @@
             // Mausac
             // 
             this.Mausac.FormattingEnabled = true;
-            this.Mausac.Location = new System.Drawing.Point(115, 213);
+            this.Mausac.Location = new System.Drawing.Point(115, 279);
             this.Mausac.Name = "Mausac";
             this.Mausac.Size = new System.Drawing.Size(250, 24);
             this.Mausac.TabIndex = 42;
@@ -311,14 +311,14 @@
             // Nuocsanxuat
             // 
             this.Nuocsanxuat.FormattingEnabled = true;
-            this.Nuocsanxuat.Location = new System.Drawing.Point(115, 243);
+            this.Nuocsanxuat.Location = new System.Drawing.Point(510, 274);
             this.Nuocsanxuat.Name = "Nuocsanxuat";
             this.Nuocsanxuat.Size = new System.Drawing.Size(250, 24);
             this.Nuocsanxuat.TabIndex = 43;
             // 
             // Thoigianbaohanh
             // 
-            this.Thoigianbaohanh.Location = new System.Drawing.Point(510, 95);
+            this.Thoigianbaohanh.Location = new System.Drawing.Point(510, 118);
             this.Thoigianbaohanh.Name = "Thoigianbaohanh";
             this.Thoigianbaohanh.Size = new System.Drawing.Size(250, 22);
             this.Thoigianbaohanh.TabIndex = 44;
@@ -327,9 +327,10 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(55)))), ((int)(((byte)(77)))));
             this.panel2.Controls.Add(this.Xacnhan);
-            this.panel2.Location = new System.Drawing.Point(9, 273);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 337);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(751, 66);
+            this.panel2.Size = new System.Drawing.Size(765, 66);
             this.panel2.TabIndex = 55;
             // 
             // Xacnhan
@@ -353,7 +354,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(765, 340);
+            this.ClientSize = new System.Drawing.Size(765, 403);
             this.Controls.Add(this.Thoigianbaohanh);
             this.Controls.Add(this.Nuocsanxuat);
             this.Controls.Add(this.Mausac);
@@ -385,6 +386,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "ThemHangHoa";
             this.Text = "Thêm Hàng Hóa";
+            this.Load += new System.EventHandler(this.ThemHangHoa_Load);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

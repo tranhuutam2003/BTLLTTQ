@@ -35,8 +35,8 @@
             this.xacnhan = new System.Windows.Forms.Button();
             this.btnsua = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvChatLieu = new System.Windows.Forms.DataGridView();
             this.btnxoa = new System.Windows.Forms.Button();
+            this.dgvChatLieu = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChatLieu)).BeginInit();
             this.SuspendLayout();
@@ -44,35 +44,35 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(12, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 16);
+            this.label1.Size = new System.Drawing.Size(100, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã chất liệu";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 58);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(13, 86);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 16);
+            this.label2.Size = new System.Drawing.Size(105, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên chất liệu";
             // 
             // Ma
             // 
-            this.Ma.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Ma.Location = new System.Drawing.Point(15, 28);
+            this.Ma.Location = new System.Drawing.Point(16, 56);
             this.Ma.Name = "Ma";
-            this.Ma.Size = new System.Drawing.Size(193, 15);
+            this.Ma.Size = new System.Drawing.Size(193, 22);
             this.Ma.TabIndex = 3;
             // 
             // Ten
             // 
-            this.Ten.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Ten.Location = new System.Drawing.Point(15, 77);
+            this.Ten.Location = new System.Drawing.Point(17, 124);
             this.Ten.Name = "Ten";
-            this.Ten.Size = new System.Drawing.Size(193, 15);
+            this.Ten.Size = new System.Drawing.Size(193, 22);
             this.Ten.TabIndex = 4;
             // 
             // xacnhan
@@ -98,11 +98,11 @@
             this.btnsua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnsua.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnsua.Image = global::BTL_LTTQ_VIP.Properties.Resources.undo;
+            this.btnsua.Image = global::BTL_LTTQ_VIP.Properties.Resources.sua;
             this.btnsua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnsua.Location = new System.Drawing.Point(242, 3);
+            this.btnsua.Location = new System.Drawing.Point(318, 3);
             this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(167, 63);
+            this.btnsua.Size = new System.Drawing.Size(122, 63);
             this.btnsua.TabIndex = 6;
             this.btnsua.Text = "Sửa";
             this.btnsua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -121,8 +121,26 @@
             this.panel1.Size = new System.Drawing.Size(732, 66);
             this.panel1.TabIndex = 7;
             // 
+            // btnxoa
+            // 
+            this.btnxoa.FlatAppearance.BorderSize = 0;
+            this.btnxoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnxoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnxoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnxoa.Image = global::BTL_LTTQ_VIP.Properties.Resources.delete;
+            this.btnxoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnxoa.Location = new System.Drawing.Point(569, 3);
+            this.btnxoa.Name = "btnxoa";
+            this.btnxoa.Size = new System.Drawing.Size(121, 63);
+            this.btnxoa.TabIndex = 7;
+            this.btnxoa.Text = "Xóa";
+            this.btnxoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnxoa.UseVisualStyleBackColor = true;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
+            // 
             // dgvChatLieu
             // 
+            this.dgvChatLieu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvChatLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChatLieu.Location = new System.Drawing.Point(293, 24);
             this.dgvChatLieu.Name = "dgvChatLieu";
@@ -130,23 +148,6 @@
             this.dgvChatLieu.RowTemplate.Height = 24;
             this.dgvChatLieu.Size = new System.Drawing.Size(428, 283);
             this.dgvChatLieu.TabIndex = 8;
-            // 
-            // btnxoa
-            // 
-            this.btnxoa.FlatAppearance.BorderSize = 0;
-            this.btnxoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnxoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnxoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnxoa.Image = global::BTL_LTTQ_VIP.Properties.Resources.undo;
-            this.btnxoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnxoa.Location = new System.Drawing.Point(511, 3);
-            this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(167, 63);
-            this.btnxoa.TabIndex = 7;
-            this.btnxoa.Text = "Xóa";
-            this.btnxoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnxoa.UseVisualStyleBackColor = true;
-            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
             // ThemChatLieu
             // 
@@ -161,6 +162,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ThemChatLieu";
             this.Text = "Thêm Chất Liệu";
+            this.Load += new System.EventHandler(this.ThemChatLieu_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChatLieu)).EndInit();
             this.ResumeLayout(false);

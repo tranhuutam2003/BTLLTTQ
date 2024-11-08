@@ -164,6 +164,11 @@ namespace BTL_LTTQ_VIP
                 }
             }
         }
+
+        private void ThemHangHoa_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class ComboBoxItem

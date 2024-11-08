@@ -81,7 +81,7 @@
             this.btnsua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnsua.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnsua.Image = global::BTL_LTTQ_VIP.Properties.Resources.undo;
+            this.btnsua.Image = global::BTL_LTTQ_VIP.Properties.Resources.sua;
             this.btnsua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnsua.Location = new System.Drawing.Point(256, 3);
             this.btnsua.Name = "btnsua";
@@ -140,6 +140,7 @@
             // 
             // dgvCongDung
             // 
+            this.dgvCongDung.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCongDung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCongDung.Location = new System.Drawing.Point(305, 14);
             this.dgvCongDung.Name = "dgvCongDung";

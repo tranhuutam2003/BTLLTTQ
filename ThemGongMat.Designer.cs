@@ -83,11 +83,11 @@
             this.btnsua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnsua.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnsua.Image = global::BTL_LTTQ_VIP.Properties.Resources.undo;
+            this.btnsua.Image = global::BTL_LTTQ_VIP.Properties.Resources.sua;
             this.btnsua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnsua.Location = new System.Drawing.Point(238, 3);
+            this.btnsua.Location = new System.Drawing.Point(307, 3);
             this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(159, 63);
+            this.btnsua.Size = new System.Drawing.Size(121, 63);
             this.btnsua.TabIndex = 5;
             this.btnsua.Text = "Sửa";
             this.btnsua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -120,7 +120,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 337);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(732, 66);
+            this.panel1.Size = new System.Drawing.Size(707, 66);
             this.panel1.TabIndex = 7;
             // 
             // btnxoa
@@ -129,11 +129,11 @@
             this.btnxoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnxoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnxoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnxoa.Image = global::BTL_LTTQ_VIP.Properties.Resources.undo;
+            this.btnxoa.Image = global::BTL_LTTQ_VIP.Properties.Resources.delete;
             this.btnxoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnxoa.Location = new System.Drawing.Point(512, 3);
+            this.btnxoa.Location = new System.Drawing.Point(573, 3);
             this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(159, 63);
+            this.btnxoa.Size = new System.Drawing.Size(122, 63);
             this.btnxoa.TabIndex = 7;
             this.btnxoa.Text = "Xóa";
             this.btnxoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -142,6 +142,7 @@
             // 
             // dgvGongMat
             // 
+            this.dgvGongMat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGongMat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGongMat.Location = new System.Drawing.Point(307, 20);
             this.dgvGongMat.Name = "dgvGongMat";
@@ -153,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 403);
+            this.ClientSize = new System.Drawing.Size(707, 403);
             this.Controls.Add(this.dgvGongMat);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Ten);

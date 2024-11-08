@@ -61,7 +61,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.listBoxthongbao = new System.Windows.Forms.ListBox();
+            this.richTextBoxThongBao = new System.Windows.Forms.RichTextBox();
             this.plTenNV.SuspendLayout();
             this.plCV.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -300,7 +300,7 @@
             // 
             // grbthongbao
             // 
-            this.grbthongbao.Controls.Add(this.listBoxthongbao);
+            this.grbthongbao.Controls.Add(this.richTextBoxThongBao);
             this.grbthongbao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.grbthongbao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(104)))), ((int)(((byte)(130)))));
             this.grbthongbao.Location = new System.Drawing.Point(257, 75);
@@ -535,14 +535,13 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // listBoxthongbao
+            // richTextBoxThongBao
             // 
-            this.listBoxthongbao.FormattingEnabled = true;
-            this.listBoxthongbao.ItemHeight = 20;
-            this.listBoxthongbao.Location = new System.Drawing.Point(8, 25);
-            this.listBoxthongbao.Name = "listBoxthongbao";
-            this.listBoxthongbao.Size = new System.Drawing.Size(626, 424);
-            this.listBoxthongbao.TabIndex = 0;
+            this.richTextBoxThongBao.Location = new System.Drawing.Point(0, 26);
+            this.richTextBoxThongBao.Name = "richTextBoxThongBao";
+            this.richTextBoxThongBao.Size = new System.Drawing.Size(644, 439);
+            this.richTextBoxThongBao.TabIndex = 15;
+            this.richTextBoxThongBao.Text = "";
             // 
             // Home
             // 
@@ -609,6 +608,6 @@
         private System.Windows.Forms.Button btndoanhthu;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ListBox listBoxthongbao;
+        private System.Windows.Forms.RichTextBox richTextBoxThongBao;
     }
 }

@@ -10,8 +10,32 @@ namespace BTL_LTTQ_VIP
             InitializeComponent();
             LoadFormsIntoTabControl();
             tabControl1.SelectedIndexChanged += TabControl1_SelectedIndexChanged;
+            tabControl1.MouseWheel += TabControl1_MouseWheel;
+
         }
 
+        private void TabControl1_MouseWheel(object sender, MouseEventArgs e)
+        {
+
+
+            if (e.Delta > 0)
+            {
+                // Nếu đang ở tab đầu tiên thì không thay đổi
+                if (tabControl1.SelectedIndex > 0)
+                {
+                    tabControl1.SelectedIndex--;
+                }
+            }
+            // Nếu con lăn chuột cuộn xuống (e.Delta < 0) thì chuyển đến tab sau
+            else
+            {
+                // Nếu đang ở tab cuối cùng thì không thay đổi
+                if (tabControl1.SelectedIndex < tabControl1.TabCount - 1)
+                {
+                    tabControl1.SelectedIndex++;
+                }
+            }
+        }
         private void LoadFormsIntoTabControl()
         {
             // Tạo instance của từng form con

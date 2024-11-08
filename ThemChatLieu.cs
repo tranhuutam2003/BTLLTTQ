@@ -168,5 +168,10 @@ namespace BTL_LTTQ_VIP
                 }
             }
         }
+
+        private void ThemChatLieu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
