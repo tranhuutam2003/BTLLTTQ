@@ -110,6 +110,17 @@ namespace BTL_LTTQ_VIP
         private void Them_Click(object sender, EventArgs e)
         {
             MainHangHoa thh = new MainHangHoa();
+            foreach (TabPage tabPage in thh.tabControl1.TabPages)
+            {
+                if (tabPage.Controls.Count > 0 && tabPage.Controls[0] is ThemHangHoa themHangHoaForm)
+                {
+                    themHangHoaForm.HangHoaAdded += (s, args) =>
+                    {
+                        loadData(); // Cập nhật dữ liệu khi sự kiện được kích hoạt
+                    };
+                    break;
+                }
+            }
             thh.Show();
         }
 

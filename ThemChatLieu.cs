@@ -12,6 +12,10 @@ namespace BTL_LTTQ_VIP
             InitializeComponent();
             LoadData();
             dgvChatLieu.CellClick += dgvChatLieu_CellClick; // Attach the CellClick event
+
+            btnsua.Enabled = false;
+            btnxoa.Enabled = false;
+            xacnhan.Enabled = true;
         }
 
         // Method to load data into the DataGridView
@@ -81,6 +85,9 @@ namespace BTL_LTTQ_VIP
                 Ma.Text = row.Cells["MaChatLieu"].Value.ToString();
                 Ten.Text = row.Cells["TenChatLieu"].Value.ToString();
             }
+            btnsua.Enabled = true;
+            btnxoa.Enabled = true;
+            xacnhan.Enabled = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -108,6 +115,10 @@ namespace BTL_LTTQ_VIP
                         LoadData();
                         Ma.Clear();
                         Ten.Clear();
+
+                        btnsua.Enabled = false;
+                        btnxoa.Enabled = false;
+                        xacnhan.Enabled = true;
                     }
                 }
                 catch (Exception ex)
@@ -144,6 +155,10 @@ namespace BTL_LTTQ_VIP
                             LoadData();
                             Ma.Clear();
                             Ten.Clear();
+
+                            btnsua.Enabled = false;
+                            btnxoa.Enabled = false;
+                            xacnhan.Enabled = true;
                         }
                     }
                     catch (Exception ex)

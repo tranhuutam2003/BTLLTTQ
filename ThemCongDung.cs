@@ -12,6 +12,10 @@ namespace BTL_LTTQ_VIP
             InitializeComponent();
             LoadData();
             dgvCongDung.CellClick += dgvCongDung_CellClick; // Attach the CellClick event
+
+            btnxoa.Enabled = false;
+            btnsua.Enabled = false;
+            xacnhan.Enabled = true;
         }
 
         // Method to load data into the DataGridView
@@ -81,6 +85,9 @@ namespace BTL_LTTQ_VIP
                 Ma.Text = row.Cells["MaCongDung"].Value.ToString();
                 Ten.Text = row.Cells["TenCongDung"].Value.ToString();
             }
+            btnxoa.Enabled = true;
+            btnsua.Enabled = true;
+            xacnhan.Enabled = false;
         }
         private void btnsua_Click_1(object sender, EventArgs e)
         {
@@ -107,6 +114,10 @@ namespace BTL_LTTQ_VIP
                         LoadData();
                         Ma.Clear();
                         Ten.Clear();
+
+                        btnxoa.Enabled = false;
+                        btnsua.Enabled = false;
+                        xacnhan.Enabled = true;
                     }
                 }
                 catch (Exception ex)
@@ -143,6 +154,10 @@ namespace BTL_LTTQ_VIP
                             LoadData();
                             Ma.Clear();
                             Ten.Clear();
+
+                            btnxoa.Enabled = false;
+                            btnsua.Enabled = false;
+                            xacnhan.Enabled = true;
                         }
                     }
                     catch (Exception ex)

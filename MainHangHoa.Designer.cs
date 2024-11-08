@@ -170,7 +170,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        public System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabThemHangHoa;
         private System.Windows.Forms.TabPage tabThemDiop;
         private System.Windows.Forms.TabPage tabThemHinhDangMat;

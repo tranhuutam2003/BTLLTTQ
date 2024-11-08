@@ -9,6 +9,7 @@ namespace BTL_LTTQ_VIP
         {
             InitializeComponent();
             LoadFormsIntoTabControl();
+            tabControl1.SelectedIndexChanged += TabControl1_SelectedIndexChanged;
         }
 
         private void LoadFormsIntoTabControl()
@@ -152,52 +153,23 @@ namespace BTL_LTTQ_VIP
             // Get the selected tab's name
             TabPage selectedTab = tabControl1.SelectedTab;
 
-            // Call the corresponding LoadData method based on the selected tab
-            if (selectedTab != null)
+            if (selectedTab.Controls.Count > 0)
             {
-                switch (selectedTab.Name)
-                {
-                    case "tabThemDiop":
-                        ThemDiop themDiopForm = (ThemDiop)selectedTab.Controls[0];
-                        themDiopForm.LoadData(); // Call LoadData for ThemDiop
-                        break;
-                    case "tabThemHangHoa":
-                        ThemHangHoa themHangHoaForm = (ThemHangHoa)selectedTab.Controls[0];
-                        themHangHoaForm.LoadData(); // Call LoadData for ThemHangHoa
-                        break;
-                    case "tabThemHinhDangMat":
-                        ThemHinhDangMat themHinhDangMatForm = (ThemHinhDangMat)selectedTab.Controls[0];
-                        themHinhDangMatForm.LoadData(); // Call LoadData for ThemHinhDangMat
-                        break;
-                    case "tabThemCongDung":
-                        ThemCongDung themCongDungForm = (ThemCongDung)selectedTab.Controls[0];
-                        themCongDungForm.LoadData(); // Call LoadData for ThemCongDung
-                        break;
-                    case "tabThemChatLieu":
-                        ThemChatLieu themChatLieuForm = (ThemChatLieu)selectedTab.Controls[0];
-                        themChatLieuForm.LoadData(); // Call LoadData for ThemChatLieu
-                        break;
-                    case "tabThemDacDiem":
-                        ThemDacDiem themDacDiemForm = (ThemDacDiem)selectedTab.Controls[0];
-                        themDacDiemForm.LoadData(); // Call LoadData for ThemDacDiem
-                        break;
-                    case "tabThemMauSac":
-                        ThemMauSac themMauSacForm = (ThemMauSac)selectedTab.Controls[0];
-                        themMauSacForm.LoadData(); // Call LoadData for ThemMauSac
-                        break;
-                    case "tabThemLoaiKinh":
-                        ThemLoaiKinh themLoaiKinhForm = (ThemLoaiKinh)selectedTab.Controls[0];
-                        themLoaiKinhForm.LoadData(); // Call LoadData for ThemLoaiKinh
-                        break;
-                    case "tabThemNuocSanXuat":
-                        ThemNuocSanXuat themNuocSanXuatForm = (ThemNuocSanXuat)selectedTab.Controls[0];
-                        themNuocSanXuatForm.LoadData(); // Call LoadData for ThemNuocSanXuat
-                        break;
-                    case "tabThemGongMat":
-                        ThemGongMat themGongMatForm = (ThemGongMat)selectedTab.Controls[0];
-                        themGongMatForm.LoadData(); // Call LoadData for ThemGongMat
-                        break;
-                }
+                Form form = (Form)selectedTab.Controls[0];
+                if (form is ThemDiop themDiop) themDiop.LoadData();
+                else if (form is ThemHangHoa themHangHoa) themHangHoa.LoadData();
+                else if (form is ThemHinhDangMat themHinhDangMat) themHinhDangMat.LoadData();
+                else if (form is ThemCongDung themCongDung) themCongDung.LoadData();
+                else if (form is ThemChatLieu themChatLieu) themChatLieu.LoadData();
+                else if (form is ThemDacDiem themDacDiem) themDacDiem.LoadData();
+                else if (form is ThemMauSac themMauSac) themMauSac.LoadData();
+                else if (form is ThemLoaiKinh themLoaiKinh) themLoaiKinh.LoadData();
+                else if (form is ThemNuocSanXuat themNuocSanXuat) themNuocSanXuat.LoadData();
+                else if (form is ThemGongMat themGongMat) themGongMat.LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy form trong tab này!");
             }
         }
     }

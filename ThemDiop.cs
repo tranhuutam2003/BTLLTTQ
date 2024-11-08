@@ -12,6 +12,10 @@ namespace BTL_LTTQ_VIP
             InitializeComponent();
             LoadData();
             dgvDiop.CellClick += dgvDiop_CellClick; // Attach the CellClick event
+
+            btnxoa.Enabled = false;
+            btnsua.Enabled = false;
+            button2.Enabled = true;
         }
 
         // Method to load data into the DataGridView
@@ -34,12 +38,6 @@ namespace BTL_LTTQ_VIP
                 }
             }
         }
-
-        private void buttonCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         // Button click event to add a new Diop
         private void button2_Click(object sender, EventArgs e)
         {
@@ -84,6 +82,10 @@ namespace BTL_LTTQ_VIP
                 Ma.Text = row.Cells["MaDiop"].Value.ToString();
                 Ten.Text = row.Cells["TenDiop"].Value.ToString();
             }
+
+            btnxoa.Enabled = true;
+            btnsua.Enabled = true;
+            button2.Enabled = false;
         }
 
         // Button click event to delete a Diop
@@ -114,6 +116,10 @@ namespace BTL_LTTQ_VIP
                             LoadData();
                             Ma.Clear();
                             Ten.Clear();
+
+                            btnxoa.Enabled = false;
+                            btnsua.Enabled = false;
+                            button2.Enabled = true;
                         }
                     }
                     catch (Exception ex)
@@ -150,6 +156,10 @@ namespace BTL_LTTQ_VIP
                         LoadData();
                         Ma.Clear();
                         Ten.Clear();
+
+                        btnxoa.Enabled = false;
+                        btnsua.Enabled = false;
+                        button2.Enabled = true;
                     }
                 }
                 catch (Exception ex)

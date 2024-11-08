@@ -12,6 +12,10 @@ namespace BTL_LTTQ_VIP
             InitializeComponent();
             LoadData();
             dgvDacDiem.CellClick += dgvDacDiem_CellClick; // Attach the CellClick event
+
+            btnxoa.Enabled = false;
+            btnsua.Enabled = false;
+            button2.Enabled = true;
         }
 
         // Method to load data into the DataGridView
@@ -81,6 +85,10 @@ namespace BTL_LTTQ_VIP
                 Ma.Text = row.Cells["MaDacDiem"].Value.ToString();
                 Ten.Text = row.Cells["TenDacDiem"].Value.ToString();
             }
+
+            btnxoa.Enabled = true;
+            btnsua.Enabled = true;
+            button2.Enabled = false;
         }
 
         // Button click event to edit an existing DacDiem
@@ -109,6 +117,10 @@ namespace BTL_LTTQ_VIP
                         LoadData();
                         Ma.Clear();
                         Ten.Clear();
+
+                        btnxoa.Enabled = false;
+                        btnsua.Enabled = false;
+                        button2.Enabled = true;
                     }
                 }
                 catch (Exception ex)
@@ -146,6 +158,10 @@ namespace BTL_LTTQ_VIP
                             LoadData();
                             Ma.Clear();
                             Ten.Clear();
+
+                            btnxoa.Enabled = false;
+                            btnsua.Enabled = false;
+                            button2.Enabled = true;
                         }
                     }
                     catch (Exception ex)

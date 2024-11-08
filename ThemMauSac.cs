@@ -12,6 +12,10 @@ namespace BTL_LTTQ_VIP
             InitializeComponent();
             LoadData();
             dgvMauSac.CellClick += dgvMauSac_CellClick; // Attach the CellClick event
+
+            btnxoa.Enabled = false;
+            btnsua.Enabled = false;
+            button1.Enabled = true;
         }
 
         // Method to load data into the DataGridView
@@ -96,6 +100,10 @@ namespace BTL_LTTQ_VIP
                         LoadData();
                         Ma.Clear();
                         Ten.Clear();
+
+                        btnxoa.Enabled = false;
+                        btnsua.Enabled = false;
+                        button1.Enabled = true;
                     }
                 }
                 catch (Exception ex)
@@ -133,6 +141,10 @@ namespace BTL_LTTQ_VIP
                             LoadData();
                             Ma.Clear();
                             Ten.Clear();
+
+                            btnxoa.Enabled = false;
+                            btnsua.Enabled = false;
+                            button1.Enabled = true;
                         }
                     }
                     catch (Exception ex)
@@ -152,6 +164,10 @@ namespace BTL_LTTQ_VIP
                 Ma.Text = row.Cells["MaMau"].Value.ToString();
                 Ten.Text = row.Cells["TenMau"].Value.ToString();
             }
+
+            btnxoa.Enabled = true;
+            btnsua.Enabled = true;
+            button1.Enabled = false;
         }
     }
 }

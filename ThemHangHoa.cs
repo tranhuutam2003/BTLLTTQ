@@ -1,26 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BTL_LTTQ_VIP
 {
-	public partial class ThemHangHoa : Form
-	{
-		public ThemHangHoa()
-		{
-			InitializeComponent();
-			LoadData();	
-		}
+    public partial class ThemHangHoa : Form
+    {
+        public event EventHandler HangHoaAdded;
+
+        public ThemHangHoa()
+        {
+            InitializeComponent();
+            LoadData();
+        }
 
         public void LoadData()
-		{
+        {
             LoadLoaiGong();
             LoadCongDung();
             LoadLoaikinh();
@@ -34,46 +29,55 @@ namespace BTL_LTTQ_VIP
 
         private void LoadLoaiGong()
         {
+            Loaigong.Items.Clear();
             LoadComboBoxData("SELECT MaLoaiGong, TenLoaiGong FROM GongMat", Loaigong, "MaLoaiGong", "TenLoaiGong", "Lỗi khi lấy danh sách loại gọng");
         }
 
         private void LoadCongDung()
         {
+            Congdung.Items.Clear();
             LoadComboBoxData("SELECT MaCongDung, TenCongDung FROM CongDung", Congdung, "MaCongDung", "TenCongDung", "Lỗi khi lấy danh sách công dụng");
         }
 
         private void LoadLoaikinh()
         {
+            Loaikinh.Items.Clear();
             LoadComboBoxData("SELECT MaLoai, TenLoai FROM LoaiKinh", Loaikinh, "MaLoai", "TenLoai", "Lỗi khi lấy danh sách loại kính");
         }
 
         private void LoadHinhDangMat()
         {
+            Dangmat.Items.Clear();
             LoadComboBoxData("SELECT MaDangMat, TenDangMat FROM HinhDangMat", Dangmat, "MaDangMat", "TenDangMat", "Lỗi khi lấy danh sách hình dáng mắt");
         }
 
         private void LoadChatLieu()
         {
+            Chatlieu.Items.Clear();
             LoadComboBoxData("SELECT MaChatLieu, TenChatLieu FROM ChatLieu", Chatlieu, "MaChatLieu", "TenChatLieu", "Lỗi khi lấy danh sách chất liệu");
         }
 
         private void LoadNuocSanXuat()
         {
+            Nuocsanxuat.Items.Clear();
             LoadComboBoxData("SELECT MaNuocSX, TenNuocSX FROM NuocSanXuat", Nuocsanxuat, "MaNuocSX", "TenNuocSX", "Lỗi khi lấy danh sách nước sản xuất");
         }
 
         private void LoadMauSac()
         {
+            Mausac.Items.Clear();
             LoadComboBoxData("SELECT MaMau, TenMau FROM MauSac", Mausac, "MaMau", "TenMau", "Lỗi khi lấy danh sách màu sắc");
         }
 
         private void LoadDiop()
         {
+            Diop.Items.Clear();
             LoadComboBoxData("SELECT MaDiop, TenDiop FROM Diop", Diop, "MaDiop", "TenDiop", "Lỗi khi lấy danh sách diop");
         }
 
         private void LoadDacDiem()
         {
+            Dacdiem.Items.Clear();
             LoadComboBoxData("SELECT MaDacDiem, TenDacDiem FROM DacDiem", Dacdiem, "MaDacDiem", "TenDacDiem", "Lỗi khi lấy danh sách đặc điểm");
         }
 
@@ -89,7 +93,11 @@ namespace BTL_LTTQ_VIP
 
                     while (reader.Read())
                     {
-                        comboBox.Items.Add(new { Value = reader[valueMember], Text = reader[displayMember].ToString() });
+                        comboBox.Items.Add(new ComboBoxItem
+                        {
+                            Value = reader[valueMember],
+                            Text = reader[displayMember].ToString()
+                        });
                     }
 
                     comboBox.DisplayMember = "Text";
@@ -101,127 +109,71 @@ namespace BTL_LTTQ_VIP
                 }
             }
         }
-        private void Xacnhan_Click(object sender, EventArgs e)
-		{
-			using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
-			{
-				try
-				{
-					connection.Open();
 
-					string query = @"INSERT INTO DanhMucHangHoa 
-                                    (MaHang, TenHang, MaLoai, MaLoaiGong, MaDangMat, MaChatLieu, 
-                                     MaDiop, MaCongDung, MaDacDiem, MaMau, MaNuocSX, SoLuong, 
-                                     DonGiaNhap, DonGiaBan, ThoiGianBaoHanh, GhiChu)
-                                    VALUES 
-                                    (@MaHang, @TenHang, @MaLoai, @MaLoaiGong, @MaDangMat, @MaChatLieu,
-                                     @MaDiop, @MaCongDung, @MaDacDiem, @MaMau, @MaNuocSX, 0, 
-                                     0, @DonGiaBan, @ThoiGianBaoHanh, @GhiChu)";
+        private void Xacnhan_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = @"INSERT INTO DanhMucHangHoa 
+                            (MaHang, TenHang, MaLoai, MaLoaiGong, MaDangMat, MaChatLieu, 
+                             MaDiop, MaCongDung, MaDacDiem, MaMau, MaNuocSX, SoLuong, 
+                             DonGiaNhap, DonGiaBan, ThoiGianBaoHanh, GhiChu)
+                            VALUES 
+                            (@MaHang, @TenHang, @MaLoai, @MaLoaiGong, @MaDangMat, @MaChatLieu,
+                             @MaDiop, @MaCongDung, @MaDacDiem, @MaMau, @MaNuocSX, 0, 
+                             0, @DonGiaBan, @ThoiGianBaoHanh, @GhiChu)";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
-					{
-						command.Parameters.AddWithValue("@MaHang", Convert.ToInt32(MaHH.Text));
-						command.Parameters.AddWithValue("@TenHang", TenHH.Text);
-						command.Parameters.AddWithValue("@MaLoai", ((dynamic)Loaikinh.SelectedItem).MaLoai);
-						command.Parameters.AddWithValue("@MaLoaiGong", ((dynamic)Loaigong.SelectedItem).MaLoaiGong);
-						command.Parameters.AddWithValue("@MaDangMat", ((dynamic)Dangmat.SelectedItem).MaDangMat);
-						command.Parameters.AddWithValue("@MaChatLieu", ((dynamic)Chatlieu.SelectedItem).MaChatLieu);
-						command.Parameters.AddWithValue("@MaDiop", ((dynamic)Diop.SelectedItem).MaDiop);
-						command.Parameters.AddWithValue("@MaCongDung", ((dynamic)Congdung.SelectedItem).MaCongDung);
-						command.Parameters.AddWithValue("@MaDacDiem", ((dynamic)Dacdiem.SelectedItem).MaDacDiem);
-						command.Parameters.AddWithValue("@MaMau", ((dynamic)Mausac.SelectedItem).MaMau);
-						command.Parameters.AddWithValue("@MaNuocSX", ((dynamic)Nuocsanxuat.SelectedItem).MaNuocSX);
-						command.Parameters.AddWithValue("@DonGiaBan", Convert.ToDecimal(Dongiaban.Text));
-						command.Parameters.AddWithValue("@ThoiGianBaoHanh", Convert.ToInt32(Thoigianbaohanh.Text));
-						command.Parameters.AddWithValue("@GhiChu", Ghichu.Text);
+                    {
+                        // Adding parameters here
+                        command.Parameters.AddWithValue("@MaHang", Convert.ToInt32(MaHH.Text));
+                        command.Parameters.AddWithValue("@TenHang", TenHH.Text);
+                        command.Parameters.AddWithValue("@MaLoai", ((ComboBoxItem)Loaikinh.SelectedItem).Value);
+                        command.Parameters.AddWithValue("@MaLoaiGong", ((ComboBoxItem)Loaigong.SelectedItem).Value);
+                        command.Parameters.AddWithValue("@MaDangMat", ((ComboBoxItem)Dangmat.SelectedItem).Value);
+                        command.Parameters.AddWithValue("@MaChatLieu", ((ComboBoxItem)Chatlieu.SelectedItem).Value);
+                        command.Parameters.AddWithValue("@MaDiop", ((ComboBoxItem)Diop.SelectedItem).Value);
+                        command.Parameters.AddWithValue("@MaCongDung", ((ComboBoxItem)Congdung.SelectedItem).Value);
+                        command.Parameters.AddWithValue("@MaDacDiem", ((ComboBoxItem)Dacdiem.SelectedItem).Value);
+                        command.Parameters.AddWithValue("@MaMau", ((ComboBoxItem)Mausac.SelectedItem).Value);
+                        command.Parameters.AddWithValue("@MaNuocSX", ((ComboBoxItem)Nuocsanxuat.SelectedItem).Value);
+                        command.Parameters.AddWithValue("@DonGiaBan", Convert.ToDecimal(Dongiaban.Text));
+                        command.Parameters.AddWithValue("@ThoiGianBaoHanh", Convert.ToInt32(Thoigianbaohanh.Text));
+                        command.Parameters.AddWithValue("@GhiChu", Ghichu.Text);
 
-						int result = command.ExecuteNonQuery();
+                        int result = command.ExecuteNonQuery();
 
-						if (result > 0)
-						{
-							MessageBox.Show("Thêm hàng hóa thành công!");
-						}
-						else
-						{
-							MessageBox.Show("Thêm hàng hóa thất bại.");
-						}
-					}
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show("Lỗi: " + ex.Message);
-				}
-			}
-		}
-
-		private void themloaikinh_Click(object sender, EventArgs e)
-		{
-			ThemLoaiKinh tlk = new ThemLoaiKinh();
-			tlk.Show();
-			
-		}
-
-		private void themloaigong_Click(object sender, EventArgs e)
-		{
-			ThemGongMat tgm = new ThemGongMat();
-			tgm.Show();
-			
-		}
-
-		private void Themdangmat_Click(object sender, EventArgs e)
-		{
-			ThemHinhDangMat thdm = new ThemHinhDangMat();
-			thdm.Show();
-			
-		}
-
-		private void themchatlieu_Click(object sender, EventArgs e)
-		{
-			ThemChatLieu themChatLieu = new ThemChatLieu();
-			themChatLieu.Show();
-			
-		}
-
-		private void themdiop_Click(object sender, EventArgs e)
-		{
-			ThemDiop themDiop = new ThemDiop();
-			themDiop.Show();
-			
-		}
-
-		private void themcongdung_Click(object sender, EventArgs e)
-		{
-			ThemCongDung tcd = new ThemCongDung();
-			tcd.Show();
-			
-		}
-
-		private void themdacdiem_Click(object sender, EventArgs e)
-		{
-			ThemDacDiem tdd = new ThemDacDiem();
-			tdd.Show();
-		}
-
-		private void themmausac_Click(object sender, EventArgs e)
-		{
-			ThemMauSac tms = new ThemMauSac();
-			tms.Show();
-		}
-
-		private void themnuocsanxuat_Click(object sender, EventArgs e)
-		{
-			ThemNuocSanXuat tnsx = new ThemNuocSanXuat();
-			tnsx.Show();
-		}
-
-        private void Exit_Click(object sender, EventArgs e)
-        {
-			this.Close();
+                        if (result > 0)
+                        {
+                            MessageBox.Show("Thêm hàng hóa thành công!");
+                            HangHoaAdded?.Invoke(this, EventArgs.Empty);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Thêm hàng hóa thất bại.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
+            }
         }
+    }
 
-        private void label3_Click(object sender, EventArgs e)
+    public class ComboBoxItem
+    {
+        public object Value { get; set; }
+        public string Text { get; set; }
+
+        public override string ToString()
         {
-
+            return Text;
         }
     }
 }

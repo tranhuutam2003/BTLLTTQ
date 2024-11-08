@@ -12,13 +12,15 @@ namespace BTL_LTTQ_VIP
             InitializeComponent();
             LoadData();
             dgvNuocSX.CellClick += dgvNuocSX_CellClick; // Attach the CellClick event
+
+            btnxoa.Enabled = false;
+            btnsua.Enabled = false;
+            button1.Enabled = true;
         }
 
         // Method to load data into the DataGridView
         public void LoadData()
         {
-            // Clear any existing data in the DataGridView before reloading
-            dgvNuocSX.Rows.Clear();
 
             using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
             {
@@ -99,6 +101,10 @@ namespace BTL_LTTQ_VIP
                         LoadData();
                         Ma.Clear();
                         Ten.Clear();
+
+                        btnxoa.Enabled = false;
+                        btnsua.Enabled = false;
+                        button1.Enabled = true;
                     }
                 }
                 catch (Exception ex)
@@ -136,6 +142,10 @@ namespace BTL_LTTQ_VIP
                             LoadData();
                             Ma.Clear();
                             Ten.Clear();
+
+                            btnxoa.Enabled = false;
+                            btnsua.Enabled = false;
+                            button1.Enabled = true;
                         }
                     }
                     catch (Exception ex)
@@ -155,6 +165,10 @@ namespace BTL_LTTQ_VIP
                 Ma.Text = row.Cells["MaNuocSX"].Value.ToString();
                 Ten.Text = row.Cells["TenNuocSX"].Value.ToString();
             }
+
+            btnxoa.Enabled = true;
+            btnsua.Enabled = true;
+            button1.Enabled = false;
         }
     }
 }
