@@ -13,6 +13,7 @@ namespace BTL_LTTQ_VIP
 {
     public partial class Home : Form
     {
+
         public string TenNV { get; set; }
         public string CongViec { get; set; }
         public int MaNV { get; set; }
@@ -77,7 +78,6 @@ namespace BTL_LTTQ_VIP
 
         private void Home_Load(object sender, EventArgs e)
         {
-
             UpdateUI();
             LoadThongBao();
         }
@@ -246,5 +246,51 @@ namespace BTL_LTTQ_VIP
             TimHoaDon timHoaDon = new TimHoaDon();
             timHoaDon.Show();
         }
+        private string LayEmailTuMaNV()
+        {
+            string email = null;
+
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT emailNV FROM NhanVien WHERE MaNV = @MaNV";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaNV", MaNV);
+
+                        var result = command.ExecuteScalar();
+                        if (result != null)
+                        {
+                            email = result.ToString(); // Lấy email từ kết quả truy vấn
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy email cho nhân viên này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi khi lấy email: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return email;
+        }
+
+        private void rspass_Click(object sender, EventArgs e)
+        {
+            string email = LayEmailTuMaNV();
+
+            if (!string.IsNullOrEmpty(email))
+            {
+                DoiMatKhau doiMatKhauForm = new DoiMatKhau(email);
+                doiMatKhauForm.Show();
+            }
+        }
+
     }
 }

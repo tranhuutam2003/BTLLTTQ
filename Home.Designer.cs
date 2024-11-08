@@ -45,6 +45,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.grbthongbao = new System.Windows.Forms.GroupBox();
+            this.richTextBoxThongBao = new System.Windows.Forms.RichTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.rspass = new System.Windows.Forms.Button();
@@ -61,7 +62,6 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.richTextBoxThongBao = new System.Windows.Forms.RichTextBox();
             this.plTenNV.SuspendLayout();
             this.plCV.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -310,6 +310,14 @@
             this.grbthongbao.TabStop = false;
             this.grbthongbao.Text = "Thông báo";
             // 
+            // richTextBoxThongBao
+            // 
+            this.richTextBoxThongBao.Location = new System.Drawing.Point(0, 26);
+            this.richTextBoxThongBao.Name = "richTextBoxThongBao";
+            this.richTextBoxThongBao.Size = new System.Drawing.Size(644, 439);
+            this.richTextBoxThongBao.TabIndex = 15;
+            this.richTextBoxThongBao.Text = "";
+            // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(55)))), ((int)(((byte)(77)))));
@@ -349,6 +357,7 @@
             this.rspass.Text = "Đổi mật khẩu";
             this.rspass.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rspass.UseVisualStyleBackColor = true;
+            this.rspass.Click += new System.EventHandler(this.rspass_Click);
             // 
             // exit
             // 
@@ -534,14 +543,6 @@
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // richTextBoxThongBao
-            // 
-            this.richTextBoxThongBao.Location = new System.Drawing.Point(0, 26);
-            this.richTextBoxThongBao.Name = "richTextBoxThongBao";
-            this.richTextBoxThongBao.Size = new System.Drawing.Size(644, 439);
-            this.richTextBoxThongBao.TabIndex = 15;
-            this.richTextBoxThongBao.Text = "";
             // 
             // Home
             // 

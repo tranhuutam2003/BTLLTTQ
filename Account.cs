@@ -13,6 +13,7 @@ namespace BTL_LTTQ_VIP
 {
     public partial class Account : Form
     {
+
         public Account()
         {
             InitializeComponent();

@@ -43,10 +43,6 @@ namespace BTL_LTTQ_VIP
 				{
 					conn.Open();
 
-					//string query = @"SELECT hdb.SoHDB, hdb.MaNV, hdb.NgayBan, hdb.MaKhach, 
-					//                               cthdb.MaHang, cthdb.SoLuong, cthdb.GiamGia, cthdb.ThanhTien
-					//                           FROM HoaDonBan hdb
-					//                           INNER JOIN ChiTietHoaDonBan cthdb ON hdb.SoHDB = cthdb.SoHDB";
 
 					string query = @"SELECT 
     hdb.SoHDB,
@@ -94,10 +90,6 @@ GROUP BY
 
         private void btnXemChiTiet_Click(object sender, EventArgs e)
 		{
-            //ChiTietHoaDonBan chiTietHoaDon= new ChiTietHoaDonBan();
-            //chiTietHoaDon.StartPosition = FormStartPosition.Manual;
-            //chiTietHoaDon.Location = this.Location;
-            //chiTietHoaDon.Show();
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 // Lấy SoHDB từ hàng được chọn trong DataGridView
