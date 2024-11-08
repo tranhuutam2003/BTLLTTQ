@@ -207,7 +207,10 @@ namespace BTL_LTTQ_VIP
                     }
 
                     transaction.Commit();
-                    AddNotification(TenNV, "hóa đơn nhập");
+                    AddNotification(MaNV, TenNV, $"đã tạo hóa đơn nhập với số {txtSoHDN.Text}");
+                    decimal tongTien = CalculateTongTien();
+                    string noiDungHoaDon = $"Hóa đơn nhập mới số {txtSoHDN.Text} được tạo với tổng tiền {tongTien:N2} VNĐ";
+                    AddNotification(MaNV, "", noiDungHoaDon);
                     MessageBox.Show("Hóa đơn nhập đã được lưu thành công và số lượng hàng đã được cập nhật!");
                     listView1.Items.Clear();
                     GenerateNewSoHDN();
@@ -240,14 +243,15 @@ namespace BTL_LTTQ_VIP
             nhaCungCap.Show();
         }
 
-        private void AddNotification(string tenNV, string action)
+        private void AddNotification(int nguoinhan, string tenNV, string action)
         {
-            string query = "INSERT INTO ThongBao (NguoiTao, NoiDung, NgayTao) VALUES (@NguoiTao, @NoiDung, @NgayTao)";
-            string noiDung = $"{tenNV} đã tạo {action} vào ngày {DateTime.Now:dd/MM/yyyy HH:mm}";
+            string query = "INSERT INTO ThongBao (NguoiNhan, NguoiTao, NoiDung, NgayTao) VALUES (@NguoiNhan, @NguoiTao, @NoiDung, @NgayTao)";
+            string noiDung = $"{tenNV} {action} vào ngày {DateTime.Now:dd/MM/yyyy HH:mm}";
 
             using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@NguoiNhan", nguoinhan);
                 cmd.Parameters.AddWithValue("@NguoiTao", tenNV);
                 cmd.Parameters.AddWithValue("@NoiDung", noiDung);
                 cmd.Parameters.AddWithValue("@NgayTao", DateTime.Now);

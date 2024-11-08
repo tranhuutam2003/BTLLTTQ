@@ -61,12 +61,14 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.listBoxthongbao = new System.Windows.Forms.ListBox();
             this.plTenNV.SuspendLayout();
             this.plCV.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.grbthongbao.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.MenuQL.SuspendLayout();
@@ -87,7 +89,6 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Quản lý bán kính mắt";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // plTenNV
             // 
@@ -119,7 +120,6 @@
             this.plCV.Name = "plCV";
             this.plCV.Size = new System.Drawing.Size(100, 74);
             this.plCV.TabIndex = 11;
-            this.plCV.Paint += new System.Windows.Forms.PaintEventHandler(this.plCV_Paint);
             // 
             // lbCV
             // 
@@ -243,7 +243,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(234, 273);
             this.flowLayoutPanel1.TabIndex = 12;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint_1);
             // 
             // btndoanhthu
             // 
@@ -283,7 +282,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel2
             // 
@@ -299,10 +297,10 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1115, 541);
             this.panel2.TabIndex = 14;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // grbthongbao
             // 
+            this.grbthongbao.Controls.Add(this.listBoxthongbao);
             this.grbthongbao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.grbthongbao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(104)))), ((int)(((byte)(130)))));
             this.grbthongbao.Location = new System.Drawing.Point(257, 75);
@@ -351,7 +349,6 @@
             this.rspass.Text = "Đổi mật khẩu";
             this.rspass.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rspass.UseVisualStyleBackColor = true;
-            this.rspass.Click += new System.EventHandler(this.rspass_Click);
             // 
             // exit
             // 
@@ -384,7 +381,6 @@
             this.MenuQL.TabIndex = 17;
             this.MenuQL.TabStop = false;
             this.MenuQL.Text = "Menu";
-            this.MenuQL.Enter += new System.EventHandler(this.MenuQL_Enter);
             // 
             // panel3
             // 
@@ -402,7 +398,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(215, 465);
             this.panel4.TabIndex = 21;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // groupBox1
             // 
@@ -417,7 +412,6 @@
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Truy cập nhanh";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // flowLayoutPanel3
             // 
@@ -431,7 +425,6 @@
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(193, 248);
             this.flowLayoutPanel3.TabIndex = 7;
-            this.flowLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel3_Paint);
             // 
             // button2
             // 
@@ -542,9 +535,14 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // backgroundWorker1
+            // listBoxthongbao
             // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.listBoxthongbao.FormattingEnabled = true;
+            this.listBoxthongbao.ItemHeight = 20;
+            this.listBoxthongbao.Location = new System.Drawing.Point(8, 25);
+            this.listBoxthongbao.Name = "listBoxthongbao";
+            this.listBoxthongbao.Size = new System.Drawing.Size(626, 424);
+            this.listBoxthongbao.TabIndex = 0;
             // 
             // Home
             // 
@@ -557,7 +555,6 @@
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
-            this.Load += new System.EventHandler(this.Home_Load_1);
             this.plTenNV.ResumeLayout(false);
             this.plTenNV.PerformLayout();
             this.plCV.ResumeLayout(false);
@@ -567,6 +564,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.grbthongbao.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.MenuQL.ResumeLayout(false);
@@ -611,5 +609,6 @@
         private System.Windows.Forms.Button btndoanhthu;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.ListBox listBoxthongbao;
     }
 }

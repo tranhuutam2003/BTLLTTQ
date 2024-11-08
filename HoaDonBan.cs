@@ -121,8 +121,8 @@ namespace BTL_LTTQ_VIP
 			}
 			return tongTien;
 		}
-		private void btnXacNhan_Click(object sender, EventArgs e)
-		{
+        private void btnXacNhan_Click(object sender, EventArgs e)
+        {
             using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
             {
                 try
@@ -130,7 +130,7 @@ namespace BTL_LTTQ_VIP
                     conn.Open();
                     SqlTransaction transaction = conn.BeginTransaction();
 
-                    // Kiểm tra các tham số bắt buộc
+                    // Validate required fields
                     if (cbMaKhach.SelectedValue == null)
                     {
                         MessageBox.Show("Vui lòng chọn khách hàng trước khi xác nhận hóa đơn.");
@@ -154,6 +154,7 @@ namespace BTL_LTTQ_VIP
                         return;
                     }
 
+                    // Insert into HoaDonBan table
                     string insertHDBQuery = "INSERT INTO HoaDonBan (SoHDB, MaNV, NgayBan, MaKhach, TongTien) " +
                                             "VALUES (@SoHDB, @MaNV, @NgayBan, @MaKhach, @TongTien)";
                     SqlCommand cmdHDB = new SqlCommand(insertHDBQuery, conn, transaction);
@@ -165,6 +166,7 @@ namespace BTL_LTTQ_VIP
 
                     cmdHDB.ExecuteNonQuery();
 
+                    // Insert into ChiTietHoaDonBan and update inventory
                     foreach (ListViewItem item in listView1.Items)
                     {
                         int soLuong = string.IsNullOrEmpty(item.SubItems[2].Text) ? 0 : int.Parse(item.SubItems[2].Text);
@@ -184,7 +186,7 @@ namespace BTL_LTTQ_VIP
                             cmdCTHDB.Parameters.AddWithValue("@ThanhTien", thanhTien);
                             cmdCTHDB.ExecuteNonQuery();
 
-                            // Cập nhật số lượng hàng tồn trong kho
+                            // Update inventory quantity
                             string updateSoLuongQuery = "UPDATE DanhMucHangHoa SET SoLuong = SoLuong - @SoLuong WHERE MaHang = @MaHang";
                             SqlCommand cmdUpdateSoLuong = new SqlCommand(updateSoLuongQuery, conn, transaction);
                             cmdUpdateSoLuong.Parameters.AddWithValue("@SoLuong", soLuong);
@@ -196,7 +198,11 @@ namespace BTL_LTTQ_VIP
                     // Commit transaction
                     transaction.Commit();
 
-                    AddNotification(TenNV, "hóa đơn bán");
+                    // Add notifications
+                    AddNotification(MaNV, TenNV, $"đã tạo hóa đơn bán với số {txtSoHDB.Text}");
+                    decimal tongTien = CalculateTongTien();
+                    string noiDungHoaDon = $"Hóa đơn bán mới số {txtSoHDB.Text} được tạo với tổng tiền {tongTien:N2} VNĐ";
+                    AddNotification(MaNV, "", noiDungHoaDon);
 
                     MessageBox.Show("Hóa đơn đã được cập nhật thành công và số lượng tồn kho đã được điều chỉnh!");
                 }
@@ -205,10 +211,9 @@ namespace BTL_LTTQ_VIP
                     MessageBox.Show("Lỗi khi cập nhật hóa đơn: " + ex.Message);
                 }
             }
-
-
         }
-		private void UpdateThanhTien()
+
+        private void UpdateThanhTien()
 		{
 			if (listView1.SelectedItems.Count > 0)
 			{
@@ -264,14 +269,15 @@ namespace BTL_LTTQ_VIP
 			LoadKhachHangToComboBox();
 		}
 
-        private void AddNotification(string tenNV, string action)
+        private void AddNotification(int nguoinhan, string tenNV, string action)
         {
-            string query = "INSERT INTO ThongBao (NguoiTao, NoiDung, NgayTao) VALUES (@NguoiTao, @NoiDung, @NgayTao)";
-            string noiDung = $"{tenNV} đã tạo {action} vào ngày {DateTime.Now:dd/MM/yyyy HH:mm}";
+            string query = "INSERT INTO ThongBao (NguoiNhan, NguoiTao, NoiDung, NgayTao) VALUES (@NguoiNhan, @NguoiTao, @NoiDung, @NgayTao)";
+            string noiDung = $"{tenNV} {action} vào ngày {DateTime.Now:dd/MM/yyyy HH:mm}";
 
             using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@NguoiNhan", nguoinhan);
                 cmd.Parameters.AddWithValue("@NguoiTao", tenNV);
                 cmd.Parameters.AddWithValue("@NoiDung", noiDung);
                 cmd.Parameters.AddWithValue("@NgayTao", DateTime.Now);
@@ -280,7 +286,6 @@ namespace BTL_LTTQ_VIP
                 cmd.ExecuteNonQuery();
             }
         }
-
         private void btnBack_Click(object sender, EventArgs e)
 		{
 			this.Close();

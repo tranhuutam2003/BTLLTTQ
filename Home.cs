@@ -22,6 +22,8 @@ namespace BTL_LTTQ_VIP
             this.Load += Home_Load;
             QLNV.Visible = false;
             btndoanhthu.Visible = false;
+            button3.Visible = false;
+            button4.Visible = false;
         }
 
         private void QLNV_Click(object sender, EventArgs e)
@@ -66,12 +68,6 @@ namespace BTL_LTTQ_VIP
             qlhdb.Show();
             this.Hide();
         }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void exit_Click(object sender, EventArgs e)
         {
             Account account = new Account();
@@ -92,46 +88,22 @@ namespace BTL_LTTQ_VIP
             lbTenNV.Text = TenNV ?? "Không có tên";
                 lbCV.Text = CongViec ?? "Không có công việc";
 
-            if (CongViec == "Nhân viên bán hàng")
+            if (CongViec == "Quản lý")
             {
-                QLNV.Visible = false;
-                btndoanhthu.Visible = false;// Show sales staff menu
-                
-            }
-            else if (CongViec == "Quản lý")
-            {
-                QLNV.Visible = true; // Hide sales staff menu
-                btndoanhthu.Visible = true;
+                QLNV.Visible = true;
+                btndoanhthu.Visible = true;// Show sales staff menu
+                button3.Visible=true;
+                button4.Visible = true;
             }
             
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
 
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void button1_Click(object sender, EventArgs e)
         {
             ThemHangHoa themHangHoa = new ThemHangHoa();
             themHangHoa.Show();
         }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-
-        }
-
         private void button9_Click(object sender, EventArgs e)
         {
             QuanLyDanhMucHangHoa qlhh = new QuanLyDanhMucHangHoa(TenNV, CongViec,MaNV);
@@ -170,15 +142,14 @@ namespace BTL_LTTQ_VIP
 
                     // Truy vấn để lấy thông tin nhân viên
                     string getUserInfoQuery = "SELECT nv.MaNV, cv.TenCV FROM NhanVien nv " +
-                                               "JOIN CongViec cv ON nv.MaCV = cv.MaCV " +
-                                               "WHERE nv.TenNV = @TenNV";
+                                              "JOIN CongViec cv ON nv.MaCV = cv.MaCV " +
+                                              "WHERE nv.TenNV = @TenNV";
 
                     int maNV = -1;
                     bool isManager = false;
 
                     using (SqlCommand cmdGetInfo = new SqlCommand(getUserInfoQuery, conn))
                     {
-                        // Khai báo tham số đúng cách
                         cmdGetInfo.Parameters.AddWithValue("@TenNV", TenNV);
 
                         using (SqlDataReader reader = cmdGetInfo.ExecuteReader())
@@ -205,7 +176,7 @@ namespace BTL_LTTQ_VIP
                     }
                     else
                     {
-                        notificationQuery = "SELECT NoiDung, NgayTao FROM ThongBao WHERE NguoiNhan = @MaNV OR NguoiNhan IS NULL ORDER BY NgayTao DESC";
+                        notificationQuery = "SELECT NoiDung, NgayTao FROM ThongBao WHERE NguoiNhan = @MaNV ORDER BY NgayTao DESC";
                     }
 
                     using (SqlCommand cmd = new SqlCommand(notificationQuery, conn))
@@ -217,25 +188,24 @@ namespace BTL_LTTQ_VIP
 
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            grbthongbao.Controls.Clear(); // Xóa các điều khiển hiện có
-                            int yOffset = 20;
+                            listBoxthongbao.Items.Clear(); // Xóa các mục hiện có trong ListBox
 
                             while (reader.Read())
                             {
                                 string noiDung = reader["NoiDung"].ToString();
                                 DateTime ngayTao = Convert.ToDateTime(reader["NgayTao"]);
 
-                                Label lblThongBao = new Label
+                                // Cắt bớt thông báo nếu dài hơn 70 ký tự
+                                if (noiDung.Length > 70)
                                 {
-                                    Text = $"{noiDung} - Ngày: {ngayTao:dd/MM/yyyy HH:mm}",
-                                    AutoSize = true,
-                                    Location = new Point(10, yOffset),
-                                    MaximumSize = new Size(grbthongbao.Width - 20, 0),
-                                    AutoEllipsis = true
-                                };
+                                    noiDung = noiDung.Substring(0, 70) + "..."; // Thêm ba dấu chấm ở cuối
+                                }
 
-                                grbthongbao.Controls.Add(lblThongBao);
-                                yOffset += lblThongBao.Height + 5; // Cập nhật vị trí Y cho thông báo tiếp theo
+                                // Định dạng chuỗi thông báo
+                                string thongBao = $"{noiDung} - Ngày: {ngayTao:dd/MM/yyyy HH:mm}";
+
+                                // Thêm chuỗi thông báo vào ListBox
+                                listBoxthongbao.Items.Add(thongBao);
                             }
                         }
                     }
@@ -279,46 +249,6 @@ namespace BTL_LTTQ_VIP
         {
             TimHoaDon timHoaDon = new TimHoaDon();
             timHoaDon.Show();
-        }
-
-        private void plCV_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Home_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuQL_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void rspass_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
