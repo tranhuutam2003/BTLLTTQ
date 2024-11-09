@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnbaocao = new System.Windows.Forms.Button();
             this.SuaNV = new System.Windows.Forms.Button();
             this.exitNV = new System.Windows.Forms.Button();
             this.ThemNV = new System.Windows.Forms.Button();
             this.XoaNV = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -61,27 +61,13 @@
             this.panel1.Size = new System.Drawing.Size(1161, 66);
             this.panel1.TabIndex = 13;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, -2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1161, 344);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
             // btnbaocao
             // 
             this.btnbaocao.FlatAppearance.BorderSize = 0;
             this.btnbaocao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbaocao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnbaocao.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnbaocao.Image = global::BTL_LTTQ_VIP.Properties.Resources.report;
             this.btnbaocao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnbaocao.Location = new System.Drawing.Point(759, 2);
             this.btnbaocao.Name = "btnbaocao";
@@ -159,6 +145,21 @@
             this.XoaNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.XoaNV.UseVisualStyleBackColor = true;
             this.XoaNV.Click += new System.EventHandler(this.XoaNV_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, -2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1161, 344);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // QuanLyNhanVien
             // 

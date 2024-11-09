@@ -141,10 +141,11 @@
             this.btnbaocao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbaocao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnbaocao.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnbaocao.Image = global::BTL_LTTQ_VIP.Properties.Resources.report;
             this.btnbaocao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbaocao.Location = new System.Drawing.Point(645, 6);
+            this.btnbaocao.Location = new System.Drawing.Point(664, 5);
             this.btnbaocao.Name = "btnbaocao";
-            this.btnbaocao.Size = new System.Drawing.Size(180, 57);
+            this.btnbaocao.Size = new System.Drawing.Size(150, 57);
             this.btnbaocao.TabIndex = 7;
             this.btnbaocao.Text = "Báo cáo";
             this.btnbaocao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

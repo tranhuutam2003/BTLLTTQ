@@ -20,15 +20,20 @@ namespace BTL_LTTQ_VIP
         {
             InitializeComponent();
             LoadData();
+            this.Activated += QuanLykhachhnag_Activated;
         }
-
+        private void QuanLykhachhnag_Activated(object sender, EventArgs e)
+        {
+            LoadData();
+        }
         public QuanLyKhachHang(string tenNV, string congViec, int maNV)
         {
             InitializeComponent();
-            TenNV = tenNV;   // Set user information
+            TenNV = tenNV;  
             CongViec = congViec;
             LoadData();
             MaNV = maNV;
+            this.Activated += QuanLykhachhnag_Activated;
         }
 
         private void LoadData()

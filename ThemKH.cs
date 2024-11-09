@@ -51,7 +51,7 @@ namespace BTL_LTTQ_VIP
                     MessageBox.Show("Lỗi khi thêm khách hàng: " + ex.Message);
                 }
             }
-
+            this.Close();
         }
 
         private void exit_Click(object sender, EventArgs e)

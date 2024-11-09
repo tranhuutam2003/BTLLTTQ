@@ -98,7 +98,6 @@ namespace BTL_LTTQ_VIP
         }
         private void UpdatePassword(string email, string newPassword)
         {
-            // Directly use the newPassword without hashing
             using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
             {
                 try
@@ -108,7 +107,7 @@ namespace BTL_LTTQ_VIP
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@NewPassword", newPassword); // Using plain password
+                        command.Parameters.AddWithValue("@NewPassword", newPassword); 
                         command.Parameters.AddWithValue("@Email", email);
 
                         int rowsAffected = command.ExecuteNonQuery();
@@ -133,6 +132,12 @@ namespace BTL_LTTQ_VIP
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
            
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            //Account account = new Account();
+            this.Close();
         }
     }
 }

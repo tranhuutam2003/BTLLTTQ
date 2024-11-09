@@ -43,7 +43,6 @@ namespace BTL_LTTQ_VIP
                     DataTable dataTable = new DataTable();
                     dataAdapter.Fill(dataTable);
 
-                    // Gán dữ liệu vào DataGridView
                     dataGridView1.DataSource = dataTable;
                 }
                 catch (Exception ex)
@@ -80,7 +79,7 @@ namespace BTL_LTTQ_VIP
             nhaCungCap.Mode = "Them";
             if (nhaCungCap.ShowDialog() == DialogResult.OK)
             {
-                LoadData(); // Tải lại dữ liệu sau khi thêm
+                LoadData(); 
             }
         }
 
@@ -95,7 +94,7 @@ namespace BTL_LTTQ_VIP
                 nhaCungCap.MaNCC = maNCC;
                 if (nhaCungCap.ShowDialog() == DialogResult.OK)
                 {
-                    LoadData(); // Tải lại dữ liệu sau khi sửa
+                    LoadData();
                 }
             }
             else
@@ -132,7 +131,7 @@ namespace BTL_LTTQ_VIP
                 if (MessageBox.Show("Bạn có chắc chắn muốn xóa nhà cung cấp này?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     XoaNhaCungCap(maNCC);
-                    LoadData(); // Tải lại dữ liệu sau khi xóa
+                    LoadData(); 
                 }
             }
             else

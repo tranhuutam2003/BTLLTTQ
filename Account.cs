@@ -135,8 +135,10 @@ namespace BTL_LTTQ_VIP
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            
             ResetPassword rs = new ResetPassword();
             rs.Show();
+            //this.Close();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

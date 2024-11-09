@@ -147,6 +147,7 @@
             this.exit.Text = "Trở lại";
             this.exit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.exit.UseVisualStyleBackColor = true;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // xacnhan
             // 

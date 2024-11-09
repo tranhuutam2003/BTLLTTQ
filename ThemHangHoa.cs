@@ -132,7 +132,7 @@ namespace BTL_LTTQ_VIP
                         // Adding parameters here
                         command.Parameters.AddWithValue("@MaHang", Convert.ToInt32(MaHH.Text));
                         command.Parameters.AddWithValue("@TenHang", TenHH.Text);
-                        command.Parameters.AddWithValue("@MaLoai", ((ComboBoxItem)Loaikinh.SelectedItem).Value);
+                        command.Parameters.AddWithValue("@MaLoai", ((ComboBoxItem)Loaikinh.SelectedItem ).Value);
                         command.Parameters.AddWithValue("@MaLoaiGong", ((ComboBoxItem)Loaigong.SelectedItem).Value);
                         command.Parameters.AddWithValue("@MaDangMat", ((ComboBoxItem)Dangmat.SelectedItem).Value);
                         command.Parameters.AddWithValue("@MaChatLieu", ((ComboBoxItem)Chatlieu.SelectedItem).Value);
