@@ -26,7 +26,25 @@ namespace BTL_LTTQ_VIP
             LoadDiop();
             LoadDacDiem();
         }
-
+        private bool IsInputValid()
+        {
+            if (string.IsNullOrWhiteSpace(TenHH.Text) ||
+                Loaikinh.SelectedItem == null ||
+                Loaigong.SelectedItem == null ||
+                Dangmat.SelectedItem == null ||
+                Chatlieu.SelectedItem == null ||
+                Diop.SelectedItem == null ||
+                Congdung.SelectedItem == null ||
+                Dacdiem.SelectedItem == null ||
+                Mausac.SelectedItem == null ||
+                Nuocsanxuat.SelectedItem == null ||
+                string.IsNullOrWhiteSpace(Dongiaban.Text) ||
+                string.IsNullOrWhiteSpace(Thoigianbaohanh.Text))
+            {
+                return false;
+            }
+            return true;
+        }
         private void LoadLoaiGong()
         {
             Loaigong.Items.Clear();
@@ -112,6 +130,11 @@ namespace BTL_LTTQ_VIP
 
         private void Xacnhan_Click(object sender, EventArgs e)
         {
+            if (!IsInputValid())
+            {
+                MessageBox.Show("Bạn chưa nhập đủ thông tin. Vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
             {
                 try
@@ -129,7 +152,6 @@ namespace BTL_LTTQ_VIP
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        // Adding parameters here
                         command.Parameters.AddWithValue("@MaHang", Convert.ToInt32(MaHH.Text));
                         command.Parameters.AddWithValue("@TenHang", TenHH.Text);
                         command.Parameters.AddWithValue("@MaLoai", ((ComboBoxItem)Loaikinh.SelectedItem ).Value);
@@ -164,10 +186,39 @@ namespace BTL_LTTQ_VIP
                 }
             }
         }
+        private int GenerateNewMaHang()
+        {
+            int newMaHang = 1; 
+
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT MAX(MaHang) FROM DanhMucHangHoa";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        object result = command.ExecuteScalar();
+                        if (result != DBNull.Value && result != null)
+                        {
+                            newMaHang = Convert.ToInt32(result) + 1; 
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tạo mã hàng mới: " + ex.Message);
+                }
+            }
+
+            return newMaHang;
+        }
 
         private void ThemHangHoa_Load(object sender, EventArgs e)
         {
-
+            MaHH.Text = GenerateNewMaHang().ToString(); 
+            Thoigianbaohanh.Text = "12"; 
         }
     }
 

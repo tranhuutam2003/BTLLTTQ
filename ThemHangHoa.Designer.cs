@@ -79,6 +79,7 @@
             // 
             this.MaHH.Location = new System.Drawing.Point(510, 39);
             this.MaHH.Name = "MaHH";
+            this.MaHH.ReadOnly = true;
             this.MaHH.Size = new System.Drawing.Size(250, 22);
             this.MaHH.TabIndex = 16;
             // 
