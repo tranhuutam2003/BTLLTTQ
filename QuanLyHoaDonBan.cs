@@ -347,7 +347,7 @@ GROUP BY
 
         private void btnbaocao_Click(object sender, EventArgs e)
         {
-            HoaDonBanReport hdbrp = new HoaDonBanReport();
+            HoaDonBanReport hdbrp = new HoaDonBanReport(TenNV);
             hdbrp.Show();
         }
     }

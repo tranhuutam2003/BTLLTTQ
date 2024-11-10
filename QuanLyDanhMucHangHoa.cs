@@ -277,7 +277,7 @@ namespace BTL_LTTQ_VIP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            HangHoaReport hhrp = new HangHoaReport();
+            HangHoaReport hhrp = new HangHoaReport(TenNV);
             hhrp.Show();
         }
     }

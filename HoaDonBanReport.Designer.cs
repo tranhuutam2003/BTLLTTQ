@@ -29,31 +29,91 @@
         private void InitializeComponent()
         {
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.dtptungay = new System.Windows.Forms.DateTimePicker();
+            this.dtpdenngay = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnxem = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(14, 21);
+            this.reportViewer1.Location = new System.Drawing.Point(14, 74);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1090, 521);
+            this.reportViewer1.Size = new System.Drawing.Size(1090, 468);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // dtptungay
+            // 
+            this.dtptungay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtptungay.Location = new System.Drawing.Point(144, 29);
+            this.dtptungay.Name = "dtptungay";
+            this.dtptungay.Size = new System.Drawing.Size(200, 22);
+            this.dtptungay.TabIndex = 1;
+            // 
+            // dtpdenngay
+            // 
+            this.dtpdenngay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpdenngay.Location = new System.Drawing.Point(616, 29);
+            this.dtpdenngay.Name = "dtpdenngay";
+            this.dtpdenngay.Size = new System.Drawing.Size(200, 22);
+            this.dtpdenngay.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(82, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Từ ngày";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(546, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 16);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Đến ngày";
+            // 
+            // btnxem
+            // 
+            this.btnxem.Location = new System.Drawing.Point(933, 24);
+            this.btnxem.Name = "btnxem";
+            this.btnxem.Size = new System.Drawing.Size(123, 37);
+            this.btnxem.TabIndex = 5;
+            this.btnxem.Text = "Xem";
+            this.btnxem.UseVisualStyleBackColor = true;
+            this.btnxem.Click += new System.EventHandler(this.btnxem_Click);
             // 
             // HoaDonBanReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1124, 563);
+            this.Controls.Add(this.btnxem);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dtpdenngay);
+            this.Controls.Add(this.dtptungay);
             this.Controls.Add(this.reportViewer1);
             this.Name = "HoaDonBanReport";
             this.Text = "HoaDonBanReport";
             this.Load += new System.EventHandler(this.HoaDonBanReport_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.DateTimePicker dtptungay;
+        private System.Windows.Forms.DateTimePicker dtpdenngay;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnxem;
     }
 }

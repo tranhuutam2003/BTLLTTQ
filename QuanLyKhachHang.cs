@@ -158,7 +158,7 @@ namespace BTL_LTTQ_VIP
 
         private void btnbaocao_Click(object sender, EventArgs e)
         {
-            KhachHangReport khrp = new KhachHangReport();
+            KhachHangReport khrp = new KhachHangReport(TenNV);
             khrp.Show();
         }
     }

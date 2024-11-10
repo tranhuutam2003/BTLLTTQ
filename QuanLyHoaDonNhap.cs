@@ -197,7 +197,7 @@ namespace BTL_LTTQ_VIP
 
         private void btnbaocao_Click(object sender, EventArgs e)
         {
-			HoaDonNhapReport hdnrp = new HoaDonNhapReport();
+			HoaDonNhapReport hdnrp = new HoaDonNhapReport(TenNV);
 			hdnrp.Show();
         }
     }

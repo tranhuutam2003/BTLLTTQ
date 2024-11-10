@@ -142,7 +142,7 @@ namespace BTL_LTTQ_VIP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            NhaCungCapReport nccrp = new NhaCungCapReport();
+            NhaCungCapReport nccrp = new NhaCungCapReport(TenNV);
             nccrp.Show();
         }
     }
