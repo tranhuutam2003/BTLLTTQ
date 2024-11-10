@@ -285,6 +285,12 @@
     <Compile Include="DoanhThuTheoThang.Designer.cs">
       <DependentUpon>DoanhThuTheoThang.cs</DependentUpon>
     </Compile>
+    <Compile Include="DoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoiMatKhau.Designer.cs">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="HangHoaReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -561,6 +567,9 @@
     <EmbeddedResource Include="DoanhThuTheoThang.resx">
       <DependentUpon>DoanhThuTheoThang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DoiMatKhau.resx">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HangHoaReport.rdlc" />
     <EmbeddedResource Include="HangHoaReport.resx">
       <DependentUpon>HangHoaReport.cs</DependentUpon>
@@ -797,6 +806,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

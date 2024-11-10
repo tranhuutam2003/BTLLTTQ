@@ -201,7 +201,6 @@ namespace BTL_LTTQ_VIP
                                 if (rowsAffected > 0)
                                 {
                                     MessageBox.Show("Hàng hóa đã được xóa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    // Cập nhật lại DataGridView
                                     loadData();
                                 }
                                 else
@@ -212,7 +211,8 @@ namespace BTL_LTTQ_VIP
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Lỗi khi xóa hàng hóa: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            //MessageBox.Show("Lỗi khi xóa hàng hóa: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Hàng hóa đã tồn tại hóa đơn không thể xóa");
                         }
                     }
                 }

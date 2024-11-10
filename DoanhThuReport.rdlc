@@ -349,7 +349,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\tam tran\source\repos\BTLLTTQ\DataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>E:\LTTQ\BTLLTTQ\BTLLTTQ\DataSet.xsd</rd:SchemaPath>
         <rd:TableName>DoanhThuTable</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

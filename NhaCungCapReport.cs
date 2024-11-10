@@ -40,7 +40,7 @@ namespace BTL_LTTQ_VIP
             reportViewer1.LocalReport.DataSources.Add(rds);
 
             // Chỉ định đường dẫn đến file báo cáo RDLC
-            reportViewer1.LocalReport.ReportPath = "C:\\Users\\tam tran\\source\\repos\\BTLLTTQ\\NhaCungCapReport.rdlc"; // Đường dẫn đến file RDLC của bạn
+            reportViewer1.LocalReport.ReportPath = "E:\\LTTQ\\BTLLTTQ\\BTLLTTQ\\NhaCungCapReport.rdlc"; // Đường dẫn đến file RDLC của bạn
 
             // Làm mới ReportViewer để hiển thị dữ liệu
             reportViewer1.RefreshReport();

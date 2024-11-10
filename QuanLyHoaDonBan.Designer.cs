@@ -30,12 +30,12 @@
 		{
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnbaocao = new System.Windows.Forms.Button();
             this.btnThemHD = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
             this.btnIn = new System.Windows.Forms.Button();
             this.btnXemChiTiet = new System.Windows.Forms.Button();
             this.btnXoaHD = new System.Windows.Forms.Button();
-            this.btnbaocao = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +68,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1143, 66);
             this.panel1.TabIndex = 7;
+            // 
+            // btnbaocao
+            // 
+            this.btnbaocao.FlatAppearance.BorderSize = 0;
+            this.btnbaocao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbaocao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnbaocao.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnbaocao.Image = global::BTL_LTTQ_VIP.Properties.Resources.report;
+            this.btnbaocao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnbaocao.Location = new System.Drawing.Point(858, 3);
+            this.btnbaocao.Name = "btnbaocao";
+            this.btnbaocao.Size = new System.Drawing.Size(130, 63);
+            this.btnbaocao.TabIndex = 7;
+            this.btnbaocao.Text = "Báo cáo";
+            this.btnbaocao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnbaocao.UseVisualStyleBackColor = true;
+            this.btnbaocao.Click += new System.EventHandler(this.btnbaocao_Click);
             // 
             // btnThemHD
             // 
@@ -153,22 +170,6 @@
             this.btnXoaHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoaHD.UseVisualStyleBackColor = true;
             this.btnXoaHD.Click += new System.EventHandler(this.btnXoaHD_Click);
-            // 
-            // btnbaocao
-            // 
-            this.btnbaocao.FlatAppearance.BorderSize = 0;
-            this.btnbaocao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnbaocao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnbaocao.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnbaocao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbaocao.Location = new System.Drawing.Point(858, 3);
-            this.btnbaocao.Name = "btnbaocao";
-            this.btnbaocao.Size = new System.Drawing.Size(130, 63);
-            this.btnbaocao.TabIndex = 7;
-            this.btnbaocao.Text = "Báo cáo";
-            this.btnbaocao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnbaocao.UseVisualStyleBackColor = true;
-            this.btnbaocao.Click += new System.EventHandler(this.btnbaocao_Click);
             // 
             // QuanLyHoaDonBan
             // 

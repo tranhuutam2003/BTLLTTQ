@@ -39,8 +39,8 @@
             this.chkHinhDang = new System.Windows.Forms.CheckBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnexit = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKQ)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -48,6 +48,9 @@
             // 
             // dataGridViewKQ
             // 
+            this.dataGridViewKQ.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewKQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewKQ.Location = new System.Drawing.Point(0, 316);
             this.dataGridViewKQ.Name = "dataGridViewKQ";
@@ -135,6 +138,7 @@
             // 
             // btnTimKiem
             // 
+            this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTimKiem.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(208)))), ((int)(((byte)(224)))));
             this.btnTimKiem.FlatAppearance.BorderSize = 2;
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -153,6 +157,8 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(55)))), ((int)(((byte)(77)))));
             this.panel1.Controls.Add(this.btnexit);
             this.panel1.Controls.Add(this.groupBox1);
@@ -161,6 +167,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(956, 312);
             this.panel1.TabIndex = 12;
+            // 
+            // btnexit
+            // 
+            this.btnexit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnexit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(208)))), ((int)(((byte)(224)))));
+            this.btnexit.FlatAppearance.BorderSize = 2;
+            this.btnexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnexit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnexit.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnexit.Image = global::BTL_LTTQ_VIP.Properties.Resources.undo;
+            this.btnexit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnexit.Location = new System.Drawing.Point(733, 172);
+            this.btnexit.Name = "btnexit";
+            this.btnexit.Size = new System.Drawing.Size(121, 40);
+            this.btnexit.TabIndex = 13;
+            this.btnexit.Text = "Trở Lại";
+            this.btnexit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnexit.UseVisualStyleBackColor = true;
+            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
             // groupBox1
             // 
@@ -180,24 +205,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lựa chọn tìm kiếm";
             // 
-            // btnexit
-            // 
-            this.btnexit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(208)))), ((int)(((byte)(224)))));
-            this.btnexit.FlatAppearance.BorderSize = 2;
-            this.btnexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnexit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnexit.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnexit.Image = global::BTL_LTTQ_VIP.Properties.Resources.undo;
-            this.btnexit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnexit.Location = new System.Drawing.Point(733, 172);
-            this.btnexit.Name = "btnexit";
-            this.btnexit.Size = new System.Drawing.Size(121, 40);
-            this.btnexit.TabIndex = 13;
-            this.btnexit.Text = "Trở Lại";
-            this.btnexit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnexit.UseVisualStyleBackColor = true;
-            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
-            // 
             // TimSanPham2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -207,6 +214,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "TimSanPham2";
             this.Text = "TimSanPham2";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TimSanPham2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKQ)).EndInit();
             this.panel1.ResumeLayout(false);

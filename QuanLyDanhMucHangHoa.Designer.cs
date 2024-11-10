@@ -31,11 +31,11 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Exit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.Them = new System.Windows.Forms.Button();
             this.Sua = new System.Windows.Forms.Button();
             this.btnXuatExcel = new System.Windows.Forms.Button();
             this.Xoa = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +84,22 @@
             this.panel1.Size = new System.Drawing.Size(1398, 66);
             this.panel1.TabIndex = 8;
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(468, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(187, 59);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Báo cáo hàng hóa";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Them
             // 
             this.Them.FlatAppearance.BorderSize = 0;
@@ -109,7 +125,7 @@
             this.Sua.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Sua.Image = global::BTL_LTTQ_VIP.Properties.Resources.sua;
             this.Sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Sua.Location = new System.Drawing.Point(218, 0);
+            this.Sua.Location = new System.Drawing.Point(234, 3);
             this.Sua.Name = "Sua";
             this.Sua.Size = new System.Drawing.Size(187, 59);
             this.Sua.TabIndex = 3;
@@ -126,7 +142,7 @@
             this.btnXuatExcel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnXuatExcel.Image = global::BTL_LTTQ_VIP.Properties.Resources.excel;
             this.btnXuatExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXuatExcel.Location = new System.Drawing.Point(932, 0);
+            this.btnXuatExcel.Location = new System.Drawing.Point(974, 0);
             this.btnXuatExcel.Name = "btnXuatExcel";
             this.btnXuatExcel.Size = new System.Drawing.Size(187, 59);
             this.btnXuatExcel.TabIndex = 7;
@@ -143,7 +159,7 @@
             this.Xoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Xoa.Image = global::BTL_LTTQ_VIP.Properties.Resources.delete;
             this.Xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Xoa.Location = new System.Drawing.Point(661, -2);
+            this.Xoa.Location = new System.Drawing.Point(720, -2);
             this.Xoa.Name = "Xoa";
             this.Xoa.Size = new System.Drawing.Size(184, 62);
             this.Xoa.TabIndex = 4;
@@ -151,22 +167,6 @@
             this.Xoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Xoa.UseVisualStyleBackColor = true;
             this.Xoa.Click += new System.EventHandler(this.Xoa_Click);
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(441, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(187, 59);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Báo cáo hàng hóa";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // QuanLyDanhMucHangHoa
             // 

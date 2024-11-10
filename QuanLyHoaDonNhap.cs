@@ -14,7 +14,8 @@ namespace BTL_LTTQ_VIP
 		{
 			InitializeComponent();
 			LoadData();
-		}
+            this.Activated += QuanLyHoaDonNhap_Activated;
+        }
 
         public QuanLyHoaDonNhap(string tenNV, string congViec, int maNV)
         {
@@ -23,6 +24,7 @@ namespace BTL_LTTQ_VIP
             CongViec = congViec;
             LoadData();
             MaNV = maNV;
+            this.Activated += QuanLyHoaDonNhap_Activated;
         }
 
         private void LoadData()
@@ -83,15 +85,13 @@ namespace BTL_LTTQ_VIP
 						try
 						{
 							connection.Open();
-							SqlTransaction transaction = connection.BeginTransaction(); // Bắt đầu giao dịch
+							SqlTransaction transaction = connection.BeginTransaction(); 
 
-							// Bước 1: Xóa các chi tiết hóa đơn nhập
 							string deleteChiTietQuery = "DELETE FROM ChiTietHoaDonNhap WHERE SoHDN = @SoHDN";
 							SqlCommand deleteChiTietCommand = new SqlCommand(deleteChiTietQuery, connection, transaction);
 							deleteChiTietCommand.Parameters.AddWithValue("@SoHDN", soHDN);
 							deleteChiTietCommand.ExecuteNonQuery();
 
-							// Bước 2: Xóa hóa đơn nhập
 							string deleteHoaDonQuery = "DELETE FROM HoaDonNhap WHERE SoHDN = @SoHDN";
 							SqlCommand deleteHoaDonCommand = new SqlCommand(deleteHoaDonQuery, connection, transaction);
 							deleteHoaDonCommand.Parameters.AddWithValue("@SoHDN", soHDN);
@@ -176,7 +176,10 @@ namespace BTL_LTTQ_VIP
             homeForm.Show();
             this.Close();
         }
-
+        private void QuanLyHoaDonNhap_Activated(object sender, EventArgs e)
+        {
+            LoadData(); 
+        }
         private void QuanLyHoaDonNhap_Load(object sender, EventArgs e)
         {
 

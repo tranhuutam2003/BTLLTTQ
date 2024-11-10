@@ -33,7 +33,6 @@ namespace BTL_LTTQ_VIP
 
         private void Xacnhan_Click(object sender, EventArgs e)
         {
-            // Kiểm tra số điện thoại hợp lệ
             if (!Regex.IsMatch(SDTKH.Text, @"^0\d{9}$"))
             {
                 MessageBox.Show("Số điện thoại phải có 10 số và bắt đầu bằng số 0.");
@@ -54,7 +53,6 @@ namespace BTL_LTTQ_VIP
                     connection.Open();
                     string query = "UPDATE KhachHang SET TenKhach=@TenKH, DiaChi=@DiaChi, DienThoai=@DienThoai WHERE MaKhach=@MaKH";
               
-                    //string query = "UPDATE KhachHang SET MaKhach=@NewMaKH, TenKhach=@TenKH, DiaChi=@DiaChi, DienThoai=@DienThoai WHERE MaKhach=@OldMaKH";
                     
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -72,6 +70,7 @@ namespace BTL_LTTQ_VIP
                     MessageBox.Show("Lỗi khi sửa thông tin khách hàng " + ex.Message);
                 }
             }
+            this.Close();
         }
 
 

@@ -33,8 +33,22 @@ namespace BTL_LTTQ_VIP
             MaNV = maNV;
             GenerateNewSoHDN();
             LoadComboBoxData();
+            LoadProductComboBoxData();
             InitializeListView();
             dateTimePickerNgayNhap.Value = DateTime.Now;
+        }
+
+        private void LoadProductComboBoxData()
+        {
+            using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
+            {
+                SqlDataAdapter daProduct = new SqlDataAdapter("SELECT MaHang, TenHang FROM DanhMucHangHoa", conn);
+                DataTable dtProduct = new DataTable();
+                daProduct.Fill(dtProduct);
+                cbbsanpham.DataSource = dtProduct;
+                cbbsanpham.DisplayMember = "TenHang";  // Display product name
+                cbbsanpham.ValueMember = "MaHang";     // Use product ID as value
+            }
         }
 
         private void CalculateThanhTien()
@@ -91,7 +105,6 @@ namespace BTL_LTTQ_VIP
         }
         private void ClearInputFields()
         {
-            txtMaHang.Clear();
             txtSoLuong.Clear();
             txtGiamGia.Clear();
             txtDonGia.Clear();
@@ -108,7 +121,7 @@ namespace BTL_LTTQ_VIP
             ListViewItem item = new ListViewItem(txtSoHDN.Text);
             item.SubItems.Add(txtSoLuong.Text);
             item.SubItems.Add(txtGiamGia.Text);
-            item.SubItems.Add(txtMaHang.Text);
+            item.SubItems.Add(cbbsanpham.SelectedValue.ToString());  // Get selected MaHang from ComboBox
             item.SubItems.Add(txtDonGia.Text);
             item.SubItems.Add(lbtennhanvien.Text);
             item.SubItems.Add(cbMaNcc.SelectedValue.ToString());
@@ -129,7 +142,7 @@ namespace BTL_LTTQ_VIP
                 txtSoHDN.Text = item.SubItems[0].Text;
                 txtSoLuong.Text = item.SubItems[1].Text;
                 txtGiamGia.Text = item.SubItems[2].Text;
-                txtMaHang.Text = item.SubItems[3].Text;
+                cbbsanpham.Text = item.SubItems[3].Text;
                 txtDonGia.Text = item.SubItems[4].Text;
                 lbtennhanvien.Text = item.SubItems[5].Text;
                 cbMaNcc.SelectedValue = item.SubItems[6].Text;
@@ -180,7 +193,7 @@ namespace BTL_LTTQ_VIP
 
                     foreach (ListViewItem item in listView1.Items)
                     {
-                        string maHang = item.SubItems[3].Text;
+                        string maHang = item.SubItems[3].Text;  
                         int soLuong = int.Parse(item.SubItems[1].Text);
                         decimal donGia = decimal.Parse(item.SubItems[4].Text);
                         decimal giamGia = decimal.Parse(item.SubItems[2].Text);
@@ -197,7 +210,6 @@ namespace BTL_LTTQ_VIP
                         cmdCTHDN.Parameters.AddWithValue("@ThanhTien", thanhTien);
                         cmdCTHDN.ExecuteNonQuery();
 
-                        // Cập nhật số lượng và đơn giá trong DanhMucHangHoa
                         string updateHangHoaQuery = "UPDATE DanhMucHangHoa SET SoLuong = SoLuong + @SoLuong, DonGiaNhap = @DonGia WHERE MaHang = @MaHang";
                         SqlCommand cmdUpdateHangHoa = new SqlCommand(updateHangHoaQuery, conn, transaction);
                         cmdUpdateHangHoa.Parameters.AddWithValue("@SoLuong", soLuong);
@@ -212,6 +224,7 @@ namespace BTL_LTTQ_VIP
                     string noiDungHoaDon = $"Hóa đơn nhập mới số {txtSoHDN.Text} được tạo với tổng tiền {tongTien:N2} VNĐ";
                     AddNotification(MaNV, "", noiDungHoaDon);
                     MessageBox.Show("Hóa đơn nhập đã được lưu thành công và số lượng hàng đã được cập nhật!");
+                    this.Close();
                     listView1.Items.Clear();
                     GenerateNewSoHDN();
                 }
@@ -219,15 +232,17 @@ namespace BTL_LTTQ_VIP
                 {
                     transaction.Rollback();
                     MessageBox.Show("Lỗi khi lưu hóa đơn nhập: " + ex.Message);
+                    this.Close();
                 }
+                
             }
+
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (listView1.SelectedItems.Count > 0)
             {
-                // Xóa hàng được chọn
                 listView1.Items.Remove(listView1.SelectedItems[0]);
                 MessageBox.Show("Đã xóa hàng được chọn khỏi danh sách.");
             }
@@ -274,6 +289,12 @@ namespace BTL_LTTQ_VIP
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cbMaNcc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
         }
     }
 }

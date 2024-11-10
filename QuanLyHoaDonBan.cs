@@ -19,11 +19,16 @@ namespace BTL_LTTQ_VIP
         private string CongViec;
         private int MaNV;
 
+        private void capnhat(object sender, EventArgs e)
+        {
+            LoadData();
 
+        }
         public QuanLyHoaDonBan()
         {
             InitializeComponent();
 			LoadData();
+            this.Activated+= capnhat;
         }
 
         public QuanLyHoaDonBan(string tenNV, string congViec, int maNV)
@@ -33,6 +38,7 @@ namespace BTL_LTTQ_VIP
             MaNV = maNV;// Set user information
             CongViec = congViec;
             LoadData();
+            this.Activated += capnhat;
         }
 
         private void LoadData()
@@ -43,10 +49,6 @@ namespace BTL_LTTQ_VIP
 				{
 					conn.Open();
 
-					//string query = @"SELECT hdb.SoHDB, hdb.MaNV, hdb.NgayBan, hdb.MaKhach, 
-					//                               cthdb.MaHang, cthdb.SoLuong, cthdb.GiamGia, cthdb.ThanhTien
-					//                           FROM HoaDonBan hdb
-					//                           INNER JOIN ChiTietHoaDonBan cthdb ON hdb.SoHDB = cthdb.SoHDB";
 
 					string query = @"SELECT 
     hdb.SoHDB,
@@ -94,10 +96,6 @@ GROUP BY
 
         private void btnXemChiTiet_Click(object sender, EventArgs e)
 		{
-            //ChiTietHoaDonBan chiTietHoaDon= new ChiTietHoaDonBan();
-            //chiTietHoaDon.StartPosition = FormStartPosition.Manual;
-            //chiTietHoaDon.Location = this.Location;
-            //chiTietHoaDon.Show();
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 // Lấy SoHDB từ hàng được chọn trong DataGridView
@@ -141,14 +139,13 @@ GROUP BY
                 {
                     decimal value = Convert.ToDecimal(e.Value);
 
-                    // Kiểm tra nếu số không có phần thập phân khác 0
                     if (value % 1 == 0)
                     {
-                        e.Value = value.ToString("0"); // Hiển thị chỉ phần nguyên nếu không có phần thập phân
+                        e.Value = value.ToString("0"); 
                     }
                     else
                     {
-                        e.Value = value.ToString("0.##");  // Hiển thị tối đa 2 chữ số thập phân nếu có phần lẻ
+                        e.Value = value.ToString("0.##");  
                     }
                     e.FormattingApplied = true;
                 }
@@ -171,7 +168,7 @@ GROUP BY
 			if (dataGridView1.SelectedRows.Count > 0)
 			{
 				DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-				string soHDB = selectedRow.Cells["SoHDB"].Value.ToString(); // "SoHDB" là tên cột chứa mã hóa đơn
+				string soHDB = selectedRow.Cells["SoHDB"].Value.ToString(); 
 				DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa hóa đơn này?", "Xác nhận xóa", MessageBoxButtons.YesNo);
 				if (dialogResult == DialogResult.Yes)
 				{
