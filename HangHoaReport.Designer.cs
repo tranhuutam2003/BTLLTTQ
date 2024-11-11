@@ -36,11 +36,12 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(13, 72);
+            this.reportViewer1.Location = new System.Drawing.Point(13, 51);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1097, 421);
+            this.reportViewer1.Size = new System.Drawing.Size(1097, 442);
             this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // cbbsanpham
             // 
@@ -49,6 +50,7 @@
             this.cbbsanpham.Name = "cbbsanpham";
             this.cbbsanpham.Size = new System.Drawing.Size(201, 24);
             this.cbbsanpham.TabIndex = 1;
+            this.cbbsanpham.Visible = false;
             // 
             // label1
             // 
@@ -58,6 +60,7 @@
             this.label1.Size = new System.Drawing.Size(93, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Tên sản phẩm";
+            this.label1.Visible = false;
             // 
             // btnxem
             // 
@@ -67,6 +70,7 @@
             this.btnxem.TabIndex = 3;
             this.btnxem.Text = "Xem";
             this.btnxem.UseVisualStyleBackColor = true;
+            this.btnxem.Visible = false;
             this.btnxem.Click += new System.EventHandler(this.btnxem_Click);
             // 
             // HangHoaReport
