@@ -63,21 +63,21 @@
             // 
             // Dongiaban
             // 
-            this.Dongiaban.Location = new System.Drawing.Point(510, 5);
+            this.Dongiaban.Location = new System.Drawing.Point(542, 8);
             this.Dongiaban.Name = "Dongiaban";
             this.Dongiaban.Size = new System.Drawing.Size(250, 22);
             this.Dongiaban.TabIndex = 5;
             // 
             // TenHH
             // 
-            this.TenHH.Location = new System.Drawing.Point(510, 81);
+            this.TenHH.Location = new System.Drawing.Point(542, 84);
             this.TenHH.Name = "TenHH";
             this.TenHH.Size = new System.Drawing.Size(250, 22);
             this.TenHH.TabIndex = 15;
             // 
             // MaHH
             // 
-            this.MaHH.Location = new System.Drawing.Point(510, 39);
+            this.MaHH.Location = new System.Drawing.Point(542, 42);
             this.MaHH.Name = "MaHH";
             this.MaHH.ReadOnly = true;
             this.MaHH.Size = new System.Drawing.Size(250, 22);
@@ -85,7 +85,7 @@
             // 
             // Ghichu
             // 
-            this.Ghichu.Location = new System.Drawing.Point(510, 157);
+            this.Ghichu.Location = new System.Drawing.Point(542, 160);
             this.Ghichu.Multiline = true;
             this.Ghichu.Name = "Ghichu";
             this.Ghichu.Size = new System.Drawing.Size(250, 73);
@@ -312,14 +312,14 @@
             // Nuocsanxuat
             // 
             this.Nuocsanxuat.FormattingEnabled = true;
-            this.Nuocsanxuat.Location = new System.Drawing.Point(510, 274);
+            this.Nuocsanxuat.Location = new System.Drawing.Point(542, 277);
             this.Nuocsanxuat.Name = "Nuocsanxuat";
             this.Nuocsanxuat.Size = new System.Drawing.Size(250, 24);
             this.Nuocsanxuat.TabIndex = 43;
             // 
             // Thoigianbaohanh
             // 
-            this.Thoigianbaohanh.Location = new System.Drawing.Point(510, 118);
+            this.Thoigianbaohanh.Location = new System.Drawing.Point(542, 121);
             this.Thoigianbaohanh.Name = "Thoigianbaohanh";
             this.Thoigianbaohanh.Size = new System.Drawing.Size(250, 22);
             this.Thoigianbaohanh.TabIndex = 44;
@@ -329,9 +329,9 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(55)))), ((int)(((byte)(77)))));
             this.panel2.Controls.Add(this.Xacnhan);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 337);
+            this.panel2.Location = new System.Drawing.Point(0, 329);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(765, 66);
+            this.panel2.Size = new System.Drawing.Size(804, 66);
             this.panel2.TabIndex = 55;
             // 
             // Xacnhan
@@ -355,7 +355,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(765, 403);
+            this.ClientSize = new System.Drawing.Size(804, 395);
             this.Controls.Add(this.Thoigianbaohanh);
             this.Controls.Add(this.Nuocsanxuat);
             this.Controls.Add(this.Mausac);

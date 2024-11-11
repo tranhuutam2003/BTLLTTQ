@@ -101,6 +101,7 @@
             // 
             this.Ma.Location = new System.Drawing.Point(16, 32);
             this.Ma.Name = "Ma";
+            this.Ma.ReadOnly = true;
             this.Ma.Size = new System.Drawing.Size(250, 22);
             this.Ma.TabIndex = 5;
             // 
@@ -164,6 +165,7 @@
             this.Controls.Add(this.label2);
             this.Name = "ThemLoaiKinh";
             this.Text = "ThemLoaiKinh";
+            this.Load += new System.EventHandler(this.ThemLoaiKinh_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiKinh)).EndInit();
             this.ResumeLayout(false);

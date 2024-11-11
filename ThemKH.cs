@@ -35,13 +35,11 @@ namespace BTL_LTTQ_VIP
                                    "VALUES (@MaKH, @TenKH, @DiaChi, @DienThoai)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        // Thêm tham số cho câu truy vấn
                         command.Parameters.AddWithValue("@MaKH", MaKH.Text);
                         command.Parameters.AddWithValue("@TenKH", TenKH.Text);
                         command.Parameters.AddWithValue("@DienThoai", SDTKH.Text);
                         command.Parameters.AddWithValue("@DiaChi", DiaChiKH.Text);
 
-                        // Thực thi câu lệnh
                         command.ExecuteNonQuery();
                         MessageBox.Show("Thêm khách hàng thành công!");
                     }
@@ -62,6 +60,38 @@ namespace BTL_LTTQ_VIP
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private int GenerateNewID()
+        {
+            int newID = 1;
+
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT MAX(MaKhach) FROM KhachHang";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        object result = command.ExecuteScalar();
+                        if (result != DBNull.Value && result != null)
+                        {
+                            newID = Convert.ToInt32(result) + 1;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tạo mã hàng mới: " + ex.Message);
+                }
+            }
+
+            return newID;
+        }
+        private void ThemKH_Load(object sender, EventArgs e)
+        {
+            MaKH.Text = GenerateNewID().ToString();
         }
     }
 }

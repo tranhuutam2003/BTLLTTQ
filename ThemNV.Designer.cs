@@ -57,6 +57,7 @@
             // 
             this.MaNV.Location = new System.Drawing.Point(187, 14);
             this.MaNV.Name = "MaNV";
+            this.MaNV.ReadOnly = true;
             this.MaNV.Size = new System.Drawing.Size(250, 22);
             this.MaNV.TabIndex = 0;
             // 

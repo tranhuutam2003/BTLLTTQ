@@ -67,8 +67,10 @@
             // 
             this.Ma.Location = new System.Drawing.Point(16, 32);
             this.Ma.Name = "Ma";
+            this.Ma.ReadOnly = true;
             this.Ma.Size = new System.Drawing.Size(250, 22);
             this.Ma.TabIndex = 3;
+            this.Ma.TextChanged += new System.EventHandler(this.Ma_TextChanged);
             // 
             // Ten
             // 
@@ -164,6 +166,7 @@
             this.Controls.Add(this.label2);
             this.Name = "ThemMauSac";
             this.Text = "Thêm Màu Sắc";
+            this.Load += new System.EventHandler(this.ThemMauSac_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMauSac)).EndInit();
             this.ResumeLayout(false);

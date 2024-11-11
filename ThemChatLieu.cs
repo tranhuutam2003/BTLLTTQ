@@ -11,14 +11,13 @@ namespace BTL_LTTQ_VIP
         {
             InitializeComponent();
             LoadData();
-            dgvChatLieu.CellClick += dgvChatLieu_CellClick; // Attach the CellClick event
+            dgvChatLieu.CellClick += dgvChatLieu_CellClick; 
 
             btnsua.Enabled = false;
             btnxoa.Enabled = false;
             xacnhan.Enabled = true;
         }
 
-        // Method to load data into the DataGridView
         public void LoadData()
         {
             using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
@@ -30,7 +29,7 @@ namespace BTL_LTTQ_VIP
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
-                    dgvChatLieu.DataSource = dt; // Set DataGridView's data source to DataTable
+                    dgvChatLieu.DataSource = dt; 
                 }
                 catch (Exception ex)
                 {
@@ -39,7 +38,6 @@ namespace BTL_LTTQ_VIP
             }
         }
 
-        // Button click event to add a new ChatLieu
         private void xacnhan_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(Ma.Text) || string.IsNullOrWhiteSpace(Ten.Text))
@@ -56,14 +54,11 @@ namespace BTL_LTTQ_VIP
                     string query = "INSERT INTO ChatLieu (MaChatLieu, TenChatLieu) VALUES (@MaChatLieu, @TenChatLieu)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        // Add parameters for the query
                         command.Parameters.AddWithValue("@MaChatLieu", Ma.Text);
                         command.Parameters.AddWithValue("@TenChatLieu", Ten.Text);
-                        // Execute the command
                         command.ExecuteNonQuery();
                         MessageBox.Show("Thêm chất liệu thành công!");
 
-                        // Refresh DataGridView and clear text boxes
                         LoadData();
                         Ma.Clear();
                         Ten.Clear();
@@ -76,10 +71,9 @@ namespace BTL_LTTQ_VIP
             }
         }
 
-        // Event to handle row selection in DataGridView
         private void dgvChatLieu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Ensure a valid row is selected
+            if (e.RowIndex >= 0) 
             {
                 DataGridViewRow row = dgvChatLieu.Rows[e.RowIndex];
                 Ma.Text = row.Cells["MaChatLieu"].Value.ToString();
@@ -168,10 +162,37 @@ namespace BTL_LTTQ_VIP
                 }
             }
         }
+        private int GenerateNewID()
+        {
+            int newID = 1;
 
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT MAX(MaChatLieu) FROM ChatLieu";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        object result = command.ExecuteScalar();
+                        if (result != DBNull.Value && result != null)
+                        {
+                            newID = Convert.ToInt32(result) + 1;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tạo mã hàng mới: " + ex.Message);
+                }
+            }
+
+            return newID;
+        }
         private void ThemChatLieu_Load(object sender, EventArgs e)
         {
-
+            Ma.Text = GenerateNewID().ToString();
         }
     }
 }

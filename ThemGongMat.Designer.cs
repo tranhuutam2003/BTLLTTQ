@@ -67,6 +67,7 @@
             // 
             this.Ma.Location = new System.Drawing.Point(16, 32);
             this.Ma.Name = "Ma";
+            this.Ma.ReadOnly = true;
             this.Ma.Size = new System.Drawing.Size(250, 22);
             this.Ma.TabIndex = 3;
             // 
@@ -163,6 +164,7 @@
             this.Controls.Add(this.label2);
             this.Name = "ThemGongMat";
             this.Text = "ThemGongMat";
+            this.Load += new System.EventHandler(this.ThemGongMat_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGongMat)).EndInit();
             this.ResumeLayout(false);

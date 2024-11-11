@@ -170,5 +170,37 @@ namespace BTL_LTTQ_VIP
             btnsua.Enabled = true;
             button1.Enabled = false;
         }
+        private int GenerateNewID()
+        {
+            int newID = 1;
+
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT MAX(MaNuocSX) FROM NuocSanXuat";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        object result = command.ExecuteScalar();
+                        if (result != DBNull.Value && result != null)
+                        {
+                            newID = Convert.ToInt32(result) + 1;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tạo mã hàng mới: " + ex.Message);
+                }
+            }
+
+            return newID;
+        }
+        private void ThemNuocSanXuat_Load(object sender, EventArgs e)
+        {
+            Ma.Text = GenerateNewID().ToString();
+        }
     }
 }

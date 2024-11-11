@@ -11,14 +11,13 @@ namespace BTL_LTTQ_VIP
         {
             InitializeComponent();
             LoadData();
-            dgvMauSac.CellClick += dgvMauSac_CellClick; // Attach the CellClick event
+            dgvMauSac.CellClick += dgvMauSac_CellClick;
 
             btnxoa.Enabled = false;
             btnsua.Enabled = false;
             button1.Enabled = true;
         }
 
-        // Method to load data into the DataGridView
         public void LoadData()
         {
             using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
@@ -30,7 +29,7 @@ namespace BTL_LTTQ_VIP
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
-                    dgvMauSac.DataSource = dt; // Set DataGridView's data source to DataTable
+                    dgvMauSac.DataSource = dt;
                 }
                 catch (Exception ex)
                 {
@@ -39,7 +38,6 @@ namespace BTL_LTTQ_VIP
             }
         }
 
-        // Button click event to add a new MauSac
         private void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(Ma.Text) || string.IsNullOrWhiteSpace(Ten.Text))
@@ -61,7 +59,6 @@ namespace BTL_LTTQ_VIP
                         command.ExecuteNonQuery();
                         MessageBox.Show("Thêm Màu Sắc thành công!");
 
-                        // Refresh DataGridView and clear text boxes
                         LoadData();
                         Ma.Clear();
                         Ten.Clear();
@@ -74,7 +71,6 @@ namespace BTL_LTTQ_VIP
             }
         }
 
-        // Button click event to edit a MauSac
         private void button2_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(Ma.Text) || string.IsNullOrWhiteSpace(Ten.Text))
@@ -96,7 +92,6 @@ namespace BTL_LTTQ_VIP
                         command.ExecuteNonQuery();
                         MessageBox.Show("Sửa Màu Sắc thành công!");
 
-                        // Refresh DataGridView and clear text boxes
                         LoadData();
                         Ma.Clear();
                         Ten.Clear();
@@ -113,7 +108,6 @@ namespace BTL_LTTQ_VIP
             }
         }
 
-        // Button click event to delete a MauSac
         private void btnxoa_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(Ma.Text))
@@ -137,7 +131,6 @@ namespace BTL_LTTQ_VIP
                             command.ExecuteNonQuery();
                             MessageBox.Show("Xóa Màu Sắc thành công!");
 
-                            // Refresh DataGridView and clear text boxes
                             LoadData();
                             Ma.Clear();
                             Ten.Clear();
@@ -155,10 +148,9 @@ namespace BTL_LTTQ_VIP
             }
         }
 
-        // Event to handle row selection in DataGridView
         private void dgvMauSac_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Ensure a valid row is selected
+            if (e.RowIndex >= 0) 
             {
                 DataGridViewRow row = dgvMauSac.Rows[e.RowIndex];
                 Ma.Text = row.Cells["MaMau"].Value.ToString();
@@ -168,6 +160,43 @@ namespace BTL_LTTQ_VIP
             btnxoa.Enabled = true;
             btnsua.Enabled = true;
             button1.Enabled = false;
+        }
+        private int GenerateNewID()
+        {
+            int newID = 1;
+
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT MAX(MaMau) FROM MauSac";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        object result = command.ExecuteScalar();
+                        if (result != DBNull.Value && result != null)
+                        {
+                            newID = Convert.ToInt32(result) + 1;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tạo mã hàng mới: " + ex.Message);
+                }
+            }
+
+            return newID;
+        }
+        private void ThemMauSac_Load(object sender, EventArgs e)
+        {
+            Ma.Text = GenerateNewID().ToString();
+        }
+
+        private void Ma_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

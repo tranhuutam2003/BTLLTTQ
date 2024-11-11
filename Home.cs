@@ -292,5 +292,9 @@ namespace BTL_LTTQ_VIP
             }
         }
 
+        private void richTextBoxThongBao_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

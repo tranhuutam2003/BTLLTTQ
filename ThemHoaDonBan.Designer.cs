@@ -199,6 +199,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ThemHoaDonBan";
             this.Text = "ThemHoaDonBan";
+            this.Load += new System.EventHandler(this.ThemHoaDonBan_Load_1);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

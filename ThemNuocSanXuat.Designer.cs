@@ -45,6 +45,7 @@
             // 
             this.Ma.Location = new System.Drawing.Point(16, 32);
             this.Ma.Name = "Ma";
+            this.Ma.ReadOnly = true;
             this.Ma.Size = new System.Drawing.Size(250, 22);
             this.Ma.TabIndex = 0;
             // 
@@ -164,6 +165,7 @@
             this.Controls.Add(this.Ten);
             this.Name = "ThemNuocSanXuat";
             this.Text = "Thêm Nước Sản Xuất";
+            this.Load += new System.EventHandler(this.ThemNuocSanXuat_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNuocSX)).EndInit();
             this.ResumeLayout(false);

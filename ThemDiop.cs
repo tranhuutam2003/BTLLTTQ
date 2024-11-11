@@ -11,14 +11,13 @@ namespace BTL_LTTQ_VIP
         {
             InitializeComponent();
             LoadData();
-            dgvDiop.CellClick += dgvDiop_CellClick; // Attach the CellClick event
+            dgvDiop.CellClick += dgvDiop_CellClick; 
 
             btnxoa.Enabled = false;
             btnsua.Enabled = false;
             button2.Enabled = true;
         }
 
-        // Method to load data into the DataGridView
         public void LoadData()
         {
             using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
@@ -30,7 +29,7 @@ namespace BTL_LTTQ_VIP
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
-                    dgvDiop.DataSource = dt; // Set DataGridView's data source to DataTable
+                    dgvDiop.DataSource = dt; 
                 }
                 catch (Exception ex)
                 {
@@ -38,7 +37,6 @@ namespace BTL_LTTQ_VIP
                 }
             }
         }
-        // Button click event to add a new Diop
         private void button2_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(Ma.Text) || string.IsNullOrWhiteSpace(Ten.Text))
@@ -60,7 +58,7 @@ namespace BTL_LTTQ_VIP
                         command.ExecuteNonQuery();
                         MessageBox.Show("Thêm Diop thành công!");
 
-                        // Refresh DataGridView and clear text boxes
+                       
                         LoadData();
                         Ma.Clear();
                         Ten.Clear();
@@ -73,10 +71,9 @@ namespace BTL_LTTQ_VIP
             }
         }
 
-        // Event to handle row selection in DataGridView
         private void dgvDiop_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Ensure a valid row is selected
+            if (e.RowIndex >= 0) 
             {
                 DataGridViewRow row = dgvDiop.Rows[e.RowIndex];
                 Ma.Text = row.Cells["MaDiop"].Value.ToString();
@@ -88,7 +85,6 @@ namespace BTL_LTTQ_VIP
             button2.Enabled = false;
         }
 
-        // Button click event to delete a Diop
         private void btnxoa_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(Ma.Text))
@@ -130,7 +126,6 @@ namespace BTL_LTTQ_VIP
             }
         }
 
-        // Button click event to edit an existing Diop
         private void btnsua_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(Ma.Text) || string.IsNullOrWhiteSpace(Ten.Text))
@@ -152,7 +147,6 @@ namespace BTL_LTTQ_VIP
                         command.ExecuteNonQuery();
                         MessageBox.Show("Sửa Diop thành công!");
 
-                        // Refresh DataGridView and clear text boxes
                         LoadData();
                         Ma.Clear();
                         Ten.Clear();
@@ -167,6 +161,38 @@ namespace BTL_LTTQ_VIP
                     MessageBox.Show("Lỗi khi sửa Diop: " + ex.Message);
                 }
             }
+        }
+        private int GenerateNewID()
+        {
+            int newID = 1;
+
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT MAX(MaDiop) FROM Diop";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        object result = command.ExecuteScalar();
+                        if (result != DBNull.Value && result != null)
+                        {
+                            newID = Convert.ToInt32(result) + 1;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tạo mã hàng mới: " + ex.Message);
+                }
+            }
+
+            return newID;
+        }
+        private void ThemDiop_Load(object sender, EventArgs e)
+        {
+            Ma.Text = GenerateNewID().ToString();
         }
     }
 }

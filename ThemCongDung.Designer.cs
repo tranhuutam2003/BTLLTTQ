@@ -61,19 +61,18 @@
             // 
             // Ma
             // 
-            this.Ma.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Ma.Location = new System.Drawing.Point(12, 28);
             this.Ma.Name = "Ma";
-            this.Ma.Size = new System.Drawing.Size(237, 15);
-            this.Ma.TabIndex = 2;
+            this.Ma.ReadOnly = true;
+            this.Ma.Size = new System.Drawing.Size(237, 22);
+            this.Ma.TabIndex = 10;
             // 
             // Ten
             // 
-            this.Ten.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Ten.Location = new System.Drawing.Point(12, 65);
             this.Ten.Name = "Ten";
-            this.Ten.Size = new System.Drawing.Size(237, 15);
-            this.Ten.TabIndex = 3;
+            this.Ten.Size = new System.Drawing.Size(237, 22);
+            this.Ten.TabIndex = 2;
             // 
             // btnsua
             // 
@@ -162,6 +161,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ThemCongDung";
             this.Text = "Thêm Công Dụng";
+            this.Load += new System.EventHandler(this.ThemCongDung_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCongDung)).EndInit();
             this.ResumeLayout(false);

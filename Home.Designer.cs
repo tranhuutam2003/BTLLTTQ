@@ -317,6 +317,7 @@
             this.richTextBoxThongBao.Size = new System.Drawing.Size(644, 439);
             this.richTextBoxThongBao.TabIndex = 15;
             this.richTextBoxThongBao.Text = "";
+            this.richTextBoxThongBao.TextChanged += new System.EventHandler(this.richTextBoxThongBao_TextChanged);
             // 
             // groupBox3
             // 

@@ -11,14 +11,13 @@ namespace BTL_LTTQ_VIP
         {
             InitializeComponent();
             LoadData();
-            dgvDacDiem.CellClick += dgvDacDiem_CellClick; // Attach the CellClick event
+            dgvDacDiem.CellClick += dgvDacDiem_CellClick;
 
             btnxoa.Enabled = false;
             btnsua.Enabled = false;
             button2.Enabled = true;
         }
 
-        // Method to load data into the DataGridView
         public void LoadData()
         {
             using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
@@ -30,7 +29,7 @@ namespace BTL_LTTQ_VIP
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
-                    dgvDacDiem.DataSource = dt; // Set DataGridView's data source to DataTable
+                    dgvDacDiem.DataSource = dt;
                 }
                 catch (Exception ex)
                 {
@@ -39,7 +38,6 @@ namespace BTL_LTTQ_VIP
             }
         }
 
-        // Button click event to add a new DacDiem
         private void button2_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(Ma.Text) || string.IsNullOrWhiteSpace(Ten.Text))
@@ -56,14 +54,11 @@ namespace BTL_LTTQ_VIP
                     string query = "INSERT INTO DacDiem (MaDacDiem, TenDacDiem) VALUES (@MaDacDiem, @TenDacDiem)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        // Add parameters for the query
                         command.Parameters.AddWithValue("@MaDacDiem", Ma.Text);
                         command.Parameters.AddWithValue("@TenDacDiem", Ten.Text);
-                        // Execute the command
                         command.ExecuteNonQuery();
                         MessageBox.Show("Thêm đặc điểm thành công!");
 
-                        // Refresh DataGridView and clear text boxes
                         LoadData();
                         Ma.Clear();
                         Ten.Clear();
@@ -76,10 +71,9 @@ namespace BTL_LTTQ_VIP
             }
         }
 
-        // Event to handle row selection in DataGridView
         private void dgvDacDiem_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Ensure a valid row is selected
+            if (e.RowIndex >= 0) 
             {
                 DataGridViewRow row = dgvDacDiem.Rows[e.RowIndex];
                 Ma.Text = row.Cells["MaDacDiem"].Value.ToString();
@@ -91,8 +85,7 @@ namespace BTL_LTTQ_VIP
             button2.Enabled = false;
         }
 
-        // Button click event to edit an existing DacDiem
-        private void button1_Click(object sender, EventArgs e) // btnSua
+        private void button1_Click(object sender, EventArgs e) 
         {
             if (string.IsNullOrWhiteSpace(Ma.Text) || string.IsNullOrWhiteSpace(Ten.Text))
             {
@@ -113,7 +106,6 @@ namespace BTL_LTTQ_VIP
                         command.ExecuteNonQuery();
                         MessageBox.Show("Sửa đặc điểm thành công!");
 
-                        // Refresh DataGridView and clear text boxes
                         LoadData();
                         Ma.Clear();
                         Ten.Clear();
@@ -130,7 +122,6 @@ namespace BTL_LTTQ_VIP
             }
         }
 
-        // Button click event to delete a DacDiem
         private void btnxoa_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(Ma.Text))
@@ -154,7 +145,6 @@ namespace BTL_LTTQ_VIP
                             command.ExecuteNonQuery();
                             MessageBox.Show("Xóa đặc điểm thành công!");
 
-                            // Refresh DataGridView and clear text boxes
                             LoadData();
                             Ma.Clear();
                             Ten.Clear();
@@ -170,6 +160,38 @@ namespace BTL_LTTQ_VIP
                     }
                 }
             }
+        }
+        private int GenerateNewID()
+        {
+            int newID = 1;
+
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT MAX(MaDacDiem) FROM DacDiem";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        object result = command.ExecuteScalar();
+                        if (result != DBNull.Value && result != null)
+                        {
+                            newID = Convert.ToInt32(result) + 1;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tạo mã hàng mới: " + ex.Message);
+                }
+            }
+
+            return newID;
+        }
+        private void ThemDacDiem_Load(object sender, EventArgs e)
+        {
+            Ma.Text = GenerateNewID().ToString();
         }
     }
 }

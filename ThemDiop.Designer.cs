@@ -101,6 +101,7 @@
             // 
             this.Ma.Location = new System.Drawing.Point(16, 35);
             this.Ma.Name = "Ma";
+            this.Ma.ReadOnly = true;
             this.Ma.Size = new System.Drawing.Size(250, 22);
             this.Ma.TabIndex = 5;
             // 
@@ -165,6 +166,7 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(104)))), ((int)(((byte)(130)))));
             this.Name = "ThemDiop";
             this.Text = "ThemDiop";
+            this.Load += new System.EventHandler(this.ThemDiop_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiop)).EndInit();
             this.ResumeLayout(false);

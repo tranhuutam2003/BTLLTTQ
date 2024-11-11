@@ -44,34 +44,31 @@
             // 
             // MaKH
             // 
-            this.MaKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.MaKH.Location = new System.Drawing.Point(83, 45);
             this.MaKH.Name = "MaKH";
-            this.MaKH.Size = new System.Drawing.Size(250, 15);
+            this.MaKH.ReadOnly = true;
+            this.MaKH.Size = new System.Drawing.Size(250, 22);
             this.MaKH.TabIndex = 2;
             // 
             // TenKH
             // 
-            this.TenKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TenKH.Location = new System.Drawing.Point(83, 118);
             this.TenKH.Name = "TenKH";
-            this.TenKH.Size = new System.Drawing.Size(250, 15);
+            this.TenKH.Size = new System.Drawing.Size(250, 22);
             this.TenKH.TabIndex = 3;
             // 
             // DiaChiKH
             // 
-            this.DiaChiKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DiaChiKH.Location = new System.Drawing.Point(83, 188);
             this.DiaChiKH.Name = "DiaChiKH";
-            this.DiaChiKH.Size = new System.Drawing.Size(250, 15);
+            this.DiaChiKH.Size = new System.Drawing.Size(250, 22);
             this.DiaChiKH.TabIndex = 4;
             // 
             // SDTKH
             // 
-            this.SDTKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SDTKH.Location = new System.Drawing.Point(83, 270);
             this.SDTKH.Name = "SDTKH";
-            this.SDTKH.Size = new System.Drawing.Size(250, 15);
+            this.SDTKH.Size = new System.Drawing.Size(250, 22);
             this.SDTKH.TabIndex = 5;
             // 
             // label2
@@ -176,6 +173,7 @@
             this.Controls.Add(this.MaKH);
             this.Name = "ThemKH";
             this.Text = "Thêm Khách Hàng";
+            this.Load += new System.EventHandler(this.ThemKH_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

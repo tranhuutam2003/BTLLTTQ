@@ -18,7 +18,6 @@ namespace BTL_LTTQ_VIP
 		//co 1
 		private bool isEditMode = false;
 		private string editSoHDB = "";
-		//
 
 		public ThemHoaDonBan( bool isEditMode)
 		{
@@ -26,7 +25,6 @@ namespace BTL_LTTQ_VIP
 			LoadMaNVToComboBox();
 			this.isEditMode = isEditMode;
 
-			// Nếu là chế độ thêm thì không cần làm gì thêm
 			if (!isEditMode)
 			{
 				this.Text = "Thêm Hóa Đơn Bán";
@@ -41,20 +39,20 @@ namespace BTL_LTTQ_VIP
 		{
 			InitializeComponent();
 
-			textBox1.Text = soHDB;  // TextBox cho SoHDB
-			comboBox2.Text= maNV;   // TextBox cho MaNV
-			dateTimePicker1.Value = ngayBan;  // DateTimePicker cho NgayBan
-			textBox4.Text = maKhach; // TextBox cho MaKhach
+			textBox1.Text = soHDB; 
+			comboBox2.Text= maNV;   
+			dateTimePicker1.Value = ngayBan;  
+			textBox4.Text = maKhach; 
 			decimal tongTienDecimal;
 			if (decimal.TryParse(tongTien, out tongTienDecimal))
 			{
 				if (tongTienDecimal % 1 == 0)
 				{
-					textBox5.Text = tongTienDecimal.ToString("0");  // Hiển thị phần nguyên nếu không có phần thập phân
+					textBox5.Text = tongTienDecimal.ToString("0"); 
 				}
 				else
 				{
-					textBox5.Text = tongTienDecimal.ToString("0.##");  // Hiển thị cả phần thập phân nếu có
+					textBox5.Text = tongTienDecimal.ToString("0.##");  
 				}
 			}
 			else
@@ -91,23 +89,23 @@ namespace BTL_LTTQ_VIP
 		}
 		private void button2_Click(object sender, EventArgs e)
 		{
-			string soHDB = textBox1.Text;  // TextBox cho SoHDB
-			string maNV = comboBox2.Text;   // TextBox cho MaNV
-			DateTime ngayBan = dateTimePicker1.Value;  // DateTimePicker cho NgayBan
-			string tongTien = textBox5.Text;  // TextBox cho TongTien
-			string maKhach = textBox4.Text;   // TextBox cho MaKhach
+			string soHDB = textBox1.Text;  
+			string maNV = comboBox2.Text;  
+			DateTime ngayBan = dateTimePicker1.Value;  
+			string tongTien = textBox5.Text; 
+			string maKhach = textBox4.Text;   
 											  //decimal tongTien = decimal.Parse(textBox5.Text);
 
 			if (XacNhanDuLieu(soHDB, maNV, tongTien, maKhach))
 			{
-				if (isEditMode)  // Nếu ở chế độ sửa
+				if (isEditMode)  
 				{
-					UpdateHoaDonBan(soHDB, maNV, ngayBan, maKhach, tongTien);  // Sửa dữ liệu
+					UpdateHoaDonBan(soHDB, maNV, ngayBan, maKhach, tongTien);  
 				}
-				else  // Nếu ở chế độ thêm
+				else  
 				{
 					decimal tongTienDecimal = decimal.Parse(tongTien);
-					AddHoaDonBan(soHDB, maNV, ngayBan, maKhach, tongTienDecimal);  // Thêm dữ liệu mới
+					AddHoaDonBan(soHDB, maNV, ngayBan, maKhach, tongTienDecimal); 
 				}
 			}
 			else
@@ -165,7 +163,6 @@ namespace BTL_LTTQ_VIP
 			textBox5.Text = "";
 			dateTimePicker1.Value = DateTime.Now;
 		}
-		//ham sua
 		private void AddHoaDonBan(string soHDB, string maNV, DateTime ngayBan, string maKhach, decimal tongTien)
 		{
 			if (CheckSoHDBExists(soHDB))
@@ -184,7 +181,6 @@ namespace BTL_LTTQ_VIP
 				return;
 			}
 
-			// Nếu tồn tại, tiếp tục thêm dữ liệu vào bảng HoaDonBan
 			string query = "INSERT INTO HoaDonBan (SoHDB, MaNV, NgayBan, MaKhach, TongTien) VALUES (@SoHDB, @MaNV, @NgayBan, @MaKhach, @TongTien)";
 			using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
 			{
@@ -270,7 +266,6 @@ namespace BTL_LTTQ_VIP
 		}
 		private void SetupComboBoxAutoComplete()
 		{
-			// Thiết lập các thuộc tính tự động hoàn thành cho ComboBox
 			comboBox2.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
 			comboBox2.AutoCompleteSource = AutoCompleteSource.ListItems;
 		}
@@ -284,7 +279,7 @@ namespace BTL_LTTQ_VIP
 				{
 					command.Parameters.AddWithValue("@SoHDB", soHDB);
 					int count = (int)command.ExecuteScalar();
-					return count > 0;  // Trả về true nếu SoHDB đã tồn tại
+					return count > 0;  
 				}
 			}
 		}
@@ -304,6 +299,38 @@ namespace BTL_LTTQ_VIP
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
+        }
+        private int GenerateNewID()
+        {
+            int newID = 1;
+
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT MAX(MaCongDung) FROM CongDung";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        object result = command.ExecuteScalar();
+                        if (result != DBNull.Value && result != null)
+                        {
+                            newID = Convert.ToInt32(result) + 1;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tạo mã hàng mới: " + ex.Message);
+                }
+            }
+
+            return newID;
+        }
+        private void ThemHoaDonBan_Load_1(object sender, EventArgs e)
+        {
+            textBox1.Text = GenerateNewID().ToString();
         }
     }
 }
