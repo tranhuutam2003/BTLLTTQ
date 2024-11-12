@@ -35,7 +35,7 @@ namespace BTL_LTTQ_VIP
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(rds);
 
-            reportViewer1.LocalReport.ReportPath = "C:\\Users\\tam tran\\source\\repos\\BTLLTTQ2\\BTLLTTQ\\NhanVienReport.rdlc";
+            reportViewer1.LocalReport.ReportPath = reportlink.nhanvienreportlink;
             this.reportViewer1.RefreshReport();
         }
     }

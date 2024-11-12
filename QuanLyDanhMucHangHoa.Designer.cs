@@ -42,6 +42,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
@@ -54,6 +57,7 @@
             // 
             // Exit
             // 
+            this.Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Exit.FlatAppearance.BorderSize = 0;
             this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -71,6 +75,8 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(55)))), ((int)(((byte)(77)))));
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.Them);
@@ -78,7 +84,6 @@
             this.panel1.Controls.Add(this.Exit);
             this.panel1.Controls.Add(this.btnXuatExcel);
             this.panel1.Controls.Add(this.Xoa);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 443);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1398, 66);
@@ -86,14 +91,16 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Image = global::BTL_LTTQ_VIP.Properties.Resources.report;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(468, 0);
+            this.button1.Location = new System.Drawing.Point(759, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(187, 59);
+            this.button1.Size = new System.Drawing.Size(208, 59);
             this.button1.TabIndex = 8;
             this.button1.Text = "Báo cáo hàng hóa";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -102,6 +109,7 @@
             // 
             // Them
             // 
+            this.Them.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Them.FlatAppearance.BorderSize = 0;
             this.Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Them.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -119,13 +127,14 @@
             // 
             // Sua
             // 
+            this.Sua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Sua.FlatAppearance.BorderSize = 0;
             this.Sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Sua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Sua.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Sua.Image = global::BTL_LTTQ_VIP.Properties.Resources.sua;
             this.Sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Sua.Location = new System.Drawing.Point(234, 3);
+            this.Sua.Location = new System.Drawing.Point(252, 0);
             this.Sua.Name = "Sua";
             this.Sua.Size = new System.Drawing.Size(187, 59);
             this.Sua.TabIndex = 3;
@@ -136,13 +145,14 @@
             // 
             // btnXuatExcel
             // 
+            this.btnXuatExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnXuatExcel.FlatAppearance.BorderSize = 0;
             this.btnXuatExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXuatExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnXuatExcel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnXuatExcel.Image = global::BTL_LTTQ_VIP.Properties.Resources.excel;
             this.btnXuatExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXuatExcel.Location = new System.Drawing.Point(974, 0);
+            this.btnXuatExcel.Location = new System.Drawing.Point(1006, 3);
             this.btnXuatExcel.Name = "btnXuatExcel";
             this.btnXuatExcel.Size = new System.Drawing.Size(187, 59);
             this.btnXuatExcel.TabIndex = 7;
@@ -153,13 +163,14 @@
             // 
             // Xoa
             // 
+            this.Xoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Xoa.FlatAppearance.BorderSize = 0;
             this.Xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Xoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Xoa.Image = global::BTL_LTTQ_VIP.Properties.Resources.delete;
             this.Xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Xoa.Location = new System.Drawing.Point(720, -2);
+            this.Xoa.Location = new System.Drawing.Point(501, 1);
             this.Xoa.Name = "Xoa";
             this.Xoa.Size = new System.Drawing.Size(184, 62);
             this.Xoa.TabIndex = 4;
@@ -177,6 +188,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "QuanLyDanhMucHangHoa";
             this.Text = "Quản Lý Danh Mục Hàng Hóa";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

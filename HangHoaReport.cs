@@ -73,19 +73,16 @@ namespace BTL_LTTQ_VIP
                 object totalRevenueResult = totalRevenueCommand.ExecuteScalar();
                 decimal totalRevenue = totalRevenueResult != DBNull.Value ? Convert.ToDecimal(totalRevenueResult) : 0;
                 conn.Close();
-                // Lấy dữ liệu sản phẩm mua nhiều nhất
                 SqlCommand mostPurchasedProductCommand = new SqlCommand(mostPurchasedProductQuery, conn);
                 conn.Open();
                 var mostPurchasedProduct = mostPurchasedProductCommand.ExecuteScalar()?.ToString() ?? "Không có";
                 conn.Close();
 
-                // Lấy dữ liệu sản phẩm có doanh thu cao nhất
                 SqlCommand highestRevenueProductCommand = new SqlCommand(highestRevenueProductQuery, conn);
                 conn.Open();
                 var highestRevenueProduct = highestRevenueProductCommand.ExecuteScalar()?.ToString() ?? "Không có";
                 conn.Close();
-                reportViewer1.LocalReport.ReportPath = "C:\\Users\\tam tran\\source\\repos\\BTLLTTQ2\\BTLLTTQ\\HangHoaReport.rdlc";
-                // Thiết lập các tham số cho báo cáo
+                reportViewer1.LocalReport.ReportPath = reportlink.hanghoareportlink;
                 ReportParameter[] reportParams = new ReportParameter[]
                 {
                     new ReportParameter("NguoiTaoBaoCao", TenNV),
@@ -96,15 +93,12 @@ namespace BTL_LTTQ_VIP
                 reportViewer1.LocalReport.SetParameters(reportParams);
             }
 
-            // Thiết lập nguồn dữ liệu cho báo cáo
             ReportDataSource rds = new ReportDataSource("HangHoaDataSet", ds.Tables["HangHoaTable"]);
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(rds);
 
-            // Chỉ định đường dẫn đến file báo cáo RDLC
-            reportViewer1.LocalReport.ReportPath = "C:\\Users\\tam tran\\source\\repos\\BTLLTTQ2\\BTLLTTQ\\HangHoaReport.rdlc";
+            reportViewer1.LocalReport.ReportPath = reportlink.hanghoareportlink;
 
-            // Làm mới ReportViewer để hiển thị dữ liệu
             this.reportViewer1.RefreshReport();
         }
 

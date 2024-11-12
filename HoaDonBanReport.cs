@@ -135,7 +135,7 @@ namespace BTL_LTTQ_VIP
                 }
 
                 conn.Close();
-                reportViewer1.LocalReport.ReportPath = "C:\\Users\\tam tran\\source\\repos\\BTLLTTQ2\\BTLLTTQ\\HoaDonBanReport.rdlc";
+                reportViewer1.LocalReport.ReportPath = reportlink.hoadonbanreportlink;
                 // Truyền tham số vào báo cáo
                 ReportParameter[] reportParams = new ReportParameter[]
                 {
@@ -156,7 +156,7 @@ namespace BTL_LTTQ_VIP
             reportViewer1.LocalReport.DataSources.Add(rds);
 
             // Chỉ định đường dẫn đến file báo cáo RDLC
-            reportViewer1.LocalReport.ReportPath = "C:\\Users\\tam tran\\source\\repos\\BTLLTTQ2\\BTLLTTQ\\HoaDonBanReport.rdlc";
+            reportViewer1.LocalReport.ReportPath = reportlink.hoadonbanreportlink;
 
             // Làm mới báo cáo để hiển thị dữ liệu
             reportViewer1.RefreshReport();

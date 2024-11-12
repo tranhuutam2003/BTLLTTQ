@@ -92,37 +92,37 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.56667in</Width>
+                  <Width>0.66137in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.5in</Width>
+                  <Width>0.5947in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.76667in</Width>
+                  <Width>0.86137in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.0947in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.0947in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.0947in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.38333in</Width>
+                  <Width>0.47803in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.45in</Width>
+                  <Width>0.5447in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.0947in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.0947in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.06136in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -825,7 +825,7 @@
             </TablixRowHierarchy>
             <DataSetName>HoaDonNhapDataSet</DataSetName>
             <Height>1.08334in</Height>
-            <Width>8.66667in</Width>
+            <Width>9.675in</Width>
             <Style>
               <Border>
                 <Style>None</Style>

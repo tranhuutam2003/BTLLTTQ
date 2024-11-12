@@ -38,6 +38,9 @@
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.reportViewer1.Location = new System.Drawing.Point(14, 68);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
@@ -46,6 +49,7 @@
             // 
             // dtptungay
             // 
+            this.dtptungay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dtptungay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtptungay.Location = new System.Drawing.Point(150, 23);
             this.dtptungay.Name = "dtptungay";
@@ -54,6 +58,7 @@
             // 
             // dtpdenngay
             // 
+            this.dtpdenngay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dtpdenngay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpdenngay.Location = new System.Drawing.Point(679, 23);
             this.dtpdenngay.Name = "dtpdenngay";
@@ -62,8 +67,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(88, 29);
+            this.label1.Location = new System.Drawing.Point(73, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 16);
             this.label1.TabIndex = 3;
@@ -71,8 +77,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(609, 29);
+            this.label2.Location = new System.Drawing.Point(597, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 16);
             this.label2.TabIndex = 4;
@@ -80,9 +87,15 @@
             // 
             // btnxem
             // 
-            this.btnxem.Location = new System.Drawing.Point(1002, 12);
+            this.btnxem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnxem.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(208)))), ((int)(((byte)(224)))));
+            this.btnxem.FlatAppearance.BorderSize = 2;
+            this.btnxem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnxem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnxem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(55)))), ((int)(((byte)(77)))));
+            this.btnxem.Location = new System.Drawing.Point(967, 9);
             this.btnxem.Name = "btnxem";
-            this.btnxem.Size = new System.Drawing.Size(99, 46);
+            this.btnxem.Size = new System.Drawing.Size(146, 50);
             this.btnxem.TabIndex = 5;
             this.btnxem.Text = "Xem";
             this.btnxem.UseVisualStyleBackColor = true;
@@ -101,6 +114,7 @@
             this.Controls.Add(this.reportViewer1);
             this.Name = "HoaDonNhapReport";
             this.Text = "HoaDonNhapReport";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.HoaDonNhapReport_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

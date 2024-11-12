@@ -63,6 +63,7 @@
             // 
             // Dongiaban
             // 
+            this.Dongiaban.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Dongiaban.Location = new System.Drawing.Point(542, 8);
             this.Dongiaban.Name = "Dongiaban";
             this.Dongiaban.Size = new System.Drawing.Size(250, 22);
@@ -70,6 +71,7 @@
             // 
             // TenHH
             // 
+            this.TenHH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.TenHH.Location = new System.Drawing.Point(542, 84);
             this.TenHH.Name = "TenHH";
             this.TenHH.Size = new System.Drawing.Size(250, 22);
@@ -77,6 +79,7 @@
             // 
             // MaHH
             // 
+            this.MaHH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.MaHH.Location = new System.Drawing.Point(542, 42);
             this.MaHH.Name = "MaHH";
             this.MaHH.ReadOnly = true;
@@ -85,14 +88,15 @@
             // 
             // Ghichu
             // 
+            this.Ghichu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Ghichu.Location = new System.Drawing.Point(542, 160);
-            this.Ghichu.Multiline = true;
             this.Ghichu.Name = "Ghichu";
-            this.Ghichu.Size = new System.Drawing.Size(250, 73);
+            this.Ghichu.Size = new System.Drawing.Size(250, 22);
             this.Ghichu.TabIndex = 17;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -104,6 +108,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -115,6 +120,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.ForeColor = System.Drawing.Color.Black;
@@ -126,6 +132,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.ForeColor = System.Drawing.Color.Black;
@@ -137,6 +144,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.ForeColor = System.Drawing.Color.Black;
@@ -148,6 +156,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.ForeColor = System.Drawing.Color.Black;
@@ -159,6 +168,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label7.ForeColor = System.Drawing.Color.Black;
@@ -170,6 +180,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label8.ForeColor = System.Drawing.Color.Black;
@@ -181,6 +192,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label9.ForeColor = System.Drawing.Color.Black;
@@ -192,6 +204,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label10.ForeColor = System.Drawing.Color.Black;
@@ -203,10 +216,11 @@
             // 
             // label11
             // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(371, 280);
+            this.label11.Location = new System.Drawing.Point(371, 242);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(103, 18);
             this.label11.TabIndex = 28;
@@ -214,6 +228,7 @@
             // 
             // label14
             // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label14.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -225,6 +240,7 @@
             // 
             // label15
             // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label15.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -236,6 +252,7 @@
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label16.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -247,6 +264,7 @@
             // 
             // Loaikinh
             // 
+            this.Loaikinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Loaikinh.FormattingEnabled = true;
             this.Loaikinh.Location = new System.Drawing.Point(115, 3);
             this.Loaikinh.Name = "Loaikinh";
@@ -255,6 +273,7 @@
             // 
             // Loaigong
             // 
+            this.Loaigong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Loaigong.FormattingEnabled = true;
             this.Loaigong.Location = new System.Drawing.Point(115, 39);
             this.Loaigong.Name = "Loaigong";
@@ -263,6 +282,7 @@
             // 
             // Dangmat
             // 
+            this.Dangmat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Dangmat.FormattingEnabled = true;
             this.Dangmat.Location = new System.Drawing.Point(115, 79);
             this.Dangmat.Name = "Dangmat";
@@ -271,6 +291,7 @@
             // 
             // Chatlieu
             // 
+            this.Chatlieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Chatlieu.FormattingEnabled = true;
             this.Chatlieu.Location = new System.Drawing.Point(115, 118);
             this.Chatlieu.Name = "Chatlieu";
@@ -279,6 +300,7 @@
             // 
             // Diop
             // 
+            this.Diop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Diop.FormattingEnabled = true;
             this.Diop.Location = new System.Drawing.Point(115, 157);
             this.Diop.Name = "Diop";
@@ -287,6 +309,7 @@
             // 
             // Congdung
             // 
+            this.Congdung.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Congdung.FormattingEnabled = true;
             this.Congdung.Location = new System.Drawing.Point(115, 198);
             this.Congdung.Name = "Congdung";
@@ -295,6 +318,7 @@
             // 
             // Dacdiem
             // 
+            this.Dacdiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Dacdiem.FormattingEnabled = true;
             this.Dacdiem.Location = new System.Drawing.Point(115, 239);
             this.Dacdiem.Name = "Dacdiem";
@@ -303,6 +327,7 @@
             // 
             // Mausac
             // 
+            this.Mausac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Mausac.FormattingEnabled = true;
             this.Mausac.Location = new System.Drawing.Point(115, 279);
             this.Mausac.Name = "Mausac";
@@ -311,14 +336,16 @@
             // 
             // Nuocsanxuat
             // 
+            this.Nuocsanxuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Nuocsanxuat.FormattingEnabled = true;
-            this.Nuocsanxuat.Location = new System.Drawing.Point(542, 277);
+            this.Nuocsanxuat.Location = new System.Drawing.Point(542, 239);
             this.Nuocsanxuat.Name = "Nuocsanxuat";
             this.Nuocsanxuat.Size = new System.Drawing.Size(250, 24);
             this.Nuocsanxuat.TabIndex = 43;
             // 
             // Thoigianbaohanh
             // 
+            this.Thoigianbaohanh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Thoigianbaohanh.Location = new System.Drawing.Point(542, 121);
             this.Thoigianbaohanh.Name = "Thoigianbaohanh";
             this.Thoigianbaohanh.Size = new System.Drawing.Size(250, 22);
@@ -336,6 +363,7 @@
             // 
             // Xacnhan
             // 
+            this.Xacnhan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Xacnhan.FlatAppearance.BorderSize = 0;
             this.Xacnhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Xacnhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));

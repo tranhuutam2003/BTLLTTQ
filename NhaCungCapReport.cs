@@ -61,13 +61,7 @@ namespace BTL_LTTQ_VIP
                 adapter.SelectCommand.Parameters.AddWithValue("@StartDate", startDate);
                 adapter.SelectCommand.Parameters.AddWithValue("@EndDate", endDate);
 
-                // Xóa DataTable có tên 'NhaCungCapTable' nếu đã tồn tại trong DataSet
-                //if (ds.Tables.Contains("NhaCungCapTable"))
-                //{
-                //    ds.Tables.Remove("NhaCungCapTable");
-                //}
-
-                // Tạo và thêm DataTable mới
+                
                 adapter.Fill(ds.Tables["NhaCungCapTable"]);
             }
 
@@ -77,7 +71,7 @@ namespace BTL_LTTQ_VIP
             reportViewer1.LocalReport.DataSources.Add(rds);
 
             // Chỉ định đường dẫn đến file báo cáo RDLC
-            reportViewer1.LocalReport.ReportPath = "C:\\Users\\tam tran\\source\\repos\\BTLLTTQ2\\BTLLTTQ\\NhaCungCapReport.rdlc";
+            reportViewer1.LocalReport.ReportPath = reportlink.nhacungcapreportlink;
 
             ReportParameter paramNguoiTao = new ReportParameter("NguoiTaoBaoCao", TenNV);
             reportViewer1.LocalReport.SetParameters(new ReportParameter[] { paramNguoiTao });

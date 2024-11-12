@@ -74,7 +74,7 @@ namespace BTL_LTTQ_VIP
                 SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(SoHDN), 0) + 1 FROM HoaDonNhap", conn);
                 soHDN = (int)cmd.ExecuteScalar();
                 txtSoHDN.Text = soHDN.ToString();
-                txtSoHDN.Enabled = false; // Không cho chỉnh sửa
+                txtSoHDN.Enabled = false;
             }
         }
         private void LoadComboBoxData()
@@ -121,7 +121,7 @@ namespace BTL_LTTQ_VIP
             ListViewItem item = new ListViewItem(txtSoHDN.Text);
             item.SubItems.Add(txtSoLuong.Text);
             item.SubItems.Add(txtGiamGia.Text);
-            item.SubItems.Add(cbbsanpham.SelectedValue.ToString());  // Get selected MaHang from ComboBox
+            item.SubItems.Add(cbbsanpham.SelectedValue.ToString());  
             item.SubItems.Add(txtDonGia.Text);
             item.SubItems.Add(lbtennhanvien.Text);
             item.SubItems.Add(cbMaNcc.SelectedValue.ToString());
@@ -231,8 +231,9 @@ namespace BTL_LTTQ_VIP
                 catch (Exception ex)
                 {
                     transaction.Rollback();
-                    MessageBox.Show("Lỗi khi lưu hóa đơn nhập: " + ex.Message);
-                    this.Close();
+                    MessageBox.Show("Sản phẩm trùng nhau hãy xóa bớt !");
+                    //MessageBox.Show("Lỗi khi lưu hóa đơn nhập: " + ex.Message);
+                    //this.Close();
                 }
                 
             }

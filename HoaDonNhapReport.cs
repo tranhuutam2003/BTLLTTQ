@@ -99,8 +99,7 @@ namespace BTL_LTTQ_VIP
                     }
                 }
 
-                // Thiết lập đường dẫn cho báo cáo và truyền các tham số vào
-                reportViewer1.LocalReport.ReportPath = "C:\\Users\\tam tran\\source\\repos\\BTLLTTQ2\\BTLLTTQ\\HoaDonNhapReport.rdlc";
+                reportViewer1.LocalReport.ReportPath = reportlink.hoadonnhapreportlink;
                 ReportParameter[] reportParams = new ReportParameter[]
                 {
             new ReportParameter("NguoiTaoBaoCao", TenNV),

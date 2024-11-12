@@ -63,7 +63,7 @@ namespace BTL_LTTQ_VIP
             ReportParameter paramNguoiTao = new ReportParameter("NguoiTaoBaoCao", TenNV);
             KhachHangRp.LocalReport.SetParameters(new ReportParameter[] { paramNguoiTao });
             // Chỉ định đường dẫn đến file báo cáo RDLC
-            KhachHangRp.LocalReport.ReportPath = "C:\\Users\\tam tran\\source\\repos\\BTLLTTQ2\\BTLLTTQ\\KhachHangReport.rdlc"; // Đường dẫn đến file RDLC của bạn
+            KhachHangRp.LocalReport.ReportPath =reportlink.khachhangreportlink; // Đường dẫn đến file RDLC của bạn
 
             // Làm mới ReportViewer để hiển thị dữ liệu
             KhachHangRp.RefreshReport();
@@ -140,7 +140,7 @@ namespace BTL_LTTQ_VIP
             KhachHangRp.LocalReport.DataSources.Add(rds);
 
             // Chỉ định đường dẫn đến file báo cáo RDLC
-            KhachHangRp.LocalReport.ReportPath = "C:\\Users\\tam tran\\source\\repos\\BTLLTTQ2\\BTLLTTQ\\KhachHangReport.rdlc";
+            KhachHangRp.LocalReport.ReportPath =reportlink.khachhangreportlink;
 
             // Làm mới ReportViewer để hiển thị dữ liệu
             KhachHangRp.RefreshReport();
