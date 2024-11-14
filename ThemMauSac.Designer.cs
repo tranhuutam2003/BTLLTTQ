@@ -70,7 +70,6 @@
             this.Ma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Ma.Location = new System.Drawing.Point(16, 32);
             this.Ma.Name = "Ma";
-            this.Ma.ReadOnly = true;
             this.Ma.Size = new System.Drawing.Size(250, 22);
             this.Ma.TabIndex = 3;
             this.Ma.TextChanged += new System.EventHandler(this.Ma_TextChanged);

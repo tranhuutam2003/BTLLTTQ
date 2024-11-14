@@ -38,6 +38,9 @@
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.reportViewer1.Location = new System.Drawing.Point(14, 74);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
@@ -46,24 +49,27 @@
             // 
             // dtptungay
             // 
+            this.dtptungay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dtptungay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtptungay.Location = new System.Drawing.Point(144, 29);
+            this.dtptungay.Location = new System.Drawing.Point(159, 24);
             this.dtptungay.Name = "dtptungay";
             this.dtptungay.Size = new System.Drawing.Size(200, 22);
             this.dtptungay.TabIndex = 1;
             // 
             // dtpdenngay
             // 
+            this.dtpdenngay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dtpdenngay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpdenngay.Location = new System.Drawing.Point(616, 29);
+            this.dtpdenngay.Location = new System.Drawing.Point(630, 24);
             this.dtpdenngay.Name = "dtpdenngay";
             this.dtpdenngay.Size = new System.Drawing.Size(200, 22);
             this.dtpdenngay.TabIndex = 2;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(82, 35);
+            this.label1.Location = new System.Drawing.Point(73, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 16);
             this.label1.TabIndex = 3;
@@ -71,8 +77,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(546, 35);
+            this.label2.Location = new System.Drawing.Point(547, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 16);
             this.label2.TabIndex = 4;
@@ -80,7 +87,13 @@
             // 
             // btnxem
             // 
-            this.btnxem.Location = new System.Drawing.Point(933, 24);
+            this.btnxem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnxem.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(208)))), ((int)(((byte)(224)))));
+            this.btnxem.FlatAppearance.BorderSize = 2;
+            this.btnxem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnxem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnxem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(55)))), ((int)(((byte)(77)))));
+            this.btnxem.Location = new System.Drawing.Point(981, 19);
             this.btnxem.Name = "btnxem";
             this.btnxem.Size = new System.Drawing.Size(123, 37);
             this.btnxem.TabIndex = 5;

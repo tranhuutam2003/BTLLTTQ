@@ -38,6 +38,9 @@
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.reportViewer1.Location = new System.Drawing.Point(18, 61);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
@@ -46,43 +49,55 @@
             // 
             // dtptungay
             // 
+            this.dtptungay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dtptungay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtptungay.Location = new System.Drawing.Point(184, 33);
+            this.dtptungay.Location = new System.Drawing.Point(194, 25);
             this.dtptungay.Name = "dtptungay";
             this.dtptungay.Size = new System.Drawing.Size(201, 22);
             this.dtptungay.TabIndex = 1;
             // 
             // dtpdenngay
             // 
+            this.dtpdenngay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dtpdenngay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpdenngay.Location = new System.Drawing.Point(685, 33);
+            this.dtpdenngay.Location = new System.Drawing.Point(691, 25);
             this.dtpdenngay.Name = "dtpdenngay";
             this.dtpdenngay.Size = new System.Drawing.Size(201, 22);
             this.dtpdenngay.TabIndex = 2;
             // 
             // lbtungay
             // 
+            this.lbtungay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbtungay.AutoSize = true;
-            this.lbtungay.Location = new System.Drawing.Point(122, 39);
+            this.lbtungay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbtungay.Location = new System.Drawing.Point(106, 25);
             this.lbtungay.Name = "lbtungay";
-            this.lbtungay.Size = new System.Drawing.Size(56, 16);
+            this.lbtungay.Size = new System.Drawing.Size(60, 18);
             this.lbtungay.TabIndex = 3;
             this.lbtungay.Text = "Từ ngày";
             // 
             // lbdenngay
             // 
+            this.lbdenngay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbdenngay.AutoSize = true;
-            this.lbdenngay.Location = new System.Drawing.Point(615, 39);
+            this.lbdenngay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbdenngay.Location = new System.Drawing.Point(596, 25);
             this.lbdenngay.Name = "lbdenngay";
-            this.lbdenngay.Size = new System.Drawing.Size(64, 16);
+            this.lbdenngay.Size = new System.Drawing.Size(70, 18);
             this.lbdenngay.TabIndex = 4;
             this.lbdenngay.Text = "Đến ngày";
             // 
             // btnxem
             // 
-            this.btnxem.Location = new System.Drawing.Point(939, 12);
+            this.btnxem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnxem.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(208)))), ((int)(((byte)(224)))));
+            this.btnxem.FlatAppearance.BorderSize = 2;
+            this.btnxem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnxem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnxem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(55)))), ((int)(((byte)(77)))));
+            this.btnxem.Location = new System.Drawing.Point(989, 13);
             this.btnxem.Name = "btnxem";
-            this.btnxem.Size = new System.Drawing.Size(192, 42);
+            this.btnxem.Size = new System.Drawing.Size(143, 42);
             this.btnxem.TabIndex = 5;
             this.btnxem.Text = "Xem";
             this.btnxem.UseVisualStyleBackColor = true;

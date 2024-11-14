@@ -39,16 +39,17 @@
             this.lblTongDoanhThuNhap = new System.Windows.Forms.Label();
             this.lblTongDoanhThuBan = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnxemdoanhthutheothang = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnxemdoanhthutheothang = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtpngayketthuc
             // 
+            this.dtpngayketthuc.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.dtpngayketthuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpngayketthuc.Location = new System.Drawing.Point(538, 212);
+            this.dtpngayketthuc.Location = new System.Drawing.Point(599, 300);
             this.dtpngayketthuc.Name = "dtpngayketthuc";
             this.dtpngayketthuc.Size = new System.Drawing.Size(250, 22);
             this.dtpngayketthuc.TabIndex = 0;
@@ -56,23 +57,25 @@
             // 
             // dtpngaybatdau
             // 
+            this.dtpngaybatdau.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.dtpngaybatdau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpngaybatdau.Location = new System.Drawing.Point(134, 214);
+            this.dtpngaybatdau.Location = new System.Drawing.Point(152, 300);
             this.dtpngaybatdau.Name = "dtpngaybatdau";
             this.dtpngaybatdau.Size = new System.Drawing.Size(250, 22);
             this.dtpngaybatdau.TabIndex = 1;
             // 
             // btnxemdoanhthu
             // 
+            this.btnxemdoanhthu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnxemdoanhthu.FlatAppearance.BorderSize = 0;
             this.btnxemdoanhthu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnxemdoanhthu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnxemdoanhthu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnxemdoanhthu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnxemdoanhthu.Image = global::BTL_LTTQ_VIP.Properties.Resources.seedetail;
             this.btnxemdoanhthu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnxemdoanhthu.Location = new System.Drawing.Point(3, 3);
+            this.btnxemdoanhthu.Location = new System.Drawing.Point(3, 0);
             this.btnxemdoanhthu.Name = "btnxemdoanhthu";
-            this.btnxemdoanhthu.Size = new System.Drawing.Size(169, 60);
+            this.btnxemdoanhthu.Size = new System.Drawing.Size(193, 60);
             this.btnxemdoanhthu.TabIndex = 2;
             this.btnxemdoanhthu.Text = "Xem doanh thu";
             this.btnxemdoanhthu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -81,6 +84,10 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowDrop = true;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -89,14 +96,15 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(797, 194);
+            this.dataGridView1.Size = new System.Drawing.Size(876, 282);
             this.dataGridView1.TabIndex = 3;
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(-3, 214);
+            this.label1.Location = new System.Drawing.Point(15, 300);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 20);
             this.label1.TabIndex = 4;
@@ -104,9 +112,10 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(407, 214);
+            this.label2.Location = new System.Drawing.Point(468, 302);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 20);
             this.label2.TabIndex = 5;
@@ -114,13 +123,14 @@
             // 
             // btnexit
             // 
+            this.btnexit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnexit.FlatAppearance.BorderSize = 0;
             this.btnexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnexit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnexit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnexit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnexit.Image = global::BTL_LTTQ_VIP.Properties.Resources.undo;
             this.btnexit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnexit.Location = new System.Drawing.Point(682, 2);
+            this.btnexit.Location = new System.Drawing.Point(768, 0);
             this.btnexit.Name = "btnexit";
             this.btnexit.Size = new System.Drawing.Size(106, 61);
             this.btnexit.TabIndex = 6;
@@ -132,7 +142,7 @@
             // lblTongDoanhThuThuan
             // 
             this.lblTongDoanhThuThuan.AutoSize = true;
-            this.lblTongDoanhThuThuan.Location = new System.Drawing.Point(576, 249);
+            this.lblTongDoanhThuThuan.Location = new System.Drawing.Point(585, 325);
             this.lblTongDoanhThuThuan.Name = "lblTongDoanhThuThuan";
             this.lblTongDoanhThuThuan.Size = new System.Drawing.Size(154, 16);
             this.lblTongDoanhThuThuan.TabIndex = 9;
@@ -142,7 +152,7 @@
             // lblTongDoanhThuNhap
             // 
             this.lblTongDoanhThuNhap.AutoSize = true;
-            this.lblTongDoanhThuNhap.Location = new System.Drawing.Point(408, 249);
+            this.lblTongDoanhThuNhap.Location = new System.Drawing.Point(417, 325);
             this.lblTongDoanhThuNhap.Name = "lblTongDoanhThuNhap";
             this.lblTongDoanhThuNhap.Size = new System.Drawing.Size(149, 16);
             this.lblTongDoanhThuNhap.TabIndex = 8;
@@ -152,7 +162,7 @@
             // lblTongDoanhThuBan
             // 
             this.lblTongDoanhThuBan.AutoSize = true;
-            this.lblTongDoanhThuBan.Location = new System.Drawing.Point(217, 249);
+            this.lblTongDoanhThuBan.Location = new System.Drawing.Point(226, 325);
             this.lblTongDoanhThuBan.Name = "lblTongDoanhThuBan";
             this.lblTongDoanhThuBan.Size = new System.Drawing.Size(140, 16);
             this.lblTongDoanhThuBan.TabIndex = 7;
@@ -168,50 +178,53 @@
             this.panel1.Controls.Add(this.btnexit);
             this.panel1.Controls.Add(this.btnxemdoanhthu);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 334);
+            this.panel1.Location = new System.Drawing.Point(0, 345);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 66);
+            this.panel1.Size = new System.Drawing.Size(877, 66);
             this.panel1.TabIndex = 11;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // btnxemdoanhthutheothang
-            // 
-            this.btnxemdoanhthutheothang.FlatAppearance.BorderSize = 0;
-            this.btnxemdoanhthutheothang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnxemdoanhthutheothang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnxemdoanhthutheothang.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnxemdoanhthutheothang.Image = global::BTL_LTTQ_VIP.Properties.Resources.seedetail;
-            this.btnxemdoanhthutheothang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnxemdoanhthutheothang.Location = new System.Drawing.Point(220, -1);
-            this.btnxemdoanhthutheothang.Name = "btnxemdoanhthutheothang";
-            this.btnxemdoanhthutheothang.Size = new System.Drawing.Size(255, 66);
-            this.btnxemdoanhthutheothang.TabIndex = 10;
-            this.btnxemdoanhthutheothang.Text = "Xem doanh thu theo tháng";
-            this.btnxemdoanhthutheothang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnxemdoanhthutheothang.UseVisualStyleBackColor = true;
-            this.btnxemdoanhthutheothang.Click += new System.EventHandler(this.btnxemdoanhthutheothang_Click);
-            // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Image = global::BTL_LTTQ_VIP.Properties.Resources.report;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(481, 3);
+            this.button1.Location = new System.Drawing.Point(544, -3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(185, 66);
+            this.button1.Size = new System.Drawing.Size(218, 66);
             this.button1.TabIndex = 11;
             this.button1.Text = "Báo cáo doanh thu";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnxemdoanhthutheothang
+            // 
+            this.btnxemdoanhthutheothang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnxemdoanhthutheothang.FlatAppearance.BorderSize = 0;
+            this.btnxemdoanhthutheothang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnxemdoanhthutheothang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnxemdoanhthutheothang.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnxemdoanhthutheothang.Image = global::BTL_LTTQ_VIP.Properties.Resources.seedetail;
+            this.btnxemdoanhthutheothang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnxemdoanhthutheothang.Location = new System.Drawing.Point(245, -3);
+            this.btnxemdoanhthutheothang.Name = "btnxemdoanhthutheothang";
+            this.btnxemdoanhthutheothang.Size = new System.Drawing.Size(275, 66);
+            this.btnxemdoanhthutheothang.TabIndex = 10;
+            this.btnxemdoanhthutheothang.Text = "Xem doanh thu theo tháng";
+            this.btnxemdoanhthutheothang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnxemdoanhthutheothang.UseVisualStyleBackColor = true;
+            this.btnxemdoanhthutheothang.Click += new System.EventHandler(this.btnxemdoanhthutheothang_Click);
+            // 
             // DoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 400);
+            this.ClientSize = new System.Drawing.Size(877, 411);
             this.Controls.Add(this.lblTongDoanhThuThuan);
             this.Controls.Add(this.lblTongDoanhThuNhap);
             this.Controls.Add(this.lblTongDoanhThuBan);

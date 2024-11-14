@@ -63,15 +63,16 @@
             // 
             // btnbaocao
             // 
+            this.btnbaocao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnbaocao.FlatAppearance.BorderSize = 0;
             this.btnbaocao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbaocao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnbaocao.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnbaocao.Image = global::BTL_LTTQ_VIP.Properties.Resources.report;
             this.btnbaocao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbaocao.Location = new System.Drawing.Point(759, 2);
+            this.btnbaocao.Location = new System.Drawing.Point(750, 2);
             this.btnbaocao.Name = "btnbaocao";
-            this.btnbaocao.Size = new System.Drawing.Size(195, 58);
+            this.btnbaocao.Size = new System.Drawing.Size(225, 58);
             this.btnbaocao.TabIndex = 6;
             this.btnbaocao.Text = "Báo cáo nhân viên";
             this.btnbaocao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -80,6 +81,7 @@
             // 
             // SuaNV
             // 
+            this.SuaNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.SuaNV.FlatAppearance.BorderSize = 0;
             this.SuaNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SuaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -97,13 +99,14 @@
             // 
             // exitNV
             // 
+            this.exitNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.exitNV.FlatAppearance.BorderSize = 0;
             this.exitNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.exitNV.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.exitNV.Image = global::BTL_LTTQ_VIP.Properties.Resources.undo;
             this.exitNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exitNV.Location = new System.Drawing.Point(991, 0);
+            this.exitNV.Location = new System.Drawing.Point(1013, 0);
             this.exitNV.Name = "exitNV";
             this.exitNV.Size = new System.Drawing.Size(145, 62);
             this.exitNV.TabIndex = 5;
@@ -114,13 +117,14 @@
             // 
             // ThemNV
             // 
+            this.ThemNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.ThemNV.FlatAppearance.BorderSize = 0;
             this.ThemNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ThemNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ThemNV.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ThemNV.Image = global::BTL_LTTQ_VIP.Properties.Resources.add2;
             this.ThemNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ThemNV.Location = new System.Drawing.Point(27, -2);
+            this.ThemNV.Location = new System.Drawing.Point(3, -2);
             this.ThemNV.Name = "ThemNV";
             this.ThemNV.Size = new System.Drawing.Size(204, 66);
             this.ThemNV.TabIndex = 1;
@@ -131,6 +135,7 @@
             // 
             // XoaNV
             // 
+            this.XoaNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.XoaNV.FlatAppearance.BorderSize = 0;
             this.XoaNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.XoaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -149,6 +154,9 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

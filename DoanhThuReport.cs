@@ -26,7 +26,6 @@ namespace BTL_LTTQ_VIP
             dtpdenngay.Value = DateTime.Now;
             dtptungay.Value = DateTime.Now.AddDays(-30);
 
-            // Load report với khoảng thời gian mặc định
             LoadReport(dtptungay.Value, dtpdenngay.Value);
         }
         private void LoadReport(DateTime startDate, DateTime endDate)
@@ -42,13 +41,11 @@ namespace BTL_LTTQ_VIP
                 adapter.SelectCommand.Parameters.AddWithValue("@StartDate", startDate);
                 adapter.SelectCommand.Parameters.AddWithValue("@EndDate", endDate);
 
-                // Tạo DataTable trong DataSet nếu chưa có
                 if (!rp.Tables.Contains("DoanhThuTable"))
                 {
                     rp.Tables.Add("DoanhThuTable");
                 }
 
-                // Điền dữ liệu vào DataTable
                 adapter.Fill(rp.Tables["DoanhThuTable"]);
             }
 

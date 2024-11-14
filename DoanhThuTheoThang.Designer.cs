@@ -39,11 +39,14 @@
             // 
             // chartdoanhthu
             // 
+            this.chartdoanhthu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             chartArea1.Name = "ChartArea1";
             this.chartdoanhthu.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartdoanhthu.Legends.Add(legend1);
-            this.chartdoanhthu.Location = new System.Drawing.Point(38, 37);
+            this.chartdoanhthu.Location = new System.Drawing.Point(0, 0);
             this.chartdoanhthu.Name = "chartdoanhthu";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -57,7 +60,7 @@
             this.chartdoanhthu.Series.Add(series1);
             this.chartdoanhthu.Series.Add(series2);
             this.chartdoanhthu.Series.Add(series3);
-            this.chartdoanhthu.Size = new System.Drawing.Size(1013, 526);
+            this.chartdoanhthu.Size = new System.Drawing.Size(1078, 593);
             this.chartdoanhthu.TabIndex = 0;
             this.chartdoanhthu.Text = "chart1";
             this.chartdoanhthu.Click += new System.EventHandler(this.doanhthu_Click);

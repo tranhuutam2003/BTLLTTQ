@@ -42,6 +42,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(2, 0);
@@ -71,13 +74,14 @@
             // 
             // btnbaocao
             // 
+            this.btnbaocao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnbaocao.FlatAppearance.BorderSize = 0;
             this.btnbaocao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbaocao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnbaocao.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnbaocao.Image = global::BTL_LTTQ_VIP.Properties.Resources.report;
             this.btnbaocao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbaocao.Location = new System.Drawing.Point(858, 3);
+            this.btnbaocao.Location = new System.Drawing.Point(832, 2);
             this.btnbaocao.Name = "btnbaocao";
             this.btnbaocao.Size = new System.Drawing.Size(130, 63);
             this.btnbaocao.TabIndex = 7;
@@ -88,13 +92,14 @@
             // 
             // btnThemHD
             // 
+            this.btnThemHD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnThemHD.FlatAppearance.BorderSize = 0;
             this.btnThemHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThemHD.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnThemHD.Image = global::BTL_LTTQ_VIP.Properties.Resources.add;
             this.btnThemHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemHD.Location = new System.Drawing.Point(3, 3);
+            this.btnThemHD.Location = new System.Drawing.Point(0, 2);
             this.btnThemHD.Name = "btnThemHD";
             this.btnThemHD.Size = new System.Drawing.Size(177, 63);
             this.btnThemHD.TabIndex = 1;
@@ -105,6 +110,7 @@
             // 
             // exit
             // 
+            this.exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.exit.FlatAppearance.BorderSize = 0;
             this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -122,13 +128,14 @@
             // 
             // btnIn
             // 
+            this.btnIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnIn.FlatAppearance.BorderSize = 0;
             this.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnIn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnIn.Image = global::BTL_LTTQ_VIP.Properties.Resources.printer;
             this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIn.Location = new System.Drawing.Point(694, 3);
+            this.btnIn.Location = new System.Drawing.Point(630, 3);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(158, 60);
             this.btnIn.TabIndex = 6;
@@ -139,13 +146,14 @@
             // 
             // btnXemChiTiet
             // 
+            this.btnXemChiTiet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnXemChiTiet.FlatAppearance.BorderSize = 0;
             this.btnXemChiTiet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXemChiTiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnXemChiTiet.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnXemChiTiet.Image = global::BTL_LTTQ_VIP.Properties.Resources.seedetail;
             this.btnXemChiTiet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXemChiTiet.Location = new System.Drawing.Point(455, 3);
+            this.btnXemChiTiet.Location = new System.Drawing.Point(418, 3);
             this.btnXemChiTiet.Name = "btnXemChiTiet";
             this.btnXemChiTiet.Size = new System.Drawing.Size(170, 60);
             this.btnXemChiTiet.TabIndex = 5;
@@ -156,13 +164,14 @@
             // 
             // btnXoaHD
             // 
+            this.btnXoaHD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnXoaHD.FlatAppearance.BorderSize = 0;
             this.btnXoaHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnXoaHD.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnXoaHD.Image = global::BTL_LTTQ_VIP.Properties.Resources.delete;
             this.btnXoaHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaHD.Location = new System.Drawing.Point(224, 3);
+            this.btnXoaHD.Location = new System.Drawing.Point(208, 3);
             this.btnXoaHD.Name = "btnXoaHD";
             this.btnXoaHD.Size = new System.Drawing.Size(159, 60);
             this.btnXoaHD.TabIndex = 3;
