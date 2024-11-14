@@ -14,9 +14,11 @@ namespace BTL_LTTQ_VIP
 {
     public partial class NhanVienReport : Form
     {
-        public NhanVienReport()
+        private string TenNV;
+        public NhanVienReport(string tenNV)
         {
             InitializeComponent();
+            TenNV = tenNV;
         }
 
         private void NhanVienReport_Load(object sender, EventArgs e)
@@ -36,6 +38,8 @@ namespace BTL_LTTQ_VIP
             reportViewer1.LocalReport.DataSources.Add(rds);
 
             reportViewer1.LocalReport.ReportPath = reportlink.nhanvienreportlink;
+            ReportParameter paramNguoiTao = new ReportParameter("NguoiTaoBaoCao", TenNV);
+            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { paramNguoiTao });
             this.reportViewer1.RefreshReport();
         }
     }

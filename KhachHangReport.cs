@@ -60,11 +60,16 @@ namespace BTL_LTTQ_VIP
             KhachHangRp.LocalReport.DataSources.Clear();
             KhachHangRp.LocalReport.DataSources.Add(rds);
 
-            ReportParameter paramNguoiTao = new ReportParameter("NguoiTaoBaoCao", TenNV);
-            KhachHangRp.LocalReport.SetParameters(new ReportParameter[] { paramNguoiTao });
+            
             // Chỉ định đường dẫn đến file báo cáo RDLC
             KhachHangRp.LocalReport.ReportPath =reportlink.khachhangreportlink; // Đường dẫn đến file RDLC của bạn
-
+            ReportParameter[] reportParams = new ReportParameter[]
+                {
+                    new ReportParameter("NguoiTaoBaoCao", TenNV),
+                    new ReportParameter("TotalSpent", "0"),
+                    new ReportParameter("MostPurchasedProduct", "Không có")
+                };
+            KhachHangRp.LocalReport.SetParameters(reportParams);
             // Làm mới ReportViewer để hiển thị dữ liệu
             KhachHangRp.RefreshReport();
         }

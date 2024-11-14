@@ -147,7 +147,7 @@ namespace BTL_LTTQ_VIP
 
         private void btnbaocao_Click(object sender, EventArgs e)
         {
-            NhanVienReport nvrp = new NhanVienReport();
+            NhanVienReport nvrp = new NhanVienReport(TenNV);
             nvrp.Show();
         }
     }
