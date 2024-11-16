@@ -62,6 +62,7 @@ namespace BTL_LTTQ_VIP
                         LoadData();
                         Ma.Clear();
                         Ten.Clear();
+                        Ma.Text = GenerateNewID().ToString();
                     }
                 }
                 catch (Exception ex)
@@ -109,7 +110,7 @@ namespace BTL_LTTQ_VIP
                         LoadData();
                         Ma.Clear();
                         Ten.Clear();
-
+                        Ma.Text = GenerateNewID().ToString();
                         btnsua.Enabled = false;
                         btnxoa.Enabled = false;
                         xacnhan.Enabled = true;
@@ -145,11 +146,10 @@ namespace BTL_LTTQ_VIP
                             command.ExecuteNonQuery();
                             MessageBox.Show("Xóa chất liệu thành công!");
 
-                            // Refresh DataGridView and clear text boxes
                             LoadData();
                             Ma.Clear();
                             Ten.Clear();
-
+                            Ma.Text = GenerateNewID().ToString();
                             btnsua.Enabled = false;
                             btnxoa.Enabled = false;
                             xacnhan.Enabled = true;
@@ -157,7 +157,6 @@ namespace BTL_LTTQ_VIP
                     }
                     catch (Exception ex)
                     {
-                        //MessageBox.Show("Lỗi khi xóa chất liệu: " + ex.Message);
                         MessageBox.Show("Chât liệu này đã tồn tại trong hóa đơn! Không thể xóa.");
                     }
                 }

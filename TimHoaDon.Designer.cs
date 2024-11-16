@@ -123,7 +123,7 @@
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.listViewHoaDon);
             this.Name = "TimHoaDon";
-            this.Text = "TimHoaDon";
+            this.Text = "Tìm Hóa đơn bán";
             this.Load += new System.EventHandler(this.TimHoaDon_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

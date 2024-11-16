@@ -62,6 +62,7 @@ namespace BTL_LTTQ_VIP
                         LoadData();
                         Ma.Clear();
                         Ten.Clear();
+                        Ma.Text = GenerateNewID().ToString();
                     }
                 }
                 catch (Exception ex)
@@ -95,7 +96,7 @@ namespace BTL_LTTQ_VIP
                         LoadData();
                         Ma.Clear();
                         Ten.Clear();
-
+                        Ma.Text = GenerateNewID().ToString();
                         btnxoa.Enabled = false;
                         btnsua.Enabled = false;
                         button2.Enabled = true;
@@ -134,7 +135,7 @@ namespace BTL_LTTQ_VIP
                             LoadData();
                             Ma.Clear();
                             Ten.Clear();
-
+                            Ma.Text = GenerateNewID().ToString();
                             btnxoa.Enabled = false;
                             btnsua.Enabled = false;
                             button2.Enabled = true;

@@ -62,6 +62,7 @@ namespace BTL_LTTQ_VIP
                         LoadData();
                         Ma.Clear();
                         Ten.Clear();
+                        Ma.Text = GenerateNewID().ToString();
                     }
                 }
                 catch (Exception ex)
@@ -95,7 +96,7 @@ namespace BTL_LTTQ_VIP
                         LoadData();
                         Ma.Clear();
                         Ten.Clear();
-
+                        Ma.Text = GenerateNewID().ToString();
                         btnxoa.Enabled = false;
                         btnsua.Enabled = false;
                         button2.Enabled = true;
@@ -134,7 +135,7 @@ namespace BTL_LTTQ_VIP
                             LoadData();
                             Ma.Clear();
                             Ten.Clear();
-
+                            Ma.Text = GenerateNewID().ToString();
                             btnxoa.Enabled = false;
                             btnsua.Enabled = false;
                             button2.Enabled = true;
@@ -193,6 +194,11 @@ namespace BTL_LTTQ_VIP
         private void ThemGongMat_Load(object sender, EventArgs e)
         {
             Ma.Text = GenerateNewID().ToString();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
