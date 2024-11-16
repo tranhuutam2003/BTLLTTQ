@@ -66,7 +66,7 @@ namespace BTL_LTTQ_VIP
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi thêm Diop: " + ex.Message);
+                    MessageBox.Show("Mã Diop đã tồn tại!" );
                 }
             }
         }
@@ -108,7 +108,6 @@ namespace BTL_LTTQ_VIP
                             command.ExecuteNonQuery();
                             MessageBox.Show("Xóa Diop thành công!");
 
-                            // Refresh DataGridView and clear text boxes
                             LoadData();
                             Ma.Clear();
                             Ten.Clear();
@@ -120,7 +119,7 @@ namespace BTL_LTTQ_VIP
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Lỗi khi xóa Diop: " + ex.Message);
+                        MessageBox.Show("Mã Diop này đã tồn tại trong hóa đơn! Không thể xóa.");
                     }
                 }
             }

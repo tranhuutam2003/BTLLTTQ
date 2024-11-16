@@ -11,7 +11,7 @@ namespace BTL_LTTQ_VIP
         {
             InitializeComponent();
             LoadData();
-            dgvCongDung.CellClick += dgvCongDung_CellClick; // Attach the CellClick event
+            dgvCongDung.CellClick += dgvCongDung_CellClick; 
 
             btnxoa.Enabled = false;
             btnsua.Enabled = false;
@@ -131,7 +131,6 @@ namespace BTL_LTTQ_VIP
                         command.ExecuteNonQuery();
                         MessageBox.Show("Sửa công dụng thành công!");
 
-                        // Refresh DataGridView and clear text boxes
                         LoadData();
                         Ma.Clear();
                         Ten.Clear();
@@ -183,7 +182,8 @@ namespace BTL_LTTQ_VIP
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Lỗi khi xóa công dụng: " + ex.Message);
+                        //MessageBox.Show("Lỗi khi xóa công dụng: " + ex.Message);
+                        MessageBox.Show("Công dụng này đã tồn tại trong hóa đơn! Không thể xóa.");
                     }
                 }
             }

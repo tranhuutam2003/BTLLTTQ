@@ -142,7 +142,8 @@ namespace BTL_LTTQ_VIP
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Lỗi khi xóa Hình Dáng Mặt: " + ex.Message);
+                        //MessageBox.Show("Lỗi khi xóa Hình Dáng Mặt: " + ex.Message);
+                        MessageBox.Show("Hình dạng mắt này đã tồn tại trong hóa đơn! Không thể xóa.");
                     }
                 }
             }

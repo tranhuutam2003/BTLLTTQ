@@ -157,7 +157,8 @@ namespace BTL_LTTQ_VIP
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Lỗi khi xóa chất liệu: " + ex.Message);
+                        //MessageBox.Show("Lỗi khi xóa chất liệu: " + ex.Message);
+                        MessageBox.Show("Chât liệu này đã tồn tại trong hóa đơn! Không thể xóa.");
                     }
                 }
             }

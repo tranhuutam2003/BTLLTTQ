@@ -872,7 +872,7 @@
       <Width>9.65833in</Width>
       <Page>
         <PageHeader>
-          <Height>0.25in</Height>
+          <Height>0.59167in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -885,8 +885,7 @@
                     <TextRun>
                       <Value>Báo cáo danh sách các khách hàng</Value>
                       <Style>
-                        <FontFamily>Britannic Bold</FontFamily>
-                        <FontSize>14pt</FontSize>
+                        <FontSize>20pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -896,7 +895,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Height>0.25in</Height>
+              <Height>0.36667in</Height>
               <Width>9.65833in</Width>
               <Style>
                 <Border>

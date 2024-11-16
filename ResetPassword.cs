@@ -55,7 +55,6 @@ namespace BTL_LTTQ_VIP
             email = Email.Text;
             verificationCode = GenerateVerificationCode();
 
-            // Gửi mã xác nhận
             SendVerificationEmail(email, verificationCode);
 
             MessageBox.Show("Mã xác nhận đã được gửi tới email của bạn.");
@@ -77,12 +76,10 @@ namespace BTL_LTTQ_VIP
             string newPassword = MKMoi.Text;
             string confirmPassword = NLMKMoi.Text;
 
-            // Kiểm tra mã xác nhận
-            if (enteredCode == verificationCode) // Kiểm tra với mã đã gửi
+            if (enteredCode == verificationCode)
             {
                 if (newPassword == confirmPassword)
                 {
-                    // Cập nhật mật khẩu trong cơ sở dữ liệu
                     UpdatePassword(email, newPassword);
                     MessageBox.Show("Mật khẩu đã được thay đổi thành công!");
                 }

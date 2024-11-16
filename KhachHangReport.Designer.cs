@@ -36,6 +36,9 @@
             // 
             // KhachHangRp
             // 
+            this.KhachHangRp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.KhachHangRp.Location = new System.Drawing.Point(39, 84);
             this.KhachHangRp.Name = "KhachHangRp";
             this.KhachHangRp.ServerReport.BearerToken = null;
@@ -44,26 +47,35 @@
             // 
             // cbbkhachhang
             // 
+            this.cbbkhachhang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbbkhachhang.FormattingEnabled = true;
-            this.cbbkhachhang.Location = new System.Drawing.Point(188, 23);
+            this.cbbkhachhang.Location = new System.Drawing.Point(230, 40);
             this.cbbkhachhang.Name = "cbbkhachhang";
             this.cbbkhachhang.Size = new System.Drawing.Size(165, 24);
             this.cbbkhachhang.TabIndex = 1;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(79, 31);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(54, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 16);
+            this.label1.Size = new System.Drawing.Size(127, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Tên khách hàng";
             // 
             // btnxem
             // 
-            this.btnxem.Location = new System.Drawing.Point(1027, 23);
+            this.btnxem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnxem.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(208)))), ((int)(((byte)(224)))));
+            this.btnxem.FlatAppearance.BorderSize = 2;
+            this.btnxem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnxem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnxem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(55)))), ((int)(((byte)(77)))));
+            this.btnxem.Location = new System.Drawing.Point(973, 23);
             this.btnxem.Name = "btnxem";
-            this.btnxem.Size = new System.Drawing.Size(88, 34);
+            this.btnxem.Size = new System.Drawing.Size(142, 55);
             this.btnxem.TabIndex = 3;
             this.btnxem.Text = "Xem";
             this.btnxem.UseVisualStyleBackColor = true;

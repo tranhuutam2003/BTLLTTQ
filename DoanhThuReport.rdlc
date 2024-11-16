@@ -107,7 +107,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Doanh thu bán</Value>
+                                  <Value>Doanh thu</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -137,7 +137,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Doanh Thu Nhập</Value>
+                                  <Value>Chi Phí Nhập</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -167,7 +167,16 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Doanh Thu Thuần</Value>
+                                  <Value>Lợi Nhuận</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -353,7 +362,7 @@
       <Width>8in</Width>
       <Page>
         <PageHeader>
-          <Height>0.28in</Height>
+          <Height>0.46333in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -365,16 +374,19 @@
                   <TextRuns>
                     <TextRun>
                       <Value>Báo cáo doanh thu </Value>
-                      <Style />
+                      <Style>
+                        <FontSize>20pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Left>3.255in</Left>
-              <Height>0.25in</Height>
-              <Width>1.6in</Width>
+              <Top>0.00564cm</Top>
+              <Left>3.13333in</Left>
+              <Height>0.39167in</Height>
+              <Width>2.34167in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>

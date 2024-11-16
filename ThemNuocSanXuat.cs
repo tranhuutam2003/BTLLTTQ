@@ -114,7 +114,6 @@ namespace BTL_LTTQ_VIP
             }
         }
 
-        // Button click event to delete a "NuocSanXuat"
         private void btnxoa_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(Ma.Text))
@@ -138,7 +137,6 @@ namespace BTL_LTTQ_VIP
                             command.ExecuteNonQuery();
                             MessageBox.Show("Xóa Nước Sản Xuất thành công!");
 
-                            // Refresh DataGridView and clear text boxes
                             LoadData();
                             Ma.Clear();
                             Ten.Clear();
@@ -150,13 +148,12 @@ namespace BTL_LTTQ_VIP
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Lỗi khi xóa Nước Sản Xuất: " + ex.Message);
+                        MessageBox.Show("Nước sản xuất này đã tồn tại trong hóa đơn! Không thể xóa.");
                     }
                 }
             }
         }
 
-        // Event to handle row selection in DataGridView
         private void dgvNuocSX_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0) // Ensure a valid row is selected

@@ -142,7 +142,8 @@ namespace BTL_LTTQ_VIP
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Lỗi khi xóa Màu Sắc: " + ex.Message);
+                        //MessageBox.Show("Lỗi khi xóa Màu Sắc: " + ex.Message);
+                        MessageBox.Show("Màu sắc này đã tồn tại trong hóa đơn! Không thể xóa.");
                     }
                 }
             }

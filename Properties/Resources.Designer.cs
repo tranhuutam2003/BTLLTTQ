@@ -213,6 +213,16 @@ namespace BTL_LTTQ_VIP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap chup_anh_san_pham_mujosh_3_2 {
+            get {
+                object obj = ResourceManager.GetObject("chup-anh-san-pham-mujosh-3-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delete {
             get {
                 object obj = ResourceManager.GetObject("delete", resourceCulture);
@@ -276,6 +286,16 @@ namespace BTL_LTTQ_VIP.Properties {
         internal static System.Drawing.Bitmap key {
             get {
                 object obj = ResourceManager.GetObject("key", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Kinh_mat_8 {
+            get {
+                object obj = ResourceManager.GetObject("Kinh-mat-8", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

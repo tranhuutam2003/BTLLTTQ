@@ -101,10 +101,8 @@ namespace BTL_LTTQ_VIP
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                // Lấy mã khách hàng từ hàng được chọn
                 string maKhach = dataGridView1.SelectedRows[0].Cells["MaKhach"].Value.ToString();
 
-                // Hiển thị hộp thoại xác nhận
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
@@ -114,7 +112,6 @@ namespace BTL_LTTQ_VIP
                         try
                         {
                             connection.Open();
-                            // Thực hiện xóa vĩnh viễn khách hàng khỏi bảng KhachHang
                             string query = "DELETE FROM KhachHang WHERE MaKhach = @MaKhach";
                             using (SqlCommand command = new SqlCommand(query, connection))
                             {
@@ -124,7 +121,6 @@ namespace BTL_LTTQ_VIP
                                 if (rowsAffected > 0)
                                 {
                                     MessageBox.Show("Khách hàng đã được xóa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    // Cập nhật lại DataGridView sau khi xóa
                                     LoadData();
                                 }
                                 else
@@ -135,7 +131,8 @@ namespace BTL_LTTQ_VIP
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Lỗi khi xóa khách hàng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            //MessageBox.Show("Lỗi khi xóa khách hàng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Mã khách hàng này đã tồn tại trong hóa đơn! Không thể xóa.");
                         }
                     }
                 }

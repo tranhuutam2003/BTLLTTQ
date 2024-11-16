@@ -296,25 +296,34 @@ namespace BTL_LTTQ_VIP
         }
         private void Xacnhan_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(TenHH.Text))
+            {
+                MessageBox.Show("Tên hàng không được để trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (!int.TryParse(Soluong.Text, out int soLuong) || soLuong < 0)
             {
-                MessageBox.Show("Số lượng phải là số nguyên không âm.");
+                MessageBox.Show("Số lượng không được để trống và phải là số lớn hơn hoặc bằng 0.");
                 return;
             }
 
             if (!decimal.TryParse(Dongianhap.Text, out decimal donGiaNhap) || donGiaNhap < 0)
             {
-                MessageBox.Show("Đơn giá nhập phải là số không âm.");
+                MessageBox.Show("Đơn giá nhập không được để trống và phải là số lớn hơn 0.");
                 return;
             }
 
             if (!decimal.TryParse(Dongiaban.Text, out decimal donGiaBan) || donGiaBan < 0)
             {
-                MessageBox.Show("Đơn giá bán phải là số không âm.");
+                MessageBox.Show("Đơn giá bán không được để trống và phải là số lớn hơn 0.");
                 return;
             }
-
-            // Kết nối đến cơ sở dữ liệu và cập nhật thông tin hàng hóa
+            if (!int.TryParse(Thoigianbaohanh.Text, out int thoiGianBaoHanh) || thoiGianBaoHanh < 0)
+            {
+                MessageBox.Show("Thời gian bảo hành không được để trống và phải là số lớn hơn hoặc bằng 0.");
+                return;
+            }
             using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
             {
                 try

@@ -142,7 +142,8 @@ namespace BTL_LTTQ_VIP
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Lỗi khi xóa Loại Gong: " + ex.Message);
+                        //MessageBox.Show("Lỗi khi xóa Loại Gong: " + ex.Message);
+                        MessageBox.Show("Gọng mắt này đã tồn tại trong hóa đơn! Không thể xóa.");
                     }
                 }
             }

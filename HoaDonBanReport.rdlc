@@ -873,7 +873,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Hóa đơn đắt nhất</Value>
+                    <Value>Hóa đơn nhiều tiền nhất</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -884,7 +884,7 @@
             <Top>2.63611in</Top>
             <Left>6.01944in</Left>
             <Height>0.25in</Height>
-            <Width>1.49722in</Width>
+            <Width>1.65555in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -972,7 +972,7 @@
       <Width>10.23333in</Width>
       <Page>
         <PageHeader>
-          <Height>0.43833in</Height>
+          <Height>0.67166in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -984,16 +984,18 @@
                   <TextRuns>
                     <TextRun>
                       <Value>Báo cáo hóa đơn bán</Value>
-                      <Style />
+                      <Style>
+                        <FontSize>20pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox4</rd:DefaultName>
-              <Left>4.39667in</Left>
-              <Height>0.25in</Height>
-              <Width>1.525in</Width>
+              <Left>3.96111in</Left>
+              <Height>0.35833in</Height>
+              <Width>2.83333in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>

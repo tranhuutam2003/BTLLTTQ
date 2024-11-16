@@ -53,22 +53,18 @@ namespace BTL_LTTQ_VIP
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(rds);
 
-            // Đường dẫn đến file RDLC của bạn
-            reportViewer1.LocalReport.ReportPath = "C:\\Users\\tam tran\\source\\repos\\BTLLTTQ2\\BTLLTTQ\\DoanhThuReport.rdlc";
+            reportViewer1.LocalReport.ReportPath = reportlink.doanhthureportlink;
 
             ReportParameter paramNguoiTao = new ReportParameter("NguoiTaoBaoCao", TenNV);
             reportViewer1.LocalReport.SetParameters(new ReportParameter[] { paramNguoiTao });
 
-            // Làm mới ReportViewer để hiển thị dữ liệu
             reportViewer1.RefreshReport();
         }
         private void btnxem_Click(object sender, EventArgs e)
         {
-            // Lấy khoảng ngày từ dtptungay và dtpdenngay
             DateTime startDate = dtptungay.Value;
             DateTime endDate = dtpdenngay.Value;
 
-            // Kiểm tra nếu ngày bắt đầu lớn hơn ngày kết thúc
             if (startDate > endDate)
             {
                 MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc!", "Lỗi",
@@ -76,7 +72,6 @@ namespace BTL_LTTQ_VIP
                 return;
             }
 
-            // Tải báo cáo theo khoảng ngày đã chọn
             LoadReport(startDate, endDate);
         }
     }

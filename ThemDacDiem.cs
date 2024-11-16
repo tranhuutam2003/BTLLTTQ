@@ -156,7 +156,8 @@ namespace BTL_LTTQ_VIP
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Lỗi khi xóa đặc điểm: " + ex.Message);
+                        //MessageBox.Show("Lỗi khi xóa đặc điểm: " + ex.Message);
+                        MessageBox.Show("Đặc điểm này đã tồn tại trong hóa đơn! Không thể xóa.");
                     }
                 }
             }

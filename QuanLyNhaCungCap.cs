@@ -118,7 +118,8 @@ namespace BTL_LTTQ_VIP
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi xóa nhà cung cấp: " + ex.Message);
+                    //MessageBox.Show("Lỗi khi xóa nhà cung cấp: " + ex.Message);
+                    MessageBox.Show("Mã Nhà Cung Cấp đã tồn tại trong hóa đơn! Không thể xóa.");
                 }
             }
         }

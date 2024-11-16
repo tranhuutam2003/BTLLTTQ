@@ -88,10 +88,8 @@ namespace BTL_LTTQ_VIP
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                // Lấy mã nhân viên từ hàng được chọn
                 string maNV = dataGridView1.SelectedRows[0].Cells["MaNV"].Value.ToString();
 
-                // Hiển thị hộp thoại xác nhận
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
@@ -101,7 +99,6 @@ namespace BTL_LTTQ_VIP
                         try
                         {
                             connection.Open();
-                            // Sử dụng câu lệnh UPDATE để thực hiện soft delete
                             string query = "delete NhanVien WHERE MaNV = @MaNV";
                             using (SqlCommand command = new SqlCommand(query, connection))
                             {
@@ -111,7 +108,6 @@ namespace BTL_LTTQ_VIP
                                 if (rowsAffected > 0)
                                 {
                                     MessageBox.Show("Nhân viên đã được xóa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    // Cập nhật lại DataGridView
                                     LoadData();
                                 }
                                 else
@@ -122,7 +118,8 @@ namespace BTL_LTTQ_VIP
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Lỗi khi xóa nhân viên: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            //MessageBox.Show("Lỗi khi xóa nhân viên: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Mã nhân viên đã tồn tại trong hóa đơn! Không thể xóa");
                         }
                     }
                 }

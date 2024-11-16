@@ -173,6 +173,7 @@ namespace BTL_LTTQ_VIP
                         {
                             MessageBox.Show("Thêm hàng hóa thành công!");
                             HangHoaAdded?.Invoke(this, EventArgs.Empty);
+                            ResetForm();
                         }
                         else
                         {
@@ -184,8 +185,29 @@ namespace BTL_LTTQ_VIP
                 {
                     MessageBox.Show("Lỗi: " + ex.Message);
                 }
+                //this.Close();
             }
         }
+        private void ResetForm()
+        {
+            TenHH.Clear();
+            Dongiaban.Clear();
+            Thoigianbaohanh.Text = "12"; 
+            Ghichu.Clear();
+
+            Loaikinh.SelectedIndex = -1;
+            Loaigong.SelectedIndex = -1;
+            Dangmat.SelectedIndex = -1;
+            Chatlieu.SelectedIndex = -1;
+            Diop.SelectedIndex = -1;
+            Congdung.SelectedIndex = -1;
+            Dacdiem.SelectedIndex = -1;
+            Mausac.SelectedIndex = -1;
+            Nuocsanxuat.SelectedIndex = -1;
+
+            MaHH.Text = GenerateNewMaHang().ToString();
+        }
+
         private int GenerateNewMaHang()
         {
             int newMaHang = 1; 

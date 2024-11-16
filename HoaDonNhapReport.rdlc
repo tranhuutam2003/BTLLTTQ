@@ -839,7 +839,7 @@
       <Width>9.67503in</Width>
       <Page>
         <PageHeader>
-          <Height>1in</Height>
+          <Height>0.725in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -851,16 +851,18 @@
                   <TextRuns>
                     <TextRun>
                       <Value>Báo Cáo Hóa Đơn Nhập</Value>
-                      <Style />
+                      <Style>
+                        <FontSize>20pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Left>4.405in</Left>
-              <Height>0.25in</Height>
-              <Width>1.74427in</Width>
+              <Left>3.21214in</Left>
+              <Height>0.4in</Height>
+              <Width>3.21213in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>

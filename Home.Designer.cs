@@ -275,7 +275,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::BTL_LTTQ_VIP.Properties.Resources.bookshelf_413705_640;
+            this.pictureBox1.Image = global::BTL_LTTQ_VIP.Properties.Resources.Kinh_mat_8;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(153, 74);
@@ -314,6 +314,7 @@
             // 
             this.richTextBoxThongBao.Location = new System.Drawing.Point(0, 26);
             this.richTextBoxThongBao.Name = "richTextBoxThongBao";
+            this.richTextBoxThongBao.ReadOnly = true;
             this.richTextBoxThongBao.Size = new System.Drawing.Size(644, 439);
             this.richTextBoxThongBao.TabIndex = 15;
             this.richTextBoxThongBao.Text = "";
